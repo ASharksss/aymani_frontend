@@ -6,7 +6,7 @@ import Image from 'next/image';
 import styles from "./style.module.css"
 
 const CaseItem = () => {
-  const [height, setHeight] = useState(514)
+  const [height, setHeight] = useState(406)
   const [name, setName] = useState('Сайт под ключ')
   const [price, setPrice] = useState(6000)
 
