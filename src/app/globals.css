@@ -9,11 +9,13 @@
   --focus-color-start: #006165;
   --focus-color-meidum: #008674;
   --focus-color-end: #16A13D;
+  --background-image: url("../asserts/BACKGROUND.svg");
 
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --background-image: url("../asserts/BACKGROUND.svg");
     --COLOR-LIGHT: white;
     --COLOR-DARK: black;
     --base-color: #181C20;
@@ -28,8 +30,24 @@
   html {
     color-scheme: dark;
   }
+  body {
+    background-color: var(--base-color) ;
+  }
+}
+body {
+  background-color: var(--base-color) ;
 }
 
+.dark{
+  --background-image: url("../asserts/BACKGROUND_LIGHT.svg");
+  --COLOR-LIGHT: white;
+  --COLOR-DARK: black;
+  --base-color: #181C20;
+  --nuans-color: #E8E8E8;
+  --focus-color-start: #006165;
+  --focus-color-meidum: #008674;
+  --focus-color-end: #16A13D;
+}
 
 
 *:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
