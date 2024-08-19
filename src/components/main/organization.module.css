@@ -42,7 +42,7 @@
     z-index: 0;
     left: 10px;
     top: 300px;
-
+    visibility: var(--visability);
     border-radius: 70px;
     overflow: hidden;
     height: 780px;
