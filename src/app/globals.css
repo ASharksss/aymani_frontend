@@ -10,21 +10,24 @@
   --focus-color-meidum: #008674;
   --focus-color-end: #16A13D;
   --background-image: url("../asserts/BACKGROUND.svg");
+  --nuans-back: #4A4F54;
+
+  --visability: 'visible';
 
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-image: url("../asserts/BACKGROUND.svg");
-    --COLOR-LIGHT: white;
-    --COLOR-DARK: black;
-    --base-color: #181C20;
-    --nuans-color: #E8E8E8;
-    --focus-color-start: #006165;
-    --focus-color-meidum: #008674;
-    --focus-color-end: #16A13D;
-  }
-}
+/*@media (prefers-color-scheme: dark) {*/
+/*  :root {*/
+/*    --background-image: url("../asserts/BACKGROUND.svg");*/
+/*    --COLOR-LIGHT: white;*/
+/*    --COLOR-DARK: black;*/
+/*    --base-color: #181C20;*/
+/*    --nuans-color: #E8E8E8;*/
+/*    --focus-color-start: #006165;*/
+/*    --focus-color-meidum: #008674;*/
+/*    --focus-color-end: #16A13D;*/
+/*  }*/
+/*}*/
 
 @media (prefers-color-scheme: dark) {
   html {
@@ -36,6 +39,7 @@
 }
 body {
   background-color: var(--base-color) ;
+  overflow-x: hidden;
 }
 
 .dark{
@@ -47,6 +51,9 @@ body {
   --focus-color-start: #006165;
   --focus-color-meidum: #008674;
   --focus-color-end: #16A13D;
+  --nuans-back: #fff;
+  --visability: collapse;
+
 }
 
 
@@ -230,6 +237,21 @@ label {
 
 legend {
   display: block;
+}
+
+/* Inter Font */
+@font-face {
+  font-family: 'Imperial One';
+  src: url('../fonts/Imperial.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Franklin Gothic Demi';
+  src: url('../fonts/Franklin Gothic Demi Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 

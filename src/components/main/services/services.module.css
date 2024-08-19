@@ -1,0 +1,20 @@
+.main{
+ padding: 100px 0;
+}
+.background{
+    font-size: 340px;
+    width: 100%;
+    transform: rotate(-9deg);
+}
+
+.background p{
+    font-family: "Imperial One", sans-serif;
+    font-weight: normal;
+    text-wrap: nowrap;
+    text-align: center;
+    /*text-border: 1px solid rgba(128, 128, 128, 0.27);*/
+}
+
+.background .bcg{
+    color: var(--nuans-back);
+}
