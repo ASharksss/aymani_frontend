@@ -1,0 +1,24 @@
+.case_container {
+    width: 576px;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #181C20 93%),
+    url("../../app/assets/atricle_image.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.case_info {
+    font-size: 32px;
+    font-weight: 400;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.case_title {
+
+}
