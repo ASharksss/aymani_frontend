@@ -7,6 +7,7 @@ import { ThemeContext } from '@/contexts/ThemeContext'
 import Organization from '@/components/main/Organization'
 import Services from '@/components/main/services/Services'
 import Projects from '@/components/main/projects/Projects'
+import { AboutUs } from '@/components/main/aboutUs/AboutUs'
 
 
 export default function Home () {
@@ -20,7 +21,8 @@ export default function Home () {
       </button>
         <Organization/>
         <Services/>
-      <Projects/>
+        <Projects/>
+      <AboutUs/>
     </main>
   )
 }
