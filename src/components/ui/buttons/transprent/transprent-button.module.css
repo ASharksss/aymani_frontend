@@ -1,0 +1,13 @@
+.button{
+    font-family: Montserrat, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.color{
+    color: var(--base-color);
+}
+
+.active{
+    color: var(--active-button);
+}

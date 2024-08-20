@@ -13,7 +13,7 @@
   --nuans-back: #4A4F54;
   --hr: #ACBDCC;
   --visability: 'visible';
-
+  --active-button: #7E7E7E;
 }
 
 /*@media (prefers-color-scheme: dark) {*/
@@ -54,6 +54,7 @@ body {
   --nuans-back: #fff;
   --visability: collapse;
   --hr: #384149;
+  --active-button: #A3A3A3;
 }
 
 

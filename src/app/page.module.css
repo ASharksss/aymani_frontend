@@ -3,4 +3,5 @@
     background-color: var(--nuans-color);
     background-repeat: repeat-y;
     color: var(--base-color);
+    padding-top: 100px;
 }
