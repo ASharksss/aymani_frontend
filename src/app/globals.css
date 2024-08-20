@@ -76,7 +76,7 @@ html {
   text-size-adjust: none;
 }
 
-/* Reapply the poPlayfairDisplay cursor for anchor tags */
+/* Reapply the pointer cursor for anchor tags */
 a, button {
   cursor: revert;
 }
@@ -218,7 +218,7 @@ button, input[type="submit"] {
   box-shadow: none;
   background-color: transparent;
   background: none;
-  cursor: poPlayfairDisplay;
+  cursor: pointer;
 }
 
 input:focus, input:active,
@@ -232,7 +232,7 @@ button::-moz-focus-inner {
 }
 
 label {
-  cursor: poPlayfairDisplay;
+  cursor: pointer;
 }
 
 legend {
