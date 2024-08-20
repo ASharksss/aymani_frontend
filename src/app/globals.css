@@ -11,7 +11,7 @@
   --focus-color-end: #16A13D;
   --background-image: url("../asserts/BACKGROUND.svg");
   --nuans-back: #4A4F54;
-
+  --hr: #ACBDCC;
   --visability: 'visible';
 
 }
@@ -53,7 +53,7 @@ body {
   --focus-color-end: #16A13D;
   --nuans-back: #fff;
   --visability: collapse;
-
+  --hr: #384149;
 }
 
 
@@ -76,7 +76,7 @@ html {
   text-size-adjust: none;
 }
 
-/* Reapply the pointer cursor for anchor tags */
+/* Reapply the poPlayfairDisplay cursor for anchor tags */
 a, button {
   cursor: revert;
 }
@@ -218,7 +218,7 @@ button, input[type="submit"] {
   box-shadow: none;
   background-color: transparent;
   background: none;
-  cursor: pointer;
+  cursor: poPlayfairDisplay;
 }
 
 input:focus, input:active,
@@ -232,14 +232,14 @@ button::-moz-focus-inner {
 }
 
 label {
-  cursor: pointer;
+  cursor: poPlayfairDisplay;
 }
 
 legend {
   display: block;
 }
 
-/* Inter Font */
+/* Imperial Franklin */
 @font-face {
   font-family: 'Imperial One';
   src: url('../fonts/Imperial.otf') format('opentype');
@@ -255,3 +255,46 @@ legend {
 }
 
 
+/* PlayFairDisplay */
+
+@font-face {
+  font-family: 'PlayFairDisplay';
+  src: url('../fonts/PlayFairFonts/PlayfairDisplay-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PlayFairDisplay';
+  src: url('../fonts/PlayFairFonts/PlayfairDisplay-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PlayFairDisplay';
+  src: url('../fonts/PlayFairFonts/PlayfairDisplay-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PlayFairDisplay';
+  src: url('../fonts/PlayFairFonts/PlayfairDisplay-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PlayFairDisplay';
+  src: url('../fonts/PlayFairFonts/PlayfairDisplay-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PlayFairDisplay';
+  src: url('../fonts/PlayFairFonts/PlayfairDisplay-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}

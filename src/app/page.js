@@ -8,6 +8,8 @@ import Organization from '@/components/main/Organization'
 import Services from '@/components/main/services/Services'
 import Projects from '@/components/main/projects/Projects'
 import Tag from "@/components/tags/tag";
+import { AboutUs } from '@/components/main/aboutUs/AboutUs'
+import PublicationsTitle from '@/components/publications/title/PublicationsTitle'
 
 
 export default function Home () {
@@ -19,17 +21,11 @@ export default function Home () {
       <button onClick={() => toggle()}>
         Change Theme
       </button>
-      <Organization/>
-      <Tag/>
-      <Tag/>
-      <Tag/>
-      <Tag/>
-      <Tag/>
-      <Tag/>
-      <Tag/>
         <Organization/>
         <Services/>
-      <Projects/>
+        <Projects/>
+        <AboutUs/>
+      <PublicationsTitle/>
     </main>
   )
 }

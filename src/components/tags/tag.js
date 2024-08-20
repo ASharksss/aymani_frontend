@@ -3,7 +3,7 @@
 import React, {useState} from 'react';
 import styles from './tag.module.css'
 
-const Tag = () => {
+const Tag = ({}) => {
   const colors = ['#006165', '#008674', '#16A13D']
 
   const [text, setText] = useState('Рандомный текст')
