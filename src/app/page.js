@@ -4,13 +4,12 @@
 import styles from './page.module.css'
 import {useContext} from 'react'
 import {ThemeContext} from '@/contexts/ThemeContext'
+import Services from '@/components/main/services/Services'
+import Projects from '@/components/main/projects/Projects'
 import Organization from '@/components/main/Organization'
-import Tag from "@/components/tags/tag";
-import ReferenceItem from "@/components/reference_item/reference_item";
-import Project_in_post from "@/components/project_in_post/project_in_post";
-import ArticleItem from "@/components/article_item/article_item";
-import CaseItem from "@/components/case_item/case_item";
 import PostImage from "@/components/post_image/post_image";
+import { AboutUs } from '@/components/main/aboutUs/AboutUs'
+import PublicationsTitle from '@/components/publications/title/PublicationsTitle'
 
 
 export default function Home() {
@@ -22,8 +21,12 @@ export default function Home() {
       <button onClick={() => toggle()}>
         Change Theme
       </button>
-      <Organization/>
-      <PostImage/>
+        <Organization/>
+        <Services/>
+        <Projects/>
+        <AboutUs/>
+        <PublicationsTitle/>
+        <PostImage/>
     </main>
   )
 }

@@ -3,10 +3,10 @@
 import React, {useState} from 'react';
 import styles from './tag.module.css'
 
-const Tag = () => {
+const Tag = ({text, fsize}) => {
   const colors = ['#006165', '#008674', '#16A13D']
 
-  const [text, setText] = useState('Рандомный текст')
+  // const [text, setText] = useState('Рандомный текст')
   const [initialColor] = useState(() => colors[Math.floor(Math.random() * colors.length)]);
   const [buttonColor, setButtonColor] = useState('');
 
@@ -15,7 +15,7 @@ const Tag = () => {
   }
 
   return (
-    <button className={styles.button} style={{backgroundColor: buttonColor}}>
+    <button className={styles.button} style={{backgroundColor: buttonColor, fontSize: fsize }}>
       #{text}
     </button>
   );

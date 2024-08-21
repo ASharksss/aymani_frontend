@@ -1,0 +1,133 @@
+.frodo{
+    overflow: hidden;
+    z-index: 100;
+
+    background: #0C0C0C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 5% 0;
+    flex-direction: column;
+}
+
+.frodo h2{
+    font-family: Montserrat, sans-serif;
+    font-weight: bold;
+    font-size: 48px;
+
+    transition: 1s;
+}
+
+.frodo h2:hover{
+    text-shadow: 0 0 5px rgb(255, 255, 255),
+    0 0 5px rgba(255, 255, 255, 0.8),
+    0 0 25px rgb(255,255,255, 0.6),
+    0 0 50px rgb(255,255,255, 0.2);
+}
+.content{
+    max-width: 1080px;
+    width: 1080px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 46px;
+}
+.description{
+    max-width: 580px;
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #4A4F54FF;
+}
+.coopiryte{
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.c_text{
+    justify-self: center;
+    height: 100%;
+    line-height: 100%;
+    vertical-align: middle;
+}
+.block{
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+}
+.buttons{
+    display: flex;
+    gap: 10px;
+}
+
+.whiteButton{
+    background: white;
+    color: black;
+    border-radius: 20px;
+    padding: 6px 20px;
+
+    transition: 0.5s;
+}
+.b_content{
+    align-items: center;
+    display: flex;
+    gap: 7px;
+}
+.whiteButton:hover{
+    box-shadow: 0 0 5px rgb(255, 255, 255),
+    0 0 5px rgba(255, 255, 255, 0.8),
+    0 0 25px rgb(255,255,255, 0.6),
+    0 0 50px rgb(255,255,255, 0.2);
+}
+
+.hr{
+    box-sizing: border-box;
+    width: 100%;
+    border-bottom:1px solid #2B2A2A;
+}
+.logo{
+    transition: 0.6s;
+}
+.logo:hover{
+    -webkit-filter: drop-shadow( 3px 3px 2px rgba(255, 255, 255, 0.7));
+    filter: drop-shadow( 3px 3px 2px rgba(255, 255, 255, 0.7));
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 15px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    /*border: 1px solid rgba(255, 255, 255);*/
+    transition: 1s;
+}
+
+.button:hover{
+    transform: scale(1.2);
+    box-shadow: 0 0 5px rgb(255, 255, 255),
+    0 0 5px rgba(255, 255, 255, 0.8),
+    0 0 25px rgb(255,255,255, 0.6),
+    0 0 50px rgb(255,255,255, 0.2);
+}
+
+
+@media (max-width: 1600px) {
+    .content{
+        box-sizing: border-box;
+        max-width: 1020px;
+        width: auto;
+    }
+    .frodo{
+        width: 100vw;
+    }
+    .footer{
+        width: 100vw;
+    }
+}
+

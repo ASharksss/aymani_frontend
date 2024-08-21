@@ -6,42 +6,31 @@
     --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
-    --COLOR-LIGHT: black;
-    --COLOR-DARK: white;
-    --base-color: #E8E8E8;
-    --nuans-color: #181C20;
-    --focus-color-start: #006165;
-    --focus-color-meidum: #008674;
-    --focus-color-end: #16A13D;
-    --background-image: url("../asserts/BACKGROUND.svg");
-
+  --COLOR-LIGHT: black;
+  --COLOR-DARK: white;
+  --base-color: #E8E8E8;
+  --nuans-color: #181C20;
+  --focus-color-start: #006165;
+  --focus-color-meidum: #008674;
+  --focus-color-end: #16A13D;
+  --background-image: url("../asserts/BACKGROUND.svg");
+  --nuans-back: #4A4F54;
+  --hr: #ACBDCC;
+  --visability: 'visible';
+  --active-button: #7E7E7E;
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
-        --background-image: url("../asserts/BACKGROUND.svg");
-        --COLOR-LIGHT: white;
-        --COLOR-DARK: black;
-        --base-color: #181C20;
-        --nuans-color: #E8E8E8;
-        --focus-color-start: #006165;
-        --focus-color-meidum: #008674;
-        --focus-color-end: #16A13D;
-    }
+  html {
+    color-scheme: dark;
+  }
+  body {
+    background-color: var(--base-color) ;
+  }
 }
-
-@media (prefers-color-scheme: dark) {
-    html {
-        color-scheme: dark;
-    }
-
-    body {
-        background-color: var(--base-color);
-    }
-}
-
 body {
-    background-color: var(--base-color);
+  background-color: var(--base-color) ;
+  overflow-x: hidden;
 }
 
 .dark {
@@ -57,187 +46,269 @@ body {
     --focus-color-start: #006165;
     --focus-color-meidum: #008674;
     --focus-color-end: #16A13D;
+    --nuans-back: #fff;
+    --visability: collapse;
+    --hr: #384149;
+    --active-button: #A3A3A3;
+}
+.skeleton {
+  height: 100%;
+  width: 100%;
+  color: transparent;
+  user-select: none;
+  /*padding: 0 2% ;*/
+  border-radius: 5px;
+  background-color: #e2e5e7;
+  /*// The shine that's going to move across the skeleton:*/
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255,255, 0));
+  background-size: 40px 100%;
+  /*// width of the shine*/
+  background-repeat: no-repeat;
+  /*// No need to repeat the shine effect*/
+  background-position: left -40px top 0;
+  /*// Place shine on the left side, with offset on the left based on the width of the shine - see background-size*/
+  animation: shine 1s ease infinite;
+  /*// increase animation time to see effect in 'slow-mo'*/
 }
 
-
 *:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
-    all: unset;
-    display: revert;
+  all: unset;
+  display: revert;
 }
 
 /* Preferred box-sizing value */
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Fix mobile Safari increase font-size on landscape mode */
 html {
-    -moz-text-size-adjust: none;
-    -webkit-text-size-adjust: none;
-    text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
 /* Reapply the pointer cursor for anchor tags */
 a, button {
-    cursor: revert;
+  cursor: revert;
 }
 
 /* Remove list styles (bullets/numbers) */
 ol, ul, menu, summary {
-    list-style: none;
+  list-style: none;
 }
 
 /* For images to not be able to exceed their container */
 img {
-    max-inline-size: 100%;
-    max-block-size: 100%;
+  max-inline-size: 100%;
+  max-block-size: 100%;
 }
 
 /* removes spacing between cells in tables */
 table {
-    border-collapse: collapse;
+  border-collapse: collapse;
 }
 
 /* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
 input, textarea {
-    -webkit-user-select: auto;
+  -webkit-user-select: auto;
 }
 
 /* revert the 'white-space' property for textarea elements on Safari */
 textarea {
-    white-space: revert;
+  white-space: revert;
 }
 
 /* minimum style to allow to style meter element */
 meter {
-    -webkit-appearance: revert;
-    appearance: revert;
+  -webkit-appearance: revert;
+  appearance: revert;
 }
 
 /* preformatted text - use only for this feature */
 :where(pre) {
-    all: revert;
-    box-sizing: border-box;
+  all: revert;
+  box-sizing: border-box;
 }
 
 /* reset default text opacity of input placeholder */
 ::placeholder {
-    color: unset;
+  color: unset;
 }
 
 /* fix the feature of 'hidden' attribute.
    display:revert; revert to element instead of attribute */
 :where([hidden]) {
-    display: none;
+  display: none;
 }
 
 /* revert for bug in Chromium browsers
    - fix for the content editable attribute will work properly.
    - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
 :where([contenteditable]:not([contenteditable="false"])) {
-    -moz-user-modify: read-write;
-    -webkit-user-modify: read-write;
-    overflow-wrap: break-word;
-    -webkit-line-break: after-white-space;
-    -webkit-user-select: auto;
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
 }
 
 /* apply back the draggable feature - exist only in Chromium and Safari */
 :where([draggable="true"]) {
-    -webkit-user-drag: element;
+  -webkit-user-drag: element;
 }
+
 
 
 /* Remove details summary webkit styles */
 ::-webkit-details-marker {
-    display: none;
+  display: none;
 }
 
 * {
-    padding: 0;
-    margin: 0;
-    border: none;
+  padding: 0;
+  margin: 0;
+  border: none;
 }
 
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Links */
 
-a, a:link, a:visited {
-    text-decoration: none;
+a, a:link, a:visited  {
+  text-decoration: none;
 }
 
-a:hover {
-    text-decoration: none;
+a:hover  {
+  text-decoration: none;
 }
 
 /* Common */
 
 aside, nav, footer, header, section, main {
-    display: block;
+  display: block;
 }
+
 
 
 ul, ul li {
-    list-style: none;
+  list-style: none;
 }
 
 img {
-    vertical-align: top;
+  vertical-align: top;
 }
 
 img, svg {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 address {
-    font-style: normal;
+  font-style: normal;
 }
 
 /* Form */
 
 input, textarea, button, select {
-    font-family: inherit;
-    font-size: inherit;
-    color: inherit;
-    background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
 }
 
 input::-ms-clear {
-    display: none;
+  display: none;
 }
 
 button, input[type="submit"] {
-    display: inline-block;
-    box-shadow: none;
-    background-color: transparent;
-    background: none;
-    cursor: pointer;
+  display: inline-block;
+  box-shadow: none;
+  background-color: transparent;
+  background: none;
+  cursor: pointer;
 }
 
 input:focus, input:active,
 button:focus, button:active {
-    outline: none;
+  outline: none;
 }
 
 button::-moz-focus-inner {
-    padding: 0;
-    border: 0;
+  padding: 0;
+  border: 0;
 }
 
 label {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 legend {
-    display: block;
+  display: block;
+}
+
+/* Imperial Franklin */
+@font-face {
+  font-family: 'Imperial One';
+  src: url('../fonts/Imperial.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Franklin Gothic Demi';
+  src: url('../fonts/Franklin Gothic Demi Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 
+/* PlayFairDisplay */
+
+@font-face {
+  font-family: 'PlayFairDisplay';
+  src: url('../fonts/PlayFairFonts/PlayfairDisplay-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PlayFairDisplay';
+  src: url('../fonts/PlayFairFonts/PlayfairDisplay-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PlayFairDisplay';
+  src: url('../fonts/PlayFairFonts/PlayfairDisplay-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PlayFairDisplay';
+  src: url('../fonts/PlayFairFonts/PlayfairDisplay-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PlayFairDisplay';
+  src: url('../fonts/PlayFairFonts/PlayfairDisplay-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PlayFairDisplay';
+  src: url('../fonts/PlayFairFonts/PlayfairDisplay-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}

@@ -1,0 +1,45 @@
+.main{
+    padding: 200px 220px 10px 220px ;
+}
+.main h1{
+    font-family: "Imperial One", sans-serif;
+    font-size: 128px;
+}
+
+.step h2{
+    font-family: "Imperial One",sans-serif;
+    font-size: 96px;
+}
+
+.step p{
+    max-width: 1088px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: normal;
+    font-size: 32px;
+}
+
+.step{
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding: 10px;
+}
+.image{
+    padding-left: 20px;
+}
+
+.content{
+    /*display: flex;*/
+    padding: 30px 0;
+}
+
+.middle{
+    position: relative;
+    bottom: 380px;
+    left: 450px
+}
+
+.last{
+    position: relative;
+    left: 180px;
+}

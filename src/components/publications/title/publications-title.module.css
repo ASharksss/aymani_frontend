@@ -1,0 +1,50 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    gap: 20px
+}
+
+.main h1{
+    font-family: "PlayFairDisplay", sans-serif;
+    font-size: 250px;
+    text-align: center;
+}
+
+.main h2{
+    font-family: "PlayFairDisplay", sans-serif;
+    font-size: 128px;
+    text-align: center;
+}
+
+.description{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Franklin Gothic Demi", sans-serif;
+    color: var(--COLOR-DARK);
+    gap: 20px
+}
+
+.small p{
+    font-size: 24px;
+    opacity: 75%;
+}
+
+.big p{
+    font-size: 40px;
+    opacity: 75%;
+
+}
+
+.hr{
+    width: 100%;
+    border-bottom: 2px solid var(--hr);
+    /*background: #384149;*/
+}
+
+.tags{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    overflow-x: scroll;
+}
