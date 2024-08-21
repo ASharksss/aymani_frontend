@@ -5,3 +5,7 @@
     color: var(--base-color);
     padding-top: 100px;
 }
+
+.commentForm{
+    width: 100%;
+}

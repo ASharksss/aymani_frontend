@@ -12,7 +12,6 @@ export default function Header () {
   const router = useRouter()
   const { theme } = useContext(ThemeContext)
   const  pathname  = usePathname()
-  console.log(pathname)
   return (
     <header className={styles.header}>
       <section className={styles.section}>
@@ -22,10 +21,10 @@ export default function Header () {
           </header>
         {/*</div>*/}
         <nav className={styles.buttons}>
-          <TransprentButton text={'Блоги'} active={pathname === '/blog'}/>
-          <TransprentButton text={'О нас'} active={pathname === '/'} />
-          <TransprentButton text={'Кейсы'} active={pathname === '/cases'}/>
-          <TransprentButton text={'Услуги'} active={pathname === '/services'}/>
+          <TransprentButton text={'Блоги'} active={pathname === '/posts'} click={() => router.push('/posts')}/>
+          <TransprentButton text={'О нас'} active={pathname === '/'} click={() => router.push('/')} />
+          <TransprentButton text={'Кейсы'} active={pathname === '/cases'} click={() => router.push('/cases')}/>
+          <TransprentButton text={'Услуги'} active={pathname === '/services'} click={() => router.push('/services')}/>
         </nav>
       </section>
     </header>

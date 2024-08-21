@@ -25,7 +25,7 @@ export default function Home () {
         <Services/>
         <Projects/>
         <AboutUs/>
-      <PublicationsTitle/>
+        <PublicationsTitle/>
     </main>
   )
 }
