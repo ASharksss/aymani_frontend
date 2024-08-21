@@ -1,7 +1,7 @@
 .container {
     width: 720px;
     height: 446px;
-    background-color: var(--nuans-color);
+    background-color: var(--base-color);
     color: var(--color-title-card);
 }
 
