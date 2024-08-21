@@ -1,0 +1,19 @@
+.container {
+    width: 720px;
+    height: 446px;
+    background-color: var(--nuans-color);
+    color: var(--color-title-card);
+}
+
+.image {
+    width: 720px;
+    height: 402px;
+    object-fit: cover;
+}
+
+.image_description {
+    width: 720px;
+    height: 44px;
+    margin-top: 10px;
+    font-size: 16px;
+}

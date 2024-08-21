@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    background: var(--background-card);
+    box-shadow: var(--box-shadow-card);
+    width: 429px;
+    height: 120px;
+    padding: 10px;
+}
+
+.image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.info {
+    color: var(--color-title-card);
+    font-size: 20px;
+}
+
+.description {
+    height: 70px;
+    overflow: hidden;
+}

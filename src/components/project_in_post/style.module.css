@@ -1,0 +1,21 @@
+.container {
+    background: var(--background-card);
+    box-shadow: var(--box-shadow-card);
+    width: 429px;
+    height: 413px;
+    padding: 10px;
+}
+
+.image {
+    width: 409px;
+    height: 280px;
+    object-fit: cover;
+}
+
+.title {
+    color: var(--color-title-card);
+    font-size: 20px;
+    margin-top: 20px;
+    line-height: 24.38px;
+}
+
