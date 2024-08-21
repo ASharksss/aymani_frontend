@@ -17,8 +17,21 @@
 .content{
    padding: 10px 0;
 }
+.time{
+    color: var(--description-color);
+}
+.likes{
+    color: var(--description-color);
+}
+.showMore{
+    color:  var(--base-color);
+}
 
 .content_text{
+    font-family: "SF Pro Rounded", sans-serif;
+    font-size: 13pt;
+    font-weight: normal;
+    color: var(--description-color);
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -28,6 +41,7 @@
 }
 .action{
     display: flex;
+    gap: 30px;
     max-width: 500px;
 }
 
@@ -45,15 +59,18 @@
 
 .pad{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     box-sizing: border-box;
-    padding: 10px 20px ;
+    padding: 10px 0  10px 20px ;
 }
 
 .childAnswer{
     margin-left: 7px;
-    border-left: 1px solid rgba(0, 0, 0, 0.2);
-
-    background: rgba(0, 0, 0, 0.01);
+    border-left: 2px solid var(--focus-color-start);
+    background: rgba(24, 28, 32, 0.01);
+    backdrop-filter: blur(10px);
 }
 
 .inlinemenu{

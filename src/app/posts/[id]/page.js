@@ -38,7 +38,59 @@ export default function Page () {
         time: '45 минут назад',
         text: 'Еще один ответ на основной комментарий.',
         likes: 150,
-        replies: []
+        replies: [
+          {
+            id: 2,
+            nickname: 'User2',
+            time: '1 час назад',
+            text: 'Это ответ на основной комментарий.',
+            likes: 300,
+            replies: [
+              {
+                id: 3,
+                nickname: 'User3',
+                time: '30 минут назад',
+                text: 'Это ответ на первый ответ.',
+                likes: 100,
+                replies: [
+                  {
+                    id: 2,
+                    nickname: 'User2',
+                    time: '1 час назад',
+                    text: 'Это ответ на основной комментарий.',
+                    likes: 300,
+                    replies: [
+                      {
+                        id: 3,
+                        nickname: 'User3',
+                        time: '30 минут назад',
+                        text: 'Это ответ на первый ответ.',
+                        likes: 100,
+                        replies: []
+                      }
+                    ]
+                  },
+                  {
+                    id: 4,
+                    nickname: 'User4',
+                    time: '45 минут назад',
+                    text: 'Еще один ответ на основной комментарий.',
+                    likes: 150,
+                    replies: []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            id: 4,
+            nickname: 'User4',
+            time: '45 минут назад',
+            text: 'Еще один ответ на основной комментарий.',
+            likes: 150,
+            replies: []
+          }
+        ]
       }
     ]
   };

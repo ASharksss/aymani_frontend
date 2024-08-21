@@ -6,7 +6,7 @@ import styles from './comment-form.module.css'
 import TransprentButton from '@/components/ui/buttons/transprent/TransprentButton'
 import Textarea from '@/components/ui/inputs/textarea/Textarea'
 
-export default function CommentForm () {
+export default function CommentForm ({click}) {
   // const { id } = useParams()
   const [value, setValue] = useState('')
   // const dispatch = useDispatch()
@@ -34,7 +34,7 @@ export default function CommentForm () {
     // <>
     <form id={'HORVA'}
           // onSubmit={handleSubmit}
-          className={`${global.flex} ${global.f_dir_column} ${styles.hell}`} >
+          className={`${styles.hell}`} >
       <div className={styles.input}>
         <Textarea type={'text'}
                   place={'Оставить комментарий'}
@@ -45,11 +45,11 @@ export default function CommentForm () {
       </div>
       <div className={styles.flex}>
         <div className={styles.button}>
-          <TransprentButton active text={'Отмена'} />
+          <TransprentButton fsize={'12pt'} active text={'Отмена'} click={click} />
         </div>
         <div className={styles.button}>
           {/*<button type="submit" form={'HORVA'}>Отправить</button>*/}
-          <TransprentButton text={'Отправить'} type={'submit'} form={'HORVA'}/>
+          <TransprentButton fsize={'12pt'} text={'Отправить'} type={'submit'} form={'HORVA'}/>
         </div>
       </div>
     </form>
