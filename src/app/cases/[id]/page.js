@@ -4,7 +4,7 @@ import React from 'react'
 import styles from '../../page.module.css'
 import CaseTitle from '@/components/case_items/title/CaseTitle'
 import WorkProgress from '@/components/case_items/work-progress/WorkProgress'
-import iiiari from '@/asserts/gifs/IIIari.gif'
+import Projects from '@/components/main/projects/Projects'
 export default function Page () {
   const data = {
     plan : {
@@ -19,6 +19,10 @@ export default function Page () {
     test : {
       text: 'На этом этапе проверяется работоспособность и качество веб-сайта'
     },
+    total: {
+      text: 'Итого мы наворошили кучу статей и что то как то сделали, чтобы оно работало!!!!',
+      price: 12000,
+    }
   }
   const template = [
     {
@@ -28,8 +32,8 @@ export default function Page () {
       text: data?.plan?.text, //data.text
       colors: null,
       design: false,
-      image: iiiari, //data.image
-      imageTitle: 'шарики', //data.imageTitle
+      image: null, //data.image
+      // imageTitle: 'шарики', //data.imageTitle
       iiiar: true,
     },
     {
@@ -69,7 +73,6 @@ export default function Page () {
       imageTitle: null, //null
     }
   ]
-  // console.log(template)
 
   return (
     <section className={styles.main}>
@@ -87,6 +90,12 @@ export default function Page () {
                      imageTitle={step.imageTitle}
       />
       ))}
+      <Projects text={'РЕЗУЛЬТАТ'}/>
+
+      <WorkProgress header={null} text={data.total.text} colors={null} image={null}/>
+      <div className={styles.cost}>
+      <h1> Цена проекта {new Intl.NumberFormat("ru", { style: "currency", currency: "RUB" }).format(12000)} </h1>
+      </div>
     </section>
   )
 };

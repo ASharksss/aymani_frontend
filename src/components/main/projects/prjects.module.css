@@ -1,9 +1,16 @@
 .main h1 {
     font-family: "Imperial One", sans-serif;
-    font-size: 250px;
+    font-size: 230px;
     text-align: center;
     padding: 100px 0;
     margin-bottom: 0;
+
+    background-image: url('../../../asserts/gifs/WTF.gif');
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    -webkit-text-stroke: 2px var(--base-color) ;
 }
 
 .devices{

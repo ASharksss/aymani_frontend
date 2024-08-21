@@ -4,11 +4,11 @@ import Image from 'next/image'
 import blogs from '../../../asserts/devices/Блоги.png'
 import blog from '../../../asserts/devices/Блог.png'
 
-export default function Projects () {
+export default function Projects ({text}) {
   return (
     <div className={styles.main}>
       <h1>
-        ПРОЕКТЫ
+        {text ? text : 'ПРОЕКТЫ'}
       </h1>
       <div className={styles.devices}>
         <div className={styles.Iphone}>

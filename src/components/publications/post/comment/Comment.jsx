@@ -18,7 +18,6 @@ export default function Comment({ comment=[], replies=[] }) {
   const [showReplies, setShowReplies] = useState(false);
 
   const { theme } = useContext(ThemeContext)
-  // console.log(comment)
   return (
     <>
     <div className={styles.pad}>

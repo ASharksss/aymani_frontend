@@ -12,7 +12,10 @@ export default function Header () {
 
   const router = useRouter()
   const { theme, toggle } = useContext(ThemeContext)
-  const  pathname  = usePathname()
+  const  pathname  = usePathname();
+
+
+
   return (
     <header className={styles.header}>
       <section className={styles.section}>

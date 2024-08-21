@@ -8,7 +8,7 @@ import IIIAR from '@/asserts/gifs/IIIAR.gif'
 export default function WorkProgress ({
   header, blockquote, numb,
   text, image, imageTitle,shar,
-  colors, unique,
+  colors, unique
 }) {
   return (
     <section className={styles.section}>
@@ -29,8 +29,8 @@ export default function WorkProgress ({
         </article>
         {colors !== null ?
           <div className={styles.colorImages}>
-            <div className={styles.oval} style={{ background: colors?.base }}>База</div>
-            <div className={styles.circle}>
+            <div className={styles.oval} style={{ background: colors?.base, border: `1px solid ${colors.base}` }}>База</div>
+            <div className={styles.circles}>
               <div className={styles.colors}>
                 <div className={styles.circle} style={{ background: colors?.nuans_start }}></div>
                 <div className={styles.circle} style={{ background: colors?.nuans_middle }}></div>
@@ -40,14 +40,14 @@ export default function WorkProgress ({
                 Нюанс
               </article>
             </div>
-            <div className={styles.oval} style={{ background: colors?.focus }}>Акцент</div>
+            <div className={styles.oval} style={{ background: colors?.focus, border: `1px solid ${colors.focus}` }}>Акцент</div>
           </div> : null}
       </div>
-      {/*{image !== null ?*/}
-      {/*<div className={styles.imageBlock}>*/}
-      {/*  <Image src={image} alt={'image'} title={imageTitle} className={styles.image}/>*/}
-      {/*  <article className={styles.imageTitle}>{imageTitle}</article>*/}
-      {/*</div> : null }*/}
+      {image !== null  ?
+      <div className={styles.imageBlock}>
+        <Image src={image} alt={'image'} title={imageTitle} className={styles.image}/>
+        <article className={styles.imageTitle}>{imageTitle}</article>
+      </div> : null }
       {shar ?
       <div className={styles.iiiariki}>
         <Image src={IIIAR} alt={'image'} title={imageTitle} className={`${styles.image} ${styles.mains}`}/>
