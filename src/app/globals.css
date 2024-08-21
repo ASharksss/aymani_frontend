@@ -436,4 +436,16 @@ legend {
 }
 
 /* ... (остальные шрифты SF Pro Rounded) */
+@font-face {
+  font-family: 'Metro Color';
+  src: url('../fonts/MoscowMetroColor.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: 'Metro';
+  src: url('../fonts/MoscowMetro.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
