@@ -12,8 +12,10 @@ import wa from '../../../asserts/footer/WhatsApp.png'
 
 import Ai from '@/components/logo/ai/Ai'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 
 function Footer ({}) {
+  const router = useRouter()
   return (
     <footer className={ styles.frodo}>
       <div className={styles.content}>
@@ -21,9 +23,7 @@ function Footer ({}) {
         <div className={`${styles.description}`}>
           Адрес: РТ, г. Казань, ул. Техническая, д. 39 пом. 4.
           <br/>
-          {/*<br/>*/}
           ИНН 1659180558 | ОГРН 1171690030599 | КПП 165901001
-          {/*<br/>*/}
           <br/>
           Основным видом деятельности является торговля розничная по почте или по информационно-коммуникационной сети Интернет
         </div>
@@ -44,13 +44,10 @@ function Footer ({}) {
               </div>
             </div>
           </button>
-          {/*<WhiteButton Image={eye_emoji} Image_width={22} text={'Документы'} stylee={{padding: "6px 20px", borderRadius: "20px"}}/>*/}
-          {/*<WhiteButton Image={hello_emoji} Image_width={22} text={'Контакты'}/>*/}
         </div>
         <hr className={styles.hr}/>
         <div className={styles.coopiryte}>
-          <div className={`${styles.block} `}>
-            {/*<Image className={styles.logo} src={logo} alt={'logo'}/>*/}
+          <div className={`${styles.block}`} onClick={() => router.push('/')}>
             <Ai/>
           </div>
           <div className={styles.block}>
@@ -65,7 +62,6 @@ function Footer ({}) {
               <button className={styles.button}><Image src={email} alt={'email'} width={15}/></button>
             </div>
           </div>
-
         </div>
       </div>
     </footer>

@@ -1,10 +1,14 @@
 'use client'
-import AiWeb from '@/components/logo/ai-web/AiWeb'
 import { useContext } from 'react'
-import { ThemeContext } from '@/contexts/ThemeContext'
 import Image from 'next/image'
-import developer from '../../asserts/main/DeveloperWorking.jpg'
+
+import { ThemeContext } from '@/contexts/ThemeContext'
+
 import styles from './organization.module.css'
+
+import developer from '../../asserts/main/DeveloperWorking.jpg'
+
+import AiWeb from '@/components/logo/ai-web/AiWeb'
 
 export default function Organization () {
   const { theme } = useContext(ThemeContext)

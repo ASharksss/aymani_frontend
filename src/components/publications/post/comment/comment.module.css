@@ -1,10 +1,10 @@
-.edit{
-    width: 1px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: rotate(90deg);
-}
+/*.edit{*/
+/*    width: 1px;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    transform: rotate(90deg);*/
+/*}*/
 
 .sender_information{
     display: flex;
@@ -73,10 +73,10 @@
     backdrop-filter: blur(10px);
 }
 
-.inlinemenu{
-    z-index: 20;
-    left: 25%;
-    display: inline-block;
-    position: absolute;
-    max-width: fit-content;
-}
+/*.inlinemenu{*/
+/*    z-index: 20;*/
+/*    left: 25%;*/
+/*    display: inline-block;*/
+/*    position: absolute;*/
+/*    max-width: fit-content;*/
+/*}*/

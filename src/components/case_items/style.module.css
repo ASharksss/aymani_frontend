@@ -1,22 +1,78 @@
-.case_container {
-    width: 576px;
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #181C20 93%),
-    url("../../app/assets/atricle_image.png");
+.main {
+    /*width: 576px;*/
+    /*background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #181C20 93%);*/
+    position: relative;
+    height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     object-fit: cover;
+    cursor: pointer;
+    overflow: hidden;
+}
+.figurecaption{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: end;
+    padding: 30px 20px;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 50;
+}
+.img{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    object-position: top;
+    object-fit: cover;
+    z-index: 0;
+
+    transition: all 500ms ease-in-out;
+
+}
+.main:hover .img{
+    transform: scale(1.1);
 }
 
-.case_info {
+.image{
+    height: 100%;
+    /*z-index: 0;*/
+}
+
+.figurecaption .text{
+    font-family: "Franklin Gothic Demi", sans-serif;
     font-size: 32px;
-    font-weight: 400;
     color: white;
+}
+
+.price{
     display: flex;
-    justify-content: space-between;
-    margin-left: 10px;
-    margin-right: 20px;
-    margin-bottom: 25px;
+    gap: 20px;
+    align-items: center;
+    color: white;
+
+}
+
+.price h3{
+    font-family: 'SF Pro Display',sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    text-align: right;
+}
+
+.price h5{
+    font-family: 'SF Pro Display',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: right;
+    text-decoration-line: line-through;
+
+    color: #A6A6A6;
+
 }

@@ -1,0 +1,18 @@
+.main{
+    width: 1396px;
+    height: 500px;
+}
+
+
+@media (max-width: 1918px) and (min-width: 1300px){
+    .main{
+        width: 1000px;
+    }
+}
+
+@media (max-width: 1299px) and (min-width: 1200px){
+    .main{
+        width: 800px;
+        height: 400px;
+    }
+}

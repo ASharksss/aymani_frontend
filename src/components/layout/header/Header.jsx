@@ -25,10 +25,10 @@ export default function Header () {
           </header>
         {/*</div>*/}
         <nav className={styles.buttons}>
+          <TransprentButton text={'Услуги'} active={pathname === '/#services'} click={() => router.push('/#services')}/>
           <TransprentButton text={'Блоги'} active={pathname === '/posts'} click={() => router.push('/posts')}/>
           <TransprentButton text={'О нас'} active={pathname === '/'} click={() => router.push('/')} />
           <TransprentButton text={'Кейсы'} active={pathname === '/cases'} click={() => router.push('/cases')}/>
-          <TransprentButton text={'Услуги'} active={pathname === '/services'} click={() => router.push('/services')}/>
           <TransprentButton text={'Сменить тему'} click={() => toggle()}/>
         </nav>
       </section>

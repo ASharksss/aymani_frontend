@@ -1,0 +1,22 @@
+.grid{
+    padding: 50px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) ;
+    grid-auto-rows: minmax(250px, 270px); /* Базовая настройка для строк */
+    grid-template-rows: repeat(auto-fill, 250px 250px 250px 250px 250px 250px 250px 250px 250px);
+    column-gap: 20px;
+    row-gap: 50px;
+}
+
+.grid1, .grid9{
+    grid-row: span 2;
+    grid-column: span 2;
+}
+.grid2, .grid3, .grid6, .grid7, .grid8, .grid10, .grid11, .grid14{
+    grid-column: span 2;
+}
+
+.grid4, .grid5, .grid12, .grid13{
+    grid-row: span 2;
+}
