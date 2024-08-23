@@ -63,11 +63,11 @@
     flex-direction: column;
     gap: 10px;
     box-sizing: border-box;
-    padding: 10px 0  10px 20px ;
+    padding: 10px 0  10px 10px ;
 }
 
 .childAnswer{
-    margin-left: 7px;
+    margin-left: 2px;
     border-left: 2px solid var(--focus-color-start);
     background: rgba(24, 28, 32, 0.01);
     backdrop-filter: blur(10px);

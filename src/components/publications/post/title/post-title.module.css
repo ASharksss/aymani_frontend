@@ -1,5 +1,6 @@
 .main{
-    padding-top: 100px; /*todo: Изменить*/
+    /*padding-top: 100px; !*todo: Изменить*!*/
+    /*!todo: Изменено*/
     padding-bottom: 20px;
     display: flex;
     flex-direction: column;

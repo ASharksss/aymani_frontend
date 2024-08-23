@@ -16,8 +16,10 @@
   --visability: 'visible';
   --active-button: #7E7E7E;
   --display: block;
+
   --card-background: conic-gradient(from 180deg at 50% 50%, #21262C 0deg, #0C0E10 235.8deg, #21262C 360deg);
   --card-box-shadow: 0 0 100px 10px #4A4A4A40;
+  --card-border: transperent;
 
 }
 
@@ -52,6 +54,7 @@ body {
 
   --card-background: #E8E8E8;
   --card-box-shadow: none;
+  --card-border: #c7c7c7;
 }
 
 .skeleton {
@@ -88,6 +91,8 @@ body {
 
 /* Fix mobile Safari increase font-size on landscape mode */
 html {
+  scroll-behavior: smooth;
+
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;

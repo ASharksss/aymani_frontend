@@ -3,9 +3,6 @@
 import React, { useContext,  useState } from 'react'
 
 import styles from './comment.module.css'
-// import { symbol } from 'prop-types'
-// import grayLike from '../../../asserts/icons/GrayLike.svg'
-// import arrow_down from '../../../asserts/icons/arowMenu.svg'
 
 import ProfileNickname from '@/components/publications/post/profile/profile-nickname/ProfileNickname'
 import TransprentButton from '@/components/ui/buttons/transprent/TransprentButton'

@@ -5,6 +5,7 @@
 .container {
     background: var(--card-background);
     box-shadow: var(--card-box-shadow);
+    border: 1px solid var(--card-border);
     display: flex;
 }
 

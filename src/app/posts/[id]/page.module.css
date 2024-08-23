@@ -1,0 +1,202 @@
+.comments{
+    width: 100%;
+}
+.span{
+    grid-column: span 2;
+}
+
+
+.grid{
+    display: grid;
+    backdrop-filter: blur(100px);
+    /*background: rgba(255, 255, 255, 0.01);*/
+
+    margin: auto;
+    grid-template-columns: auto 430px;
+    /*grid-template-rows: 25px auto;*/
+    padding: 50px 370px;
+
+    row-gap: 35px;
+    column-gap: 20px;
+    transition: all 250ms ease-in-out;
+    overflow: hidden;
+}
+
+.mainImage{
+    display: flex;
+    align-items: center;
+}
+
+.recomends{
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+    max-height: 300vh;
+    overflow-y: hidden;
+}
+
+.video{
+    width: 100%;
+    margin: 2vh 0;
+
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.fileUploadImage{
+    width: 100%;
+    margin: 2vh 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.textContent{
+    background: rgba(0, 0, 0, 0.06);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+.content{
+    /*box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;*/
+    /*box-shadow: 0 0 0.25em  rgba(20,20,25,0.5);*/
+    backdrop-filter: blur(300px);
+    /*padding: 0 10px;*/
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+}
+
+
+.image{
+    margin: auto;
+    border-radius: 10px;
+
+    overflow: hidden;
+    /*max-height: 520px;*/
+    width: 70%;
+    object-fit: cover;
+}
+
+.inputDescription{
+    width: 70%;
+    height: fit-content;
+}
+.inputDescription h4{
+    margin-bottom: 2vh;
+}
+
+.text{
+    font-family: "SF Pro Text", sans-serif;
+    font-size: 15pt;
+    font-weight: normal;
+    width: 100%;
+}
+.commentForm{
+    width: 100%;
+}
+
+.spanImage{
+    /*height: 520px;*/
+    width: 100%;
+    margin: auto;
+    /*max-height: 520px;*/
+    max-width: 1250px;
+}
+
+.fileUpload{
+    /*position: absolute;*/
+    /*top: 49vh;*/
+    z-index: 10;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.text ul,
+.text ol {
+    padding: 0 1rem;
+    margin: 1.25rem 1rem 1.25rem 0.4rem;
+}
+.text li p {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+}
+.text li{
+    padding: 0.30rem 0;
+}
+
+.text a {
+    color: var(--focus-color-meidum);
+}
+/* Code and preformatted text styles */
+.text code {
+    background-color: white;
+    border-radius: 0.4rem;
+    color: black;
+    font-size: 0.85rem;
+    padding: 0.25em 0.3em;
+}
+
+.text  pre {
+    background: black;
+    border-radius: 0.5rem;
+    color: white;
+    font-family: 'JetBrainsMono', monospace;
+    margin: 1.5rem 0;
+    padding: 0.75rem 1rem;
+}
+.text  code {
+    background: none;
+    color: inherit;
+    font-size: 0.8rem;
+    padding: 0;
+}
+
+
+.text  blockquote {
+    border-left: 3px solid #484848;
+    margin: 1.5rem 0;
+    padding-left: 1rem;
+
+    font-style: italic; /* Курсивное начертание текста */
+    quotes: "\201C" "\201D" "\2018" "\2019"
+}
+
+.text  blockquote:before {
+    content: open-quote; /* Открывающая кавычка перед цитатой */
+}
+
+.text  blockquote:after {
+    content: close-quote; /* Закрывающая кавычка после цитаты */
+}
+
+.text blockquote p {
+    text-indent: 0;
+    font-size: 12pt;
+    margin: 0; /* Убираем отступы у параграфов внутри цитаты */
+}
+.text p {
+    padding: 0.25rem 0;
+    /*text-indent: 1.25rem;*/
+}
+
+.text  hr {
+    border: none;
+    border-top: 1px solid #939393;
+    margin: 2rem 0;
+}
+.text  em{
+    font-style: italic;
+}
+.text  strong{
+    font-weight: bold;
+}
+.text  s{
+    text-decoration: line-through;
+}
+
+
