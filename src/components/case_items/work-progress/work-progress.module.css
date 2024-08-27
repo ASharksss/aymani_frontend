@@ -1,14 +1,6 @@
 .header{
     font-family: "Imperial One", sans-serif;
     font-size: 64px;
-
-
-    /*background-image: url('../../../asserts/gifs/200w.gif');*/
-    /*background-clip: text;*/
-    /*-webkit-background-clip: text;*/
-    /*color: transparent;*/
-
-    /*-webkit-text-stroke: 1px var(--base-color) ;*/
 }
 .uniqueHeaders{
     font-family: "Metro Color", sans-serif;
@@ -110,7 +102,6 @@
     display: flex;
     padding-bottom: 30px;
     border-bottom: 2px solid var(--COLOR-DARK);
-
 }
 .circles{
     display: flex;
@@ -172,7 +163,111 @@
     width: 500px;
     filter: blur(10px);
 }
-
-
 /*GIFS*/
 /*GIFS*/
+
+
+@media (max-width: 1024px) {
+    .header{
+        font-size: 64pt;
+    }
+    .uniqueHeaders{
+        font-size: 78pt;
+
+    }
+
+    .section{
+        padding: 60px 30px ;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        height: fit-content;
+    }
+    .iiiariki{
+        display: none;
+    }
+    .numb{
+        font-size: 60pt;
+    }
+    .blockquote{
+        font-family: "SF Pro Display", sans-serif;
+        font-size: 24pt;
+        max-width: 800px;
+    }
+    .desc{
+        padding: 40px 0;
+    }
+}
+
+@media (max-width: 425px) {
+    .header {
+        font-size: 28px;
+    }
+    .uniqueHeaders {
+        font-size: 54px;
+    }
+    .section {
+        padding: 30px 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        height: fit-content;
+    }
+    .iiiariki {
+        display: none;
+    }
+    .numb {
+        font-size: 44px;
+    }
+    .blockquote {
+        font-family: "SF Pro Display", sans-serif;
+        font-size: 18px;
+        max-width: 100%;
+    }
+    .text{
+        font-size: 20px;
+    }
+    .desc {
+        padding: 32px 0;
+    }
+
+    .circle{
+        height: 80px;
+        width: 45px;
+        border-radius: 50px;
+        transition: all 1s ease-in-out;
+    }
+    .oval:hover, .circle:hover{
+        transform: scale(1.01);
+    }
+
+    .oval{
+        transition: all 1s ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Montserrat, sans-serif;
+        font-weight: bold;
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 14px;
+        height: 80px;
+        width: 90px;
+        border-radius: 50px;
+    }
+    .nuans{
+        padding-top: 10px;
+        font-family: Montserrat, sans-serif;
+        font-weight: bold;
+        color: var(--COLOR-DARK);
+        font-size: 14px;
+    }
+    .colorImages{
+        padding-top: 50px;
+        padding-bottom: 0;
+        /*justify-content: space-between;*/
+        justify-content: center;
+        width: 100%;
+        display: flex;
+        gap: 1%;
+    }
+}

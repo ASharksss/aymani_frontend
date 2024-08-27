@@ -31,13 +31,11 @@
 }
 .second{
     margin:70px 10px 0 10px;
-
     width: 80px;
     /*margin-top: 70px;*/
 }
 .third{
     width: 300px;
-
     margin: 0 10px;
 }
 .fourth{
@@ -56,7 +54,6 @@
     -webkit-background-clip: text;
     -webkit-text-stroke: 2px var(--base-color);
     color: transparent;
-
 }
 
 .grid{
@@ -87,14 +84,75 @@
     overflow: hidden;
     grid-column: span 3;
 }
+@media (max-width: 1024px) {
+    .h1{
+        padding-top: 20px;
+        font-size: 150px;
+        -webkit-text-stroke: 1px var(--base-color);
+    }
+    .bcg{
+        display: none;
+    }
+    .round{
+        padding: 0;
+        height: 50px;
+        position: sticky;
+        top: 150px;
+    }
 
-/*.grid7{*/
-/*    grid-row: span 3;*/
-/*}*/
+    .grid{
+        padding: 0 20px;
+        grid-template-columns: repeat(2, 1fr) ;
+        grid-auto-rows: minmax(400px, 1fr); /* Базовая настройка для строк */
+        grid-template-rows: repeat(auto-fit, 600px 100px 600px 600px 600px 100px 600px 1000px);
+        /*grid-template-columns: repeat(2, 1fr) ;*/
+        /*grid-auto-rows: minmax(800px, 1fr); !* Базовая настройка для строк *!*/
+        /*grid-template-rows: repeat(auto-fit, 800px 200px 800px 800px 800px 200px 800px 1800px);*/
+        column-gap: 20px;
+        row-gap: 20px;
+    }
+}
 
-/*.grid9{*/
-/*    grid-row: span 2;*/
-/*}*/
-/*.grid10{*/
-/*    grid-row: span 2;*/
-/*}*/
+@media (max-width: 425px) {
+    .grid{
+        column-gap: 10px;
+        row-gap: 25px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: minmax(250px, 1fr); /* Базовая настройка для строк */
+        grid-template-rows: repeat(auto-fit, 250px 250px 125px 125px 250px 250px );
+    }
+
+    .grid1, .grid2, .grid4, .grid6, .grid8, .grid9, .grid11, .grid12, .grid13, .grid14{
+        grid-row: span 1;
+        grid-column: span 1;
+    }
+
+    .grid3, .grid7, .grid10{
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+    .grid5{
+        grid-row: span 2;
+    }
+
+    .h1{
+        font-size: 48pt;
+        -webkit-text-stroke: 1px var(--base-color);
+    }
+
+    .GID{
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 375px) {
+    .h1{
+        font-size: 38pt;
+    }
+}
+
+@media (max-width: 320px) {
+    .h1{
+        font-size: 32pt;
+    }
+}

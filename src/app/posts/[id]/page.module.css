@@ -5,34 +5,49 @@
     grid-column: span 2;
 }
 
-
-.grid{
-    display: grid;
-    backdrop-filter: blur(100px);
-    /*background: rgba(255, 255, 255, 0.01);*/
-
-    margin: auto;
-    grid-template-columns: auto 430px;
-    /*grid-template-rows: 25px auto;*/
-    padding: 50px 370px;
-
-    row-gap: 35px;
-    column-gap: 20px;
-    transition: all 250ms ease-in-out;
-    overflow: hidden;
-}
-
 .mainImage{
+    justify-content: center;
     display: flex;
     align-items: center;
 }
 
+.grid{
+    background: var(--nuans-color);
+    display: grid;
+    grid-template-columns: auto 430px;
+    padding: 50px 19vw;
+    row-gap: 35px;
+    column-gap: 20px;
+    transition: all 250ms ease;
+
+}
+
+.sticky{
+    position: sticky;
+    top: 10vw;
+    align-self: start;
+}
 .recomends{
     display: flex;
     flex-direction: column;
+    max-height: fit-content;
     gap: 34px;
-    max-height: 300vh;
-    overflow-y: hidden;
+    /*max-height: 300vh;*/
+    /*overflow-y: hidden;*/
+}
+
+.recomends h3{
+    font-family: "Imperial One", sans-serif;
+    font-size: 21pt;
+}
+.news{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.project{
+    height: 430px;
 }
 
 .video{
@@ -58,9 +73,10 @@
 
 
 .content{
+    background: var(--nuans-color);
     /*box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;*/
     /*box-shadow: 0 0 0.25em  rgba(20,20,25,0.5);*/
-    backdrop-filter: blur(300px);
+    /*backdrop-filter: blur(300px);*/
     /*padding: 0 10px;*/
     display: flex;
     align-items: center;
@@ -94,6 +110,8 @@
     width: 100%;
 }
 .commentForm{
+    /*grid-column: span 2;*/
+    background: var(--nuans-color);
     width: 100%;
 }
 
@@ -198,5 +216,97 @@
 .text  s{
     text-decoration: line-through;
 }
+
+@media (max-width: 1600px) {
+    .grid{
+        padding: 50px 100px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .commentForm{
+        margin: 5vh 0;
+    }
+    .content{
+        gap: 100px;
+    }
+
+    .grid{
+        grid-template-columns: auto 0;
+        column-gap: 0;
+        row-gap: 100px;
+        padding: 20px 3vw;
+    }
+    .recomends{
+        visibility: collapse;
+    }
+    .text{
+        font-size: 32pt;
+    }
+
+    .text ul,
+    .text ol {
+        padding: 0.8rem;
+        margin: 2.5rem 2rem 2.5rem 0.8rem;
+    }
+    .text li p {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+    .text li{
+        padding: 0.2em 0;
+    }
+
+    .text code {
+        border-radius: 0.8rem;
+        font-size: 1.6rem;
+        padding: 0.5em 0.6em;
+    }
+
+    .text  pre {
+        border-radius: 1rem;
+        margin: 3rem 0;
+        padding: 1.5rem 2rem;
+    }
+    .text  code {
+        background: none;
+        color: inherit;
+        font-size: 1.6rem;
+        padding: 0;
+    }
+
+
+    .text  blockquote {
+        border-left: 6px solid #484848;
+        margin: 3rem 0;
+        padding-left: 2rem;
+    }
+
+    /*.text blockquote p {*/
+    /*    text-indent: 0;*/
+    /*    font-size: 12pt;*/
+    /*    margin: 0; !* Убираем отступы у параграфов внутри цитаты *!*/
+    /*}*/
+
+    .text p {
+        padding: 0.5rem 0;
+    }
+
+    .text  hr {
+        border: none;
+        border-top: 4px solid #939393;
+        margin: 4rem 0;
+    }
+    .text  em{
+        font-style: italic;
+    }
+    .text  strong{
+        font-weight: bold;
+    }
+    .text  s{
+        text-decoration: line-through;
+    }
+}
+
 
 

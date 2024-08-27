@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, {useRef} from 'react'
 
 import PostTitle from '@/components/publications/post/title/PostTitle'
 import CommentForm from '@/components/forms/comment-form/CommentForm'
@@ -11,10 +11,21 @@ import temp from '../../../asserts/temp/temp.jpg'
 import page from '../../page.module.css'
 import styles from './page.module.css'
 import PostImage from "@/components/publications/post/image/PostImage";
+import ProjectArticle from "@/components/publications/post/project-article/ProjectArticle";
+import LittlePost from "@/components/publications/post/little-post/LittlePost";
+import {useRouter} from "next/navigation";
 
 
 export default function Page() {
-
+    const router = useRouter()
+    const commentRef = useRef()
+    const handleLinkClick = () => {
+        router.push('#comment');
+        commentRef.current.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center',
+        });
+    };
     const commentData = {
         id: 1,
         nickname: 'User1',
@@ -113,7 +124,8 @@ export default function Page() {
                         title={'Как играть на скрипке, я это вообще не понимаю так то'}
                         tag={'Web-developers'}
                         date={'12.02.2002'}
-                        user={'Антон Анштонов'}
+                        user={'Антон Антонов'}
+                        click={() => handleLinkClick()}
                     />
                 </div>
                 <span></span>
@@ -262,33 +274,50 @@ export default function Page() {
                             </li>
                         </ol>
                         <p>
-                        Подборка отличных скидок! Покупка, Скидки, Промокод, Распродажа, Доставка, Акции, Длиннопост
-                        Разбирайте скидки пока они еще горячие! Цены могут поменяться в любую минуту, либо товар может
-                        закончиться. Не забывайте проверять свой регион доставки.
+                            Подборка отличных скидок! Покупка, Скидки, Промокод, Распродажа, Доставка, Акции, Длиннопост
+                            Разбирайте скидки пока они еще горячие! Цены могут поменяться в любую минуту, либо товар
+                            может
+                            закончиться. Не забывайте проверять свой регион доставки.
                         </p>
                         <p>
-                        Больше выгодных предложений ищите в разделе Пикабу Промокоды. Вы сами решаете судьбу скидок,
-                        голосуя за топовые варианты. Механика ничем не отличается от Пикабу: есть плюсы, минусы и
-                        комментарии. Выводите в Горячее классные предложения или добавляйте свои!
+                            Больше выгодных предложений ищите в разделе Пикабу Промокоды. Вы сами решаете судьбу скидок,
+                            голосуя за топовые варианты. Механика ничем не отличается от Пикабу: есть плюсы, минусы и
+                            комментарии. Выводите в Горячее классные предложения или добавляйте свои!
                         </p>
 
                         <p>
-                        <strong>
-                        Реклама.
-                        </strong>
-                        Рекламодатель. ООО "АЛИБАБА.КОМ (РУ)" ИНН 7703380158, erid: Kra2449mN
+                            <hr/>
+                            <strong>
+                                Реклама.<br/>
+                            </strong>
+                            <hr/>
+                            Рекламодатель. ООО "АЛИБАБА.КОМ (РУ)" ИНН 7703380158, erid: Kra2449mN
                         </p>
-                    </div>
-                    <div className={styles.commentForm} id={'comment'}>
-                        <CommentForm/>
-                        <Comment comment={commentData} replies={commentData.replies}/>
                     </div>
                 </div>
                 {/*</form>*/}
-                <div className={styles.recomends}>
-                    <h4>Тут дожно быть что то
-                    </h4>
+                <aside className={styles.recomends}>
+                    <div className={styles.project}>
+                        <ProjectArticle title={'Web - приложение для попита '} img={temp}/>
+                    </div>
+                    <div className={styles.sticky}>
+                        <div className={styles.news}>
+                            <h3>Новинки</h3>
+                            <LittlePost title={'The quick brown fox jumps over the lazy dog'} img={temp}/>
+                            <LittlePost title={'The quick brown fox jumps over the lazy dog'} img={temp}/>
+                        </div>
+                        <div className={styles.news}>
+                            <h3>Похожее</h3>
+                            <LittlePost title={'The quick brown fox jumps over the lazy dog'} img={temp}/>
+                            <LittlePost title={'The quick brown fox jumps over the lazy dog'} img={temp}/>
+                        </div>
+                    </div>
+                </aside>
+                <div className={styles.commentForm} ref={commentRef}>
+                    <CommentForm/>
+                    <Comment comment={commentData} replies={commentData.replies}/>
                 </div>
+                <span></span>
             </section>
         </main>
     )

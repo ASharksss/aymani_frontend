@@ -1,0 +1,25 @@
+.section{
+    display: flex;
+    padding: 10px;
+    background: var(--card-background);
+    /*border: 1px solid var(--card-border);*/
+    align-items: center;
+    gap: 10px
+}
+.figure{
+    width: fit-content;
+    min-width: 100px;
+}
+.img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.header{
+    width: 100%;
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 14pt;
+}

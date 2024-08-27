@@ -32,11 +32,11 @@ export default function Comment({ comment=[], replies=[] }) {
       <div className={styles.action}>
         <button className={styles.likes}>
           <div className={`${styles.flex}`}>
-            <LikeSvg color={theme === 'light' ? 'var(--focus-color-meidum)' :  "var(--focus-color-end)"}/>
+            <LikeSvg color={theme === 'light' ? 'var(--description-color)' :  "var(--description-color)"}/>
             {comment?.likes}
           </div>
         </button>
-        {answ ? null : <TransprentButton fsize={'12pt'} text={'Ответить'} click={() => setAnsw(!answ)} />}
+        {answ ? null : <TransprentButton text={'Ответить'} click={() => setAnsw(!answ)} />}
       </div>
       <div className={styles.answ}>
         {answ ? <CommnetForm click={() => setAnsw(!answ)} /> : null}

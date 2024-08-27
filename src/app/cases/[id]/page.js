@@ -2,6 +2,7 @@
 import React from 'react'
 
 import styles from '../../page.module.css'
+
 import CaseTitle from '@/components/case_items/title/CaseTitle'
 import WorkProgress from '@/components/case_items/work-progress/WorkProgress'
 import Projects from '@/components/main/projects/Projects'
@@ -77,7 +78,7 @@ export default function Page () {
   return (
     <section className={styles.main}>
       {/*<CaseTitle type={'Сайт визитка'} date={'12.03.2002'} companyname={'Аграном'} developers={'Yana Dasha Hola'}/>*/}
-      <CaseTitle type={'Сайт визитка'} date={'12.03.2002'} companyname={'Агроном'} developers={'Yana Dasha Hola'}/>
+      <CaseTitle type={'Сайт визитка'} date={'12.03.2002'} companyname={'Агроном'} developers={'FOra Hola DOra'}/>
       {template.map((step) => (
       <WorkProgress  header={step.header}
                      text={step.text}
@@ -92,8 +93,9 @@ export default function Page () {
       ))}
       <Projects text={'РЕЗУЛЬТАТ'}/>
 
-      <WorkProgress header={null} text={data.total.text} colors={null} image={null}/>
+      {/*<WorkProgress header={null} text={data.total.text} colors={null} image={null}/>*/}
       <div className={styles.cost}>
+        <p>{data.total.text}</p>
       <h1> Цена проекта {new Intl.NumberFormat("ru", { style: "currency", currency: "RUB" }).format(12000)} </h1>
       </div>
     </section>

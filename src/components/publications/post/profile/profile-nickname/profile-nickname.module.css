@@ -7,5 +7,10 @@
 .nickname{
     font-family: "Franklin Gothic Demi", sans-serif;
     font-size: 20px;
+}
 
+@media (max-width: 1024px) {
+    .nickname{
+        font-size: 34pt;
+    }
 }

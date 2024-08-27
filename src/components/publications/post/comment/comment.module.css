@@ -1,10 +1,3 @@
-/*.edit{*/
-/*    width: 1px;*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    justify-content: center;*/
-/*    transform: rotate(90deg);*/
-/*}*/
 
 .sender_information{
     display: flex;
@@ -24,14 +17,14 @@
     color: var(--description-color);
 }
 .showMore{
-    color:  var(--base-color);
+    color:  #07835d;
 }
 
 .content_text{
     font-family: "SF Pro Rounded", sans-serif;
     font-size: 13pt;
     font-weight: normal;
-    color: var(--description-color);
+    color: var(--base-color);
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -73,10 +66,51 @@
     backdrop-filter: blur(10px);
 }
 
-/*.inlinemenu{*/
-/*    z-index: 20;*/
-/*    left: 25%;*/
-/*    display: inline-block;*/
-/*    position: absolute;*/
-/*    max-width: fit-content;*/
-/*}*/
+
+@media (max-width: 1024px) {
+
+    .sender_information{
+        font-size: 24pt;
+    }
+    .likes{
+        font-size: 24pt;
+    }
+    .showMore{
+        font-size: 32pt;
+    }
+
+    .content_text{
+        font-size: 32pt;
+    }
+    .action{
+        display: flex;
+        gap: 30px;
+        max-width: 500px;
+    }
+
+    .flex{
+        font-size: 30pt;
+        display: flex;
+        gap: 10px;
+    }
+
+    .answ_btn{
+        max-width: 500px;
+    }
+
+    .pad{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        box-sizing: border-box;
+        padding: 20px 0  20px 20px ;
+    }
+
+    .childAnswer{
+        margin-left: 4px;
+        border-left: 4px solid rgba(7, 131, 93, 0.5);
+        background: rgba(24, 28, 32, 0.01);
+        backdrop-filter: none;
+    }
+}

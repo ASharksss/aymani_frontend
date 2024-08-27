@@ -45,11 +45,11 @@ export default function CommentForm ({click}) {
       </div>
       <div className={styles.flex}>
         <div className={styles.button}>
-          <TransprentButton fsize={'12pt'} active text={'Отмена'} click={click} />
+          <TransprentButton  active text={'Отмена'} click={click} />
         </div>
         <div className={styles.button}>
           {/*<button type="submit" form={'HORVA'}>Отправить</button>*/}
-          <TransprentButton fsize={'12pt'} text={'Отправить'} type={'submit'} form={'HORVA'}/>
+          <TransprentButton  text={'Отправить'} type={'submit'} form={'HORVA'}/>
         </div>
       </div>
     </form>

@@ -1,6 +1,6 @@
 .back{
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 10px;
 }
 .main{
@@ -23,4 +23,12 @@
     top: 70px;
 
     background: white;
+}
+
+@media (max-width: 1024px) {
+    .back{
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
 }

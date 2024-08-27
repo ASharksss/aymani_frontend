@@ -14,7 +14,10 @@ export default function CaseTitle ({type, companyname, developers, date}) {
         &laquo;{companyname}&raquo;
       </div>
       <div className={`${styles.description}`}>
-        <p>Developers: {developers} |</p>  <p>Date: {date} |</p>  <Tag text={type} fsize={'16px'}/>
+           <p>Developers: {developers}</p>
+       <div className={styles.row}>
+          <p>Date: {date} |</p> <p className={styles.tag}>#{type}</p> <div className={styles.Ctag}> <Tag text={type} /> </div>
+       </div>
       </div>
     </header>
   )

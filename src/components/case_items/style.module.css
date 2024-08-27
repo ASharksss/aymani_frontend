@@ -74,5 +74,18 @@
     text-decoration-line: line-through;
 
     color: #A6A6A6;
+}
 
+@media (max-width: 425px) {
+    .main{
+        max-height: auto;
+    }
+    .figurecaption{
+        padding: 10px;
+    }
+    .figurecaption .text{
+        font-family: "Franklin Gothic Demi", sans-serif;
+        font-size: 20px;
+        color: white;
+    }
 }

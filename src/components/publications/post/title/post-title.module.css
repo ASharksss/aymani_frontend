@@ -25,3 +25,23 @@
     display: flex;
     gap: 20px;
 }
+
+
+@media (max-width: 1024px) {
+
+    .main{
+        gap: 50px;
+    }
+    .nav{
+        gap: 30px;
+    }
+    .header{
+        font-size: 64pt;
+    }
+
+    .description{
+        /*flex-direction: column;*/
+        font-size: 32pt;
+        color: var(--description-color);
+    }
+}

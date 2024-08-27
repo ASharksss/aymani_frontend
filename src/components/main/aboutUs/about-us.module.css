@@ -43,3 +43,25 @@
     position: relative;
     left: 180px;
 }
+
+@media (max-width: 1440px) {
+    .main{
+        padding: 100px 120px 10px 120px ;
+    }
+    .main h1{
+        font-size: 96px;
+    }
+
+    .step{
+        gap: 40px;
+    }
+
+    .step h2{
+        font-size: 72px;
+    }
+
+    .step p{
+        max-width: 900px;
+        font-size: 24px;
+    }
+}

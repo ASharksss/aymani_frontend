@@ -4,15 +4,17 @@
 }
 
 
-@media (max-width: 1918px) and (min-width: 1300px){
+@media (max-width: 1918px) {
     .main{
-        width: 1000px;
+        /*width: 100%;*/
+        max-width: 1000px;
+        min-width: 300px;
     }
 }
 
-@media (max-width: 1299px) and (min-width: 1200px){
+@media (max-width: 1024px) {
     .main{
-        width: 800px;
-        height: 400px;
+        width: 600px;
+        height: 300px;
     }
 }

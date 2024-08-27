@@ -17,7 +17,7 @@ export default function Header () {
 
 
   return (
-    <header className={styles.header}>
+    <nav className={styles.header}>
       <section className={styles.section}>
         {/*<div className={styles.logo}>*/}
           <header title={'Аймани'} className={styles.logo} onClick={() => router.push('/')}>
@@ -32,7 +32,7 @@ export default function Header () {
           <TransprentButton text={'Сменить тему'} click={() => toggle()}/>
         </nav>
       </section>
-    </header>
+    </nav>
   )
 };
 

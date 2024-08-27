@@ -3,11 +3,13 @@ import styles from './prjects.module.css'
 import Image from 'next/image'
 import blogs from '../../../asserts/devices/Блоги.png'
 import blog from '../../../asserts/devices/Блог.png'
+import {useRouter} from "next/navigation";
 
 export default function Projects ({text}) {
+    const router = useRouter()
   return (
     <div className={styles.main}>
-      <h1>
+      <h1 onClick={() => router.push('/cases')}>
         {text ? text : 'ПРОЕКТЫ'}
       </h1>
       <div className={styles.devices}>

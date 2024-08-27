@@ -1,20 +1,62 @@
 .main{
- padding: 100px 0;
+    padding-top: 100px;
+    overflow: hidden;
+    max-width: 100vw;
+    box-sizing: border-box;
+    /*position: absolute;*/
 }
 .background{
+    position: absolute;
+    /*position: relative;*/
     font-size: 340px;
     width: 100%;
-    transform: rotate(-9deg);
+    overflow-x: hidden;
+    transform: rotate(-9deg) translateX(0);
 }
 
-.background p{
+.background p, .header{
     font-family: "Imperial One", sans-serif;
     font-weight: normal;
     text-wrap: nowrap;
     text-align: center;
+    overflow: hidden;
+
     /*text-border: 1px solid rgba(128, 128, 128, 0.27);*/
 }
 
 .background .bcg{
     color: var(--nuans-back);
+}
+
+.content{
+    margin-top: 14vw;
+    padding: 60px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) ;
+    /*grid-auto-rows: minmax(400px, 1fr); !* Базовая настройка для строк *!*/
+    overflow: hidden;
+    grid-template-rows: repeat(auto-fit, 400px 100px 400px);
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+@media (max-width: 1440px) {
+    .background{
+        /*max-width: 1200px;*/
+        font-size: 230px;
+        width: fit-content;
+        overflow-x: hidden;
+    }
+    .header{
+        width: 1300px;
+        text-align: end;
+    }
+    .content {
+        margin-top: 10vw;
+    }
+    .background p{
+        /*text-wrap: wrap;*/
+        /*font-size: 180px;*/
+        max-width: 1300px;
+    }
 }

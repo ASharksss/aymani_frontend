@@ -19,3 +19,9 @@
     flex-direction: column;
     width: 100%;
 }
+
+@media (max-width: 1024px) {
+    .flex{
+        gap: 40px;
+    }
+}

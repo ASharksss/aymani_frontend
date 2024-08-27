@@ -9,12 +9,11 @@ import ShareSvg from '@/components/svgs/ShareSVG'
 import CommentSVG from '@/components/svgs/CommentSVG'
 import {ThemeContext} from '@/contexts/ThemeContext'
 
-import { useRouter} from "next/navigation";
 
-export default function PostTitle({title, user, date, tag}) {
+export default function PostTitle({title, user, date, tag, click}) {
 
     const {theme} = useContext(ThemeContext)
-    const router = useRouter()
+
 
 
     return (
@@ -32,7 +31,7 @@ export default function PostTitle({title, user, date, tag}) {
                 <TransprentButton img={<LikeSvg color={theme === 'light' ? '#B0B0B0' : "#474747"}/>}/>
                 <TransprentButton img={<ShareSvg color={theme === 'light' ? '#B0B0B0' : "#474747"}/>}/>
                 <TransprentButton img={<CommentSVG color={theme === 'light' ? '#B0B0B0' : "#474747"}/>}
-                                  click={() => router.push('#comment')}
+                                  click={click}
                 />
             </nav>
         </div>

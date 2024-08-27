@@ -1,7 +1,8 @@
+import styles from './styles.module.css'
 export default function CommentSVG ({color = '#474747'}) {
   return (
-    <div>
-      <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div className={styles.comment}>
+      <svg  viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M20.4737 0.412903H1.52632C1.23684 0.412903 1 0.674661 1 0.994589V14.955C1 15.275 1.23684 15.5367 1.52632 15.5367H5.73684V19.0268C5.73684 19.5504 6.28947 19.8121 6.63158 19.434L10.2105 15.5367H20.4737C20.7632 15.5367 21 15.275 21 14.955V0.994589C21 0.674661 20.7632 0.412903 20.4737 0.412903ZM19.9474 14.3734H10C9.86842 14.3734 9.73684 14.4315 9.63158 14.5479L6.78947 17.6308V14.955C6.78947 14.6351 6.55263 14.3734 6.26316 14.3734H2.05263V1.57627H19.9474V14.3734Z" fill={color} stroke={color}/>
       </svg>
     </div>
