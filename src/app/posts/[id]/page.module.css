@@ -232,13 +232,16 @@
     }
 
     .grid{
-        grid-template-columns: auto 0;
-        column-gap: 0;
-        row-gap: 100px;
+        display: flex;
+        /*grid-template-columns: none;*/
+        /*column-gap: 0;*/
+        flex-direction: column;
+        gap: 20px;
         padding: 20px 3vw;
     }
     .recomends{
         visibility: collapse;
+        display: none;
     }
     .text{
         font-size: 32pt;
@@ -296,6 +299,113 @@
         border: none;
         border-top: 4px solid #939393;
         margin: 4rem 0;
+    }
+    .text  em{
+        font-style: italic;
+    }
+    .text  strong{
+        font-weight: bold;
+    }
+    .text  s{
+        text-decoration: line-through;
+    }
+}
+
+
+@media (max-width: 425px) {
+    .commentForm{
+        margin: 5vh 0;
+    }
+    .content{
+        gap: 10px;
+        box-sizing: border-box;
+    }
+    .anotherSpan{
+        display: none;
+    }
+
+    .grid{
+
+    }
+    .recomends{
+        visibility: collapse;
+    }
+    .text{
+        font-size: 14pt;
+    }
+
+    .text ul,
+    .text ol {
+        padding: 0.1rem;
+        margin: 0.5rem 0 0.5rem 0.8rem;
+    }
+    .text li p {
+        margin-top: 0.2em;
+        margin-bottom: 0.2em;
+    }
+    .text li{
+        padding: 0.5em 0;
+    }
+
+    .text code {
+        border-radius: 0.8rem;
+        font-size: 14pt;
+        padding: 0.2em 0.3em;
+    }
+
+    .text  pre {
+        border-radius: 1rem;
+        margin: 1rem 0;
+        padding: 0.5rem 1rem;
+    }
+    .text  code {
+        background-color: rgb(0, 0, 0, 0.502);
+        margin: 0;
+        text-wrap: wrap;
+        /*padding: .1875rem .375rem .1875rem .6875rem;*/
+        margin-block: .25rem;
+        border-radius: .25rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .text code::before{
+        display: block;
+        width: 100%;
+        content: 'css';
+        /*font-size: 15pt;*/
+        /*padding: 0;*/
+
+        color: var(--focus-color-end);
+        font-family: "SF Pro Text",sans-serif;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-weight: 500;
+        margin-bottom: .5rem;
+    }
+
+
+    .text  blockquote {
+        border-left: 3px solid #484848;
+        margin: 1rem 0;
+        padding-left: 1rem;
+    }
+
+    /*.text blockquote p {*/
+    /*    text-indent: 0;*/
+    /*    font-size: 12pt;*/
+    /*    margin: 0; !* Убираем отступы у параграфов внутри цитаты *!*/
+    /*}*/
+
+    .text p {
+        padding: 0.2rem 0;
+    }
+
+    .text  hr {
+        border: none;
+        border-top: 2px solid #939393;
+        margin: 2rem 0;
     }
     .text  em{
         font-style: italic;

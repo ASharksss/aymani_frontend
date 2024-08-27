@@ -32,3 +32,20 @@
         object-position: center;
     }
 }
+
+@media (max-width: 425px) {
+    .figure{
+        padding: 20px 0;
+    }
+    .figcaption{
+        font-size: 14pt;
+    }
+
+    .image{
+        width: 100%;
+        min-width: 100px;
+        height: 300px;
+        object-fit: cover;
+        object-position: center;
+    }
+}

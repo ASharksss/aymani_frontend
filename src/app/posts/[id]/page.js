@@ -19,6 +19,12 @@ import {useRouter} from "next/navigation";
 export default function Page() {
     const router = useRouter()
     const commentRef = useRef()
+    const dart =  '<li><p>\n' +
+        '            - <a href={\'#\'}> NEW500 </a> - скидка 500 рублей на первый заказ от 3 500 рублей. При использовании данного\n' +
+        '            промокода вы можете получить скидку 500 рублей при покупке от 3500 рублей, применив его\n' +
+        '            только в приложении при оформлении заказа. Промокод действует только на первый заказ и\n' +
+        '            не распространяется на товары из акции "Одна цена". Активен до 30 сентября.</p>\n' +
+        '    </li>';
     const handleLinkClick = () => {
         router.push('#comment');
         commentRef.current.scrollIntoView({
@@ -128,7 +134,7 @@ export default function Page() {
                         click={() => handleLinkClick()}
                     />
                 </div>
-                <span></span>
+                <span className={styles.anotherSpan}></span>
                 <div className={styles.content}>
                     <div className={`${styles.spanImage} ${styles.text}`}>
                         <div className={`${styles.mainImage}`}>
@@ -153,6 +159,7 @@ export default function Page() {
                                     не распространяется на товары из акции "Одна цена". Активен до 30 сентября.
                                 </p>
                             </li>
+                            <pre><code>{dart}</code></pre>
                             <li>
                                 <p>
                                     - <a href={'#'}> PIKABU700 </a> - 700 баллов в подарок для новых пользователей. При

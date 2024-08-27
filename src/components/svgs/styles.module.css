@@ -20,3 +20,16 @@
         /*scale: 2;*/
     }
 }
+
+@media (max-width: 425px) {
+    .like, .share, .comment{
+        width: 24px;
+        height: 24px;
+    }
+    .back{
+        max-width: 100%;
+        width: 24px ;
+        height: 24px ;
+        /*scale: 2;*/
+    }
+}
