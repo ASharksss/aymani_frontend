@@ -128,7 +128,6 @@
     position: relative;
     width: 100px;
     filter: blur(40px);
-
 }
 
 .third{
@@ -166,37 +165,110 @@
 /*GIFS*/
 /*GIFS*/
 
+@media (max-width: 1440px) {
 
-@media (max-width: 1024px) {
     .header{
-        font-size: 64pt;
+        font-size: 58pt;
     }
     .uniqueHeaders{
-        font-size: 78pt;
+        font-size: 64pt;
 
     }
 
     .section{
-        padding: 60px 30px ;
-        display: flex;
-        flex-direction: column;
+        padding: 60px 50px ;
         gap: 30px;
+        justify-content: center;
         height: fit-content;
     }
     .iiiariki{
         display: none;
     }
     .numb{
-        font-size: 60pt;
+        font-size: 54pt;
     }
     .blockquote{
         font-family: "SF Pro Display", sans-serif;
-        font-size: 24pt;
+        font-size: 20pt;
         max-width: 800px;
     }
     .desc{
         padding: 40px 0;
     }
+}
+
+@media (max-width: 1024px) {
+    .header {
+        font-size: 42pt;
+    }
+    .uniqueHeaders {
+        font-size: 54pt;
+    }
+
+    .section {
+        padding: 30px 40px;
+        gap: 26px;
+        justify-content: start;
+        height: fit-content;
+    }
+    .iiiariki {
+        display: none;
+    }
+    .numb {
+        font-size: 42pt;
+    }
+    .blockquote {
+        font-family: "SF Pro Display", sans-serif;
+        font-size: 14pt;
+        max-width: 700px;
+    }
+    .text{
+        font-size: 15pt;
+    }
+    .desc {
+        padding: 36px 0;
+    }
+
+    .circle{
+        height: 160px;
+        width: 90px;
+        border-radius: 100px;
+        transition: all 1s ease-in-out;
+    }
+    .oval:hover, .circle:hover{
+        transform: scale(1.06);
+    }
+
+    .oval{
+        transition: all 1s ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Montserrat, sans-serif;
+        font-weight: bold;
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 15pt;
+        height: 160px;
+        width: 120px;
+        border-radius: 40px;
+    }
+    .nuans{
+        padding-top: 10px;
+        font-family: Montserrat, sans-serif;
+        font-weight: bold;
+        color: var(--COLOR-DARK);
+        font-size: 15pt;
+    }
+    .colorImages{
+        padding-top: 50px;
+        padding-bottom: 0;
+        /*justify-content: space-between;*/
+        justify-content: start;
+        width: 100%;
+        display: flex;
+        gap: 1%;
+    }
+
 }
 
 @media (max-width: 425px) {

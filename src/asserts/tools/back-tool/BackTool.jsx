@@ -6,15 +6,15 @@ import styles from './back-create.module.css'
 import {useRouter} from "next/navigation";
 import TransprentButton from "@/components/ui/buttons/transprent/TransprentButton";
 import Arrow from "@/components/svgs/Arrow";
-function BackTool ({sticky}) {
+function BackTool () {
 
     const router  = useRouter()
 
   return (
-    <div className={sticky ? `${styles.main} ${styles.sticky}` : styles.main}>
-        <div className={styles.back}>
+    <div className={styles.main}>
+        <div className={styles.back} onClick={() => router.back()}>
             <Arrow/>
-           <TransprentButton text={'Назад'} click={() => router.back()}/>
+           <TransprentButton text={'Назад'} />
         </div>
     </div>
   )

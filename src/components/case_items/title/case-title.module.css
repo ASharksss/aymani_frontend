@@ -8,7 +8,9 @@
     padding-bottom: 50px;
     gap: 10px
 }
-
+.date:after{
+    content: '|';
+}
 .typeOfWork{
     font-family: Montserrat, sans-serif;
     font-weight: normal;
@@ -25,7 +27,7 @@
     justify-content: center;
     font-family: "Franklin Gothic Demi",sans-serif;
     font-size: 16px;
-    color: var(--base-color);
+    color: var(--description-color);
     padding-top: 10px;
 }
 .row{
@@ -41,33 +43,42 @@
 }
 
 @media (max-width: 1024px) {
+    .main{
+        /*justify-content: start;*/
+        padding: 30px 40px;
+        align-items: start;
+    }
     .tag{
         display: block;
     }
     .Ctag{
-        display: none;
+        /*display: none;*/
     }
     .typeOfWork, .nameOfCompany{
-        font-size: 48pt;
+        font-size: 42pt;
     }
     .description{
        font-family: "SF Pro Text", sans-serif;
-        font-size: 20pt;
+        font-size: 13pt;
         display: block;
         flex-direction: column;
         align-items: center;
+        justify-content: start;
         text-align: center;
-        gap:20px;
+        gap:10px;
         padding-top: 10px;
     }
     .description p{
-        padding: 10px 0;
+        text-align: start;
+        padding: 5px 0;
     }
 }
 
 @media (max-width: 425px) {
     .main{
-        padding-bottom: 10px;
+        /*padding-bottom: 10px;*/
+        padding: 30px 0;
+        align-items: center;
     }
     .tag {
         display: block;
@@ -77,20 +88,21 @@
     }
     .typeOfWork,
     .nameOfCompany {
-        font-size: 32px;
+        font-size: 28px;
         text-align: center;
     }
     .description {
         font-family: "SF Pro Text", sans-serif;
-        font-size: 16px;
+        font-size: 14px;
         display: block;
         flex-direction: column;
         align-items: center;
         text-align: center;
-        gap: 10px;
+        gap: 5px;
         padding-top: 4px;
     }
     .description p {
-        padding: 8px 0;
+        padding: 4px 0;
+        text-align: center;
     }
 }

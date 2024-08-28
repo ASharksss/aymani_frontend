@@ -21,8 +21,10 @@ export default function Page () {
       text: 'На этом этапе проверяется работоспособность и качество веб-сайта'
     },
     total: {
-      text: 'Итого мы наворошили кучу статей и что то как то сделали, чтобы оно работало!!!!',
-      price: 12000,
+      header: 'ИТОГО',
+      text: 'Мы наворошили кучу статей и что то как то сделали, чтобы оно работало!!!!',
+      price: 'Цена проекта составила 12 000 рублей',
+      numb: 0,
     }
   }
   const template = [
@@ -94,10 +96,18 @@ export default function Page () {
       <Projects text={'РЕЗУЛЬТАТ'}/>
 
       {/*<WorkProgress header={null} text={data.total.text} colors={null} image={null}/>*/}
-      <div className={styles.cost}>
-        <p>{data.total.text}</p>
-      <h1> Цена проекта {new Intl.NumberFormat("ru", { style: "currency", currency: "RUB" }).format(12000)} </h1>
-      </div>
+      {/*<div className={styles.cost}>*/}
+      {/*  <h1>ИТОГО</h1>*/}
+      {/*  <p>{data.total.text}</p>*/}
+      {/*<p> Цена проекта {new Intl.NumberFormat("ru", { style: "currency", currency: "RUB" }).format(12000)} </p>*/}
+      {/*</div>*/}
+      <WorkProgress  header={data.total.header}
+                     blockquote={data.total.text}
+                     text={data.total.price}
+                     numb={data.total.numb}
+                     colors={null}
+                     image={null}
+      />
     </section>
   )
 };
