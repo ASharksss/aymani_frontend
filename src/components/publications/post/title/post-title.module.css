@@ -9,7 +9,9 @@
 
 .description{
     display: flex;
-    font-family: "Franklin Gothic Demi", sans-serif;
+    /*font-family: "Franklin Gothic Demi", sans-serif;*/
+    font-family: "SF Pro Text",sans-serif;
+    font-weight: bold;
     font-size: 16px;
     color: var(--base-color);
     gap: 10px;
@@ -33,19 +35,22 @@
 @media (max-width: 1024px) {
 
     .main{
-        gap: 50px;
+        gap: 20px;
     }
     .nav{
-        gap: 30px;
+        gap: 20px;
     }
     .header{
-        font-size: 64pt;
+        font-size: 24pt;
     }
 
     .description{
         /*flex-direction: column;*/
-        font-size: 32pt;
+        font-size: 13pt;
         color: var(--description-color);
+    }
+    .description p:last-child:after{
+        content: ' ';
     }
 }
 

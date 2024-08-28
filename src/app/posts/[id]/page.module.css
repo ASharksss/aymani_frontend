@@ -170,6 +170,7 @@
 .text  code {
     background: none;
     color: inherit;
+    text-wrap: wrap;
     font-size: 0.8rem;
     padding: 0;
 }
@@ -204,9 +205,13 @@
 
 .text  hr {
     border: none;
+    /*margin: auto;*/
     border-top: 1px solid #939393;
-    margin: 2rem 0;
+    margin: 2rem auto;
 }
+
+
+
 .text  em{
     font-style: italic;
 }
@@ -219,7 +224,9 @@
 
 @media (max-width: 1600px) {
     .grid{
-        padding: 50px 100px;
+        padding: 50px 5%;
+        grid-template-columns: minmax(300px, 900px) minmax(300px, 430px);
+
     }
 }
 
@@ -228,89 +235,107 @@
         margin: 5vh 0;
     }
     .content{
-        gap: 100px;
+        gap: 30px;
     }
-
     .grid{
         display: flex;
         /*grid-template-columns: none;*/
         /*column-gap: 0;*/
         flex-direction: column;
         gap: 20px;
-        padding: 20px 3vw;
+        padding: 50px 15%;
     }
     .recomends{
         visibility: collapse;
         display: none;
     }
     .text{
-        font-size: 32pt;
+        font-size: 15pt;
     }
 
     .text ul,
     .text ol {
-        padding: 0.8rem;
-        margin: 2.5rem 2rem 2.5rem 0.8rem;
+        padding: 0 1.5rem;
+        margin: 1.5rem 1.5rem 1.5rem 0.6rem;
     }
     .text li p {
-        margin-top: 0.5em;
-        margin-bottom: 0.5em;
+        margin-top: 0.1em;
+        margin-bottom: 0.1em;
     }
-    .text li{
-        padding: 0.2em 0;
+    .text li {
+        padding: 0.4rem 0;
+    }
+
+    .text a {
+        color: var(--focus-color-meidum);
+    }
+    /* Code and preformatted text styles */
+    .text code {
+        background-color: white;
+        border-radius: 0.5rem;
+        color: black;
+        font-size: 1rem;
+        padding: 0.3em 0.4em;
+    }
+
+    .text pre {
+        background: black;
+        border-radius: 0.6rem;
+        color: white;
+        font-family: 'JetBrainsMono', monospace;
+        margin: 1rem 0;
+        padding: 0.9rem 1.2rem;
     }
 
     .text code {
-        border-radius: 0.8rem;
-        font-size: 1.6rem;
-        padding: 0.5em 0.6em;
-    }
-
-    .text  pre {
-        border-radius: 1rem;
-        margin: 3rem 0;
-        padding: 1.5rem 2rem;
-    }
-    .text  code {
         background: none;
+        text-wrap: wrap;
         color: inherit;
-        font-size: 1.6rem;
+        font-size: 0.95rem;
         padding: 0;
     }
 
 
-    .text  blockquote {
-        border-left: 6px solid #484848;
-        margin: 3rem 0;
-        padding-left: 2rem;
+    .text blockquote {
+        border-left: 4px solid #484848;
+        margin: 1rem 0;
+        padding-left: 1.2rem;
+
+        font-style: italic;
+        quotes: "\201C" "\201D" "\2018" "\2019"
     }
 
-    /*.text blockquote p {*/
-    /*    text-indent: 0;*/
-    /*    font-size: 12pt;*/
-    /*    margin: 0; !* Убираем отступы у параграфов внутри цитаты *!*/
-    /*}*/
-
+    .text blockquote p {
+        text-indent: 0;
+        font-size: 1.1rem;
+        margin: 0;
+    }
     .text p {
-        padding: 0.5rem 0;
+        padding: 0.3rem 0;
     }
 
-    .text  hr {
+    .text hr {
         border: none;
-        border-top: 4px solid #939393;
-        margin: 4rem 0;
+        border-top: 1px solid #939393;
+        margin: 1.5rem 0;
     }
-    .text  em{
+    .text em {
         font-style: italic;
     }
-    .text  strong{
+    .text strong {
         font-weight: bold;
     }
-    .text  s{
+    .text s {
         text-decoration: line-through;
     }
 }
 
+@media (max-width: 768px) {
+    .grid{
+        padding: 20px 3vw;
+
+    }
+}
 
 @media (max-width: 425px) {
     .commentForm{
@@ -327,6 +352,7 @@
     .grid{
 
     }
+
     .recomends{
         visibility: collapse;
     }

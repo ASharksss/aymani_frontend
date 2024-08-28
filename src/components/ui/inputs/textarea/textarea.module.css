@@ -1,8 +1,9 @@
 .input{
     font-size: 14pt;
-    font-family: 'Montserrat', sans-serif;
+    /*font-family: 'Montserrat', sans-serif;*/
+    font-family: "SF Pro Text",sans-serif;
     font-weight: normal;
-
+    background: rgba(139, 90, 231, 0.01);
     vertical-align: top;
     width: 100%;
     height: 100%;
@@ -50,10 +51,9 @@
     /*    max-width: max-content;*/
     /*}*/
 }
-
 @media (max-width: 1024px) {
     .input{
-        font-size: 32pt;
+        font-size: 15pt;
         padding-bottom: 20px;
     }
 
@@ -61,16 +61,42 @@
         /*про атрибут field-sizing */
         /*https://caniuse.com/?search=field-sizing*/
         field-sizing: content;
-        padding: 20px 0;
-        border-bottom: 4px solid #b6b6b6;
+        padding: 10px 0;
+        border-bottom: 2px solid #b6b6b6;
     }
 
     .anotherBack:focus{
         /*background: rgb(58, 104, 14);*/
         /*border-bottom: 2px solid linear-gradient(var(--focus-color-start) 0%, var(--focus-color-end) 100%);*/
-        border-bottom: 4px solid transparent;
+        border-bottom: 2px solid transparent;
         background-image: radial-gradient( var(--focus-color-end), var(--focus-color-start));
-        background-size: 100% 4px;
+        background-size: 100% 2px;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        transform: scale(1.01);
+    }
+}
+
+@media (max-width: 425px) {
+    .input{
+        font-size: 14pt;
+        padding-bottom: 10px;
+    }
+
+    .anotherBack{
+        /*про атрибут field-sizing */
+        /*https://caniuse.com/?search=field-sizing*/
+        field-sizing: content;
+        padding: 10px 0;
+        border-bottom: 1px solid #b6b6b6;
+    }
+
+    .anotherBack:focus{
+        /*background: rgb(58, 104, 14);*/
+        /*border-bottom: 2px solid linear-gradient(var(--focus-color-start) 0%, var(--focus-color-end) 100%);*/
+        border-bottom: 1px solid transparent;
+        background-image: radial-gradient( var(--focus-color-end), var(--focus-color-start));
+        background-size: 100% 1px;
         background-position: bottom;
         background-repeat: no-repeat;
         transform: scale(1.01);

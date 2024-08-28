@@ -11,6 +11,12 @@
 
 @media (max-width: 1024px) {
     .nickname{
-        font-size: 34pt;
+        font-size: 15pt;
+    }
+}
+
+@media (max-width: 425px) {
+    .nickname{
+        font-size: 14pt;
     }
 }

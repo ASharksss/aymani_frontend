@@ -22,6 +22,18 @@
 
 @media (max-width: 1024px) {
     .flex{
-        gap: 40px;
+        gap: 10px;
+    }
+
+    .button{
+        max-width: 200px;
+        min-width: 100px;
+    }
+}
+
+
+@media (max-width: 425px) {
+    .flex{
+        gap: 0;
     }
 }
