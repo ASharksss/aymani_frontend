@@ -84,6 +84,12 @@
     overflow: hidden;
     grid-column: span 3;
 }
+@media (max-width: 1440px) {
+    .h1{
+        font-size: 10rem;
+    }
+}
+
 @media (max-width: 1024px) {
     .h1{
         padding-top: 20px;
@@ -112,8 +118,13 @@
         row-gap: 20px;
     }
 }
+@media (max-width: 900px) {
+    .h1{
+     font-size: 8rem;
+    }
+}
 
-@media (max-width: 425px) {
+@media (max-width: 768px) {
     .grid{
         column-gap: 10px;
         row-gap: 25px;

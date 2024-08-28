@@ -76,7 +76,7 @@
     color: #A6A6A6;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 768px) {
     .main{
         max-height: auto;
     }
