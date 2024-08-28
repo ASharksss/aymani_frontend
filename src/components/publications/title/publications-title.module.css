@@ -61,7 +61,8 @@
     margin: 0 50px;
 }
 .tag{
-    min-width: 200px;
+    /*min-width: 200px;*/
+    min-width: fit-content;
 }
 
 .tags::-webkit-scrollbar {
@@ -112,7 +113,7 @@
         gap: 10px
     }
     .tag{
-        min-width: 180px;
+        min-width: fit-content;
     }
     .small p{
         font-size: 20px;
@@ -151,7 +152,7 @@
 
 @media (max-width: 1024px) {
     .tag{
-        min-width: 160px;
+        min-width: fit-content;
     }
     .main{
         gap: 20px;
@@ -166,13 +167,48 @@
 /*PLANSHET*/
 @media (max-width: 768px) {
     .main h1{
-        /*font-size: 64px;*/
+        font-size: 96px;
     }
     .main h2{
-        font-size: 96px;
+        font-size: 4rem;
+    }
+    .description{
+        /*justify-content: start;*/
+        margin: auto;
+        padding:0 4px ;
+        align-items: center;
+        gap: 5px;
+        flex-direction: column;
+        text-align: center;
+
+    }
+    .small p{
+        font-family: "SF Pro Text",sans-serif;
+        font-weight: normal;
+        font-size: 0.8rem;
+        opacity: 75%;
+    }
+    .small p:after{
+        content: '';
+    }
+    .big p{
+        font-size: 24px;
+        opacity: 75%;
     }
     .main{
         gap: 10px
+    }
+    .tag{
+        min-width:fit-content;
+    }
+    .tags{
+        padding: 0 50px;
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+        gap: 5px;
+        /*margin: auto;*/
+        /*gap: normal;*/
     }
 }
 
@@ -208,6 +244,7 @@
         padding: 4px ;
     }
     .tags{
+        padding: 0;
         display: flex;
         flex-wrap: wrap;
         margin: auto;
