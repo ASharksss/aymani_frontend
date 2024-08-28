@@ -1,11 +1,19 @@
 .button {
-    color: rgba(255, 255, 255, 0.80);
+    color: rgba(255, 255, 255);
+
+    background: var(--focus-color-meidum);
+
+    /*animation: drop 5s ease-in-out infinite;*/
+
+    opacity: 90%;
     height: fit-content;
     border-radius: 20px;
     padding: 1px 10px;
-    font-family: "Franklin Gothic Demi", sans-serif;
+    font-family: "SF Pro Display", sans-serif;
+    font-weight: bold;
     font-size: 24px;
 }
+
 
 @media (max-width: 1440px) {
     .button {
@@ -29,5 +37,71 @@
     .button{
         font-family: "SF Pro Text",sans-serif;
         font-size: 11pt;
+    }
+}
+
+@keyframes drop {
+    0% {
+        background-image: linear-gradient(var(--focus-color-end), var(--focus-color-start));
+    }
+    5% {
+        background-image: linear-gradient(var(--focus-color-end), var(--focus-color-meidum));
+    }
+    10% {
+        background-image: linear-gradient(var(--focus-color-end), var(--focus-color-start));
+    }
+    15% {
+        background-image: linear-gradient(var(--focus-color-start), var(--focus-color-meidum));
+    }
+    20% {
+        background-image: linear-gradient(var(--focus-color-start), var(--focus-color-end));
+    }
+    25% {
+        background-image: linear-gradient(var(--focus-color-meidum), var(--focus-color-end));
+    }
+    30% {
+        background-image: linear-gradient(var(--focus-color-meidum), var(--focus-color-start));
+    }
+    35% {
+        background-image: linear-gradient(var(--focus-color-end), var(--focus-color-meidum));
+    }
+    40% {
+        background-image: linear-gradient(var(--focus-color-end), var(--focus-color-start));
+    }
+    45% {
+        background-image: linear-gradient(var(--focus-color-start), var(--focus-color-meidum));
+    }
+    50% {
+        background-image: linear-gradient(var(--focus-color-start), var(--focus-color-end));
+    }
+    55% {
+        background-image: linear-gradient(var(--focus-color-meidum), var(--focus-color-end));
+    }
+    60% {
+        background-image: linear-gradient(var(--focus-color-meidum), var(--focus-color-start));
+    }
+    65% {
+        background-image: linear-gradient(var(--focus-color-end), var(--focus-color-meidum));
+    }
+    70% {
+        background-image: linear-gradient(var(--focus-color-end), var(--focus-color-start));
+    }
+    75% {
+        background-image: linear-gradient(var(--focus-color-start), var(--focus-color-meidum));
+    }
+    80% {
+        background-image: linear-gradient(var(--focus-color-start), var(--focus-color-end));
+    }
+    85% {
+        background-image: linear-gradient(var(--focus-color-meidum), var(--focus-color-end));
+    }
+    90% {
+        background-image: linear-gradient(var(--focus-color-meidum), var(--focus-color-start));
+    }
+    95% {
+        background-image: linear-gradient(var(--focus-color-end), var(--focus-color-meidum));
+    }
+    100% {
+        background-image: linear-gradient(var(--focus-color-end), var(--focus-color-start));
     }
 }

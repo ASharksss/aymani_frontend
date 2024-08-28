@@ -31,7 +31,7 @@ function Footer ({}) {
           <button className={styles.whiteButton}>
             <div className={styles.b_content}>
               <Image src={eye_emoji} alt={''} width={22}/>
-              <div className={``}>
+              <div className={`${styles.textB}`}>
                 Документы
               </div>
             </div>
@@ -39,7 +39,7 @@ function Footer ({}) {
           <button className={styles.whiteButton}>
             <div className={styles.b_content}>
               <Image src={hello_emoji} alt={''} width={22}/>
-              <div className={``}>
+              <div className={`${styles.textB}`}>
                 Контакты
               </div>
             </div>

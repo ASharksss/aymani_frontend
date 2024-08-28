@@ -65,3 +65,137 @@
         font-size: 24px;
     }
 }
+
+@media (max-width: 1300px) {
+    .main{
+        padding: 150px 70px 10px 70px ;
+    }
+    .main h1{
+        font-size: 72pt;
+    }
+
+    .step{
+        gap: 40px;
+    }
+
+    .step h2{
+        font-size: 38pt;
+    }
+
+    .step p{
+        max-width: 500px;
+        font-size: 16pt;
+    }
+    .middle{
+        left: 400px;
+        bottom: 350px
+    }
+
+    .last{
+        left: 200px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .main{
+        padding: 150px 120px 10px 50px ;
+    }
+    .main h1{
+        font-size: 52pt;
+    }
+
+    .step{
+        gap: 40px;
+    }
+
+    .step h2{
+        font-size: 38pt;
+    }
+
+    .step p{
+        max-width: 500px;
+        font-size: 16pt;
+    }
+    .middle{
+        left: 300px;
+        bottom: 300px
+    }
+
+    .last{
+        left: 100px;
+    }
+
+    .image{
+        width: 300px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .main{
+        padding: 150px 30px 10px 30px ;
+    }
+    .main h1{
+        font-size: 64px;
+    }
+
+    .step{
+        gap: 40px;
+    }
+
+    .step h2{
+        font-size: 38pt;
+    }
+
+    .step p{
+        max-width: 300px;
+        font-size: 16pt;
+    }
+    .last p{
+        max-width: 400px ;
+    }
+    .middle{
+        left: 300px;
+        bottom: 350px
+    }
+
+    .last{
+        left: 150px;
+    }
+}
+
+
+@media (max-width: 743px) {
+    .image{
+        display: none;
+    }
+
+    .start, .middle, .last{
+        position: static;
+    }
+    .step{
+        max-width: fit-content;
+    }
+
+    .content{
+        display: flex;
+        flex-direction: column;
+        gap: 30px
+        /*order: 0;*/
+    }
+    .content:nth-child(1), .start{
+        order: 1;
+    }
+
+    .content:nth-child(2), .last{
+        order: 3;
+    }
+
+    .content:nth-child(3), .middle{
+        order: 2;
+    }
+
+
+}
+
+

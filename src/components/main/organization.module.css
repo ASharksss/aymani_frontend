@@ -163,5 +163,9 @@
         object-fit: cover;
         filter: blur(100px);
     }
+    
+}
 
+@media (max-width: 768px) {
+    
 }

@@ -4,15 +4,17 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import image from '@/asserts/temp/temp.jpg'
 import styles from './style.module.css'
+import {useRouter} from "next/navigation";
 
 
 const ArticleItem = ({ name, type }) => {
+  const router = useRouter()
   const [description, setDescription] = useState('As recently as last month, U.S. intelligence officials warned that Iran aimed to stoke societal discord and undermine former president Donald Trump’s bid to regain the White House, a reprise of its online interference four years ago. Now the 2024 effort appears to have begun, with suspected hacking attempts targeting the Republican and Democratic presidential campaigns. But intelligence officials and disinformation experts remain unsure of Iran’s precise plans.\n' +
     'As recently as last month, U.S. intelligence officials warned that Iran aimed to stoke societal discord and undermine former president Donald Trump’s bid to regain the White House, a reprise of its online interference four years ago. Now the 2024 effort appears to have begun, with suspected hacking attempts targeting the Republican and Democratic presidential campaigns. But intelligence officials and disinformation experts remain unsure of Iran’s precise plans.')
   const [views, setViews] = useState(1000)
 
   return (
-    <div className={styles.main}>
+    <div className={styles.main} onClick={() => router.push('/posts/1')}>
       {
         type === 'full' ?
           <section className={`${styles.full_container} ${styles.container}`}>

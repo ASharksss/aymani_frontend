@@ -111,7 +111,8 @@
     }
 
     .devices{
-        padding: 0 minmax(5%, 100px);
+        /*padding: 0 minmax(5%, 100px);*/
+        padding: 5%;
         display: flex;
         justify-content: space-between;
     }
@@ -142,6 +143,7 @@
     }
 
     .Ipad {
+        position: static;
         width: 924px;
         height: 658px;
         overflow: hidden;
@@ -278,6 +280,6 @@
 
 @media (max-width: 375px) {
     .main h1{
-        font-size: 32pt;
+        font-size: 30pt;
     }
 }

@@ -23,16 +23,16 @@ export default function PublicationsTitle({small = false}) {
         <div className={styles.main}>
             {small ? <h2>ПУБЛИКАЦИИ</h2> : <h1 onClick={() => router.push('/posts')}>ПУБЛИКАЦИИ</h1>}
             <div className={small ? `${styles.description} ${styles.small}` : `${styles.description} ${styles.big}`}>
-                <p>User: Антон Антонов, Генадий Воробьев, Жора Измаился </p>  <p className={styles.date}>Date: date </p>  <Tag text={'style'}/>
+                <p>User: Антон Антонов, Генадий Воробьев, Жора Измаился </p>  <p className={styles.date}>Date: date </p>  <Tag text={'style'} id={1}/>
             </div>
             <hr className={styles.hr}/>
             <div className={styles.tags}>
                 <div className={styles.tag} onClick={() => setvalue(data.length)} >
-                    <Tag text={'Открыть'}/>
+                    <Tag text={'Больше тегов'}/>
                 </div>
-                {data.slice(0, value).map((item) => (
+                {data.slice(0, value).map((item, index) => (
                     <div className={styles.tag} id={item.key}>
-                        <Tag text={item.name}/>
+                        <Tag text={item.name} id={(index % 7)}/>
                     </div>
                 ))}
             </div>

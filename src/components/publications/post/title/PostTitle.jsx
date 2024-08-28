@@ -22,7 +22,7 @@ export default function PostTitle({title, user, date, tag, click}) {
                 <p>User: {user} </p>  <p>Date: {date} </p>
             </div>
             <nav className={styles.navigationTag}>
-                <Tag text={tag} fsize={'20px'}/>
+                <Tag text={tag} fsize={'20px'} id={1}/>
             </nav>
             <header className={styles.header}>
                 {title}

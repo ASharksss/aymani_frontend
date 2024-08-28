@@ -17,13 +17,21 @@ export default function Services () {
 
   return (
     <section className={styles.main} id={'services'}>
+
       <div className={styles.background}>
           <header className={styles.header}> УСЛУГИ</header>
           <p className={styles.bcg}>УСЛУГИ УСЛУГИ </p>
           <p className={styles.bcg}>УСЛУГИ УСЛУГИ</p>
       </div>
         <div className={styles.content}>
-            {data.slice(0,5).map((item, index) => (
+            {data.slice(0,6).map((item, index) => (
+                <div className={`${page[`grid${(index % 14) + 1}`]}`}>
+                    <CaseItem name={item.name}  />
+                </div>
+            ))}
+        </div>
+        <div className={styles.content2}>
+            {data.slice(0,6).map((item, index) => (
                 <div className={`${page[`grid${(index % 14) + 1}`]}`}>
                     <CaseItem name={item.name}  />
                 </div>
