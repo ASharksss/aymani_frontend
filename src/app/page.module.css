@@ -5,6 +5,13 @@
     color: var(--base-color);
     padding-top: 100px;
     overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vw;
 }
 
 /*  TODO: CASE/1  */
@@ -84,7 +91,15 @@
         font-size: 15pt;
     }
 }
+@media (max-width: 768px) {
+    .content {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px
 
+    }
+}
 @media (max-width: 425px) {
     .content{
         padding: 10px;

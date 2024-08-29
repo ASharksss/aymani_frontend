@@ -8,6 +8,11 @@
     width: 20px;
     height: 20px;
 }
+
+.image{
+    padding-left: 20px;
+}
+
 @media (max-width: 1024px) {
     .like, .share, .comment{
         width: 24px;
@@ -18,6 +23,16 @@
         width: 28px ;
         height: 28px ;
         /*scale: 2;*/
+    }
+    .image{
+        width: 300px;
+    }
+
+}
+
+@media (max-width: 743px) {
+    .image{
+        display: none;
     }
 }
 

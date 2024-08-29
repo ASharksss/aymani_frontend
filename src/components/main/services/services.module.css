@@ -15,6 +15,7 @@
 }
 
 .background p, .header{
+    color: var(--services-title);
     font-family: "Imperial One", sans-serif;
     font-weight: normal;
     text-wrap: nowrap;

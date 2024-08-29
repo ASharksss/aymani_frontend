@@ -4,7 +4,10 @@
 .span{
     grid-column: span 2;
 }
-
+.flex{
+    background: var(--nuans-color);
+    margin: 2% 25%;
+}
 .mainImage{
     justify-content: center;
     display: flex;
@@ -333,6 +336,11 @@
 @media (max-width: 768px) {
     .grid{
         padding: 20px 3vw;
+    }
+
+    .flex{
+        background: var(--nuans-color);
+        margin: 2% 5%;
     }
 }
 

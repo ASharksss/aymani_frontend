@@ -14,7 +14,7 @@
     z-index: 0;
     height: 920px;
     min-width: 300px;
-    max-width: 40vw;
+    max-width: 650px;
     /*max-width: ;*/
     object-fit: cover;
     border-radius: 70px;
@@ -84,6 +84,8 @@
 
     .frontImage{
         height: 820px;
+        max-width: 40vw;
+
         min-width: 180px;
         width: 100%;
     }

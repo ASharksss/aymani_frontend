@@ -28,7 +28,7 @@ function Footer ({}) {
           Основным видом деятельности является торговля розничная по почте или по информационно-коммуникационной сети Интернет
         </div>
         <div className={styles.buttons}>
-          <button className={styles.whiteButton}>
+          <button className={styles.whiteButton} onClick={() => router.push('contact')}>
             <div className={styles.b_content}>
               <Image src={eye_emoji} alt={''} width={22}/>
               <div className={`${styles.textB}`}>

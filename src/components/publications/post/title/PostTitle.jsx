@@ -11,23 +11,23 @@ import {ThemeContext} from '@/contexts/ThemeContext'
 import {useRouter} from "next/navigation";
 
 
-export default function PostTitle({title, user, date, tag}) {
+export default function PostTitle({title, user, date, tag, buttons= true}) {
 
     const {theme} = useContext(ThemeContext)
     const router = useRouter()
     const handleLinkClick = () => {
         router.push('#comment');
-        commentRef.current.scrollIntoView({
-            behavior: 'smooth',
-            block: 'center',
-        });
+        // commentRef.current.scrollIntoView({
+        //     behavior: 'smooth',
+        //     block: 'center',
+        // });
     };
 
 
     return (
         <div className={styles.main}>
             <div className={styles.description}>
-                <p>User: {user} </p>  <p>Date: {date} </p>
+                {user ? <p>User: {user} </p> : null } {date ?  <p>Date: {date} </p> : null}
             </div>
             <nav className={styles.navigationTag}>
                 <Tag text={tag} fsize={'20px'} id={1}/>
@@ -35,13 +35,14 @@ export default function PostTitle({title, user, date, tag}) {
             <header className={styles.header}>
                 {title}
             </header>
+            {buttons ?
             <nav className={styles.nav} >
                 <TransprentButton img={<LikeSvg color={theme === 'light' ? '#B0B0B0' : "#474747"}/>}/>
                 <TransprentButton img={<ShareSvg color={theme === 'light' ? '#B0B0B0' : "#474747"}/>}/>
                 <TransprentButton img={<CommentSVG color={theme === 'light' ? '#B0B0B0' : "#474747"}/>}
                                   click={() => handleLinkClick()}
                 />
-            </nav>
+            </nav> : null}
         </div>
     )
 };
