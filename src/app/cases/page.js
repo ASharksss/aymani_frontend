@@ -1,4 +1,4 @@
-'use client'
+// 'use client'
 import React from 'react'
 
 import styles from '../page.module.css'
@@ -7,10 +7,16 @@ import CaseItem from '@/components/case_items/case_item'
 import Image from 'next/image'
 import magic from '../../asserts/gifs/IIIAR.gif'
 import stars from '../../asserts/gifs/stars-main.gif'
-import {useRouter} from "next/navigation";
+// import {useRouter} from "next/navigation";
+
+export const metadata = {
+  title: 'Портфолио',
+  description: 'Портфолио Аймани',
+}
+
 export default function Page () {
   const data = []
-  const router = useRouter()
+  // const router = useRouter()
   for (let i = 1; i < 62; ++i) {
     data.push({
       key: i.toString(),
@@ -41,7 +47,7 @@ export default function Page () {
       </div>
       <div className={page.grid}>
         {data.map((item, index) => (
-          <div className={`${page[`grid${(index % 14) + 1}`]}`} onClick={() => router.push('/cases/1')}>
+          <div className={`${page[`grid${(index % 14) + 1}`]}`} >
             <CaseItem name={item.name} />
           </div>
         ))}

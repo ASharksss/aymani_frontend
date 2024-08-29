@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 
 import styles from './back-create.module.css'
@@ -6,7 +7,7 @@ import styles from './back-create.module.css'
 import {useRouter} from "next/navigation";
 import TransprentButton from "@/components/ui/buttons/transprent/TransprentButton";
 import Arrow from "@/components/svgs/Arrow";
-function BackTool () {
+export default function BackTool () {
 
     const router  = useRouter()
 
@@ -20,4 +21,4 @@ function BackTool () {
   )
 }
 
-export default BackTool
+// export default BackTool

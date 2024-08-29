@@ -1,4 +1,4 @@
-'use client'
+// 'use client'
 import React from 'react'
 
 import styles from '../../page.module.css'
@@ -6,6 +6,12 @@ import styles from '../../page.module.css'
 import CaseTitle from '@/components/case_items/title/CaseTitle'
 import WorkProgress from '@/components/case_items/work-progress/WorkProgress'
 import Projects from '@/components/main/projects/Projects'
+
+export const metadata = {
+  title: `Единственный и не повторимый проект`,
+  description: 'Портфолио Аймани',
+}
+
 export default function Page () {
   const data = {
     plan : {
@@ -101,6 +107,7 @@ export default function Page () {
       {/*  <p>{data.total.text}</p>*/}
       {/*<p> Цена проекта {new Intl.NumberFormat("ru", { style: "currency", currency: "RUB" }).format(12000)} </p>*/}
       {/*</div>*/}
+      <span className={styles.span}> asdfasf</span>
       <WorkProgress  header={data.total.header}
                      blockquote={data.total.text}
                      text={data.total.price}

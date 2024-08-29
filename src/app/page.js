@@ -1,4 +1,4 @@
-'use client'
+// 'use client'
 
 // import Image from "next/image";
 import styles from './page.module.css'
@@ -11,6 +11,10 @@ import page from "@/app/posts/page.module.css";
 import ArticleItem from "@/components/article_item/article_item";
 import React from "react";
 
+export const metadata = {
+    title: 'Аймани | Главная',
+    description: 'Сделать сайт просто!',
+}
 
 export default function Home () {
 
@@ -37,7 +41,7 @@ export default function Home () {
         <PublicationsTitle/>
         <div className={styles.content}>
             {data.slice(0,7).map((item, index) => (
-                <div className={`${page[`grid${(index % 14) + 1}`]}`} onClick={() => router.push('/posts/1')}>
+                <div className={`${page[`grid${(index % 14) + 1}`]}`} >
                     {/*<CaseItem name={item.name}  />*/}
                     <ArticleItem name={`${index} title`}
                                  type={flexRow.includes((index % 14) + 1) ? 'flexRow' : flexColumn.includes((index % 14) + 1) ? 'flexColumn'

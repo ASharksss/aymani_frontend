@@ -1,5 +1,6 @@
-'use client'
-import React, {useRef} from 'react'
+// 'use client'
+// 'use server'
+import React from 'react'
 
 import PostTitle from '@/components/publications/post/title/PostTitle'
 import CommentForm from '@/components/forms/comment-form/CommentForm'
@@ -13,25 +14,20 @@ import styles from './page.module.css'
 import PostImage from "@/components/publications/post/image/PostImage";
 import ProjectArticle from "@/components/publications/post/project-article/ProjectArticle";
 import LittlePost from "@/components/publications/post/little-post/LittlePost";
-import {useRouter} from "next/navigation";
 
-
-export default function Page() {
-    const router = useRouter()
-    const commentRef = useRef()
+export const metadata = {
+    title: 'Пост',
+    description: 'Пост один',
+}
+export default async function Page() {
+    // const commentRef = useRef()
     const dart = '<li><p>\n' +
         '            - <a href={\'#\'}> NEW500 </a> - скидка 500 рублей на первый заказ от 3 500 рублей. При использовании данного\n' +
         '            промокода вы можете получить скидку 500 рублей при покупке от 3500 рублей, применив его\n' +
         '            только в приложении при оформлении заказа. Промокод действует только на первый заказ и\n' +
         '            не распространяется на товары из акции "Одна цена". Активен до 30 сентября.</p>\n' +
         '    </li>';
-    const handleLinkClick = () => {
-        router.push('#comment');
-        commentRef.current.scrollIntoView({
-            behavior: 'smooth',
-            block: 'center',
-        });
-    };
+
     const commentData = {
         id: 1,
         nickname: 'User1',
@@ -131,7 +127,6 @@ export default function Page() {
                         tag={'Web-developers'}
                         date={'12.02.2002'}
                         user={'Антон Антонов'}
-                        click={() => handleLinkClick()}
                     />
                 </div>
                 <span className={styles.anotherSpan}></span>
@@ -320,7 +315,7 @@ export default function Page() {
                         </div>
                     </div>
                 </aside>
-                <div className={styles.commentForm} ref={commentRef}>
+                <div className={styles.commentForm} id={'comment'}>
                     <CommentForm/>
                     <Comment comment={commentData} replies={commentData.replies}/>
                 </div>

@@ -4,14 +4,12 @@ import React, from 'react';
 import image from "@/asserts/temp/temp.jpg"
 import Image from 'next/image';
 import styles from "./style.module.css"
+import {useRouter} from "next/navigation";
 
 const CaseItem = ({name, price}) => {
-  // const [height, setHeight] = useState(406)
-  // const [name, setName] = useState('Сайт под ключ')
-  // const [price, setPrice] = useState(6000)
-
+    const router = useRouter()
   return (
-    <div className={styles.main}>
+    <div className={styles.main} onClick={() => router.push('/cases/1')}>
       <figure className={styles.image}>
         <figcaption className={styles.figurecaption}>
             <h1 className={styles.text}>{name}</h1>
