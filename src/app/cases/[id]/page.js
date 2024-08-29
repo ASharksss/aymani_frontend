@@ -6,7 +6,7 @@ import styles from '../../page.module.css'
 import CaseTitle from '@/components/case_items/title/CaseTitle'
 import WorkProgress from '@/components/case_items/work-progress/WorkProgress'
 import Projects from '@/components/main/projects/Projects'
-
+import temp from '@/asserts/temp/temp.jpg'
 export const metadata = {
   title: `Единственный и не повторимый проект`,
   description: 'Портфолио Аймани',
@@ -58,7 +58,7 @@ export default function Page () {
         nuans_end: 'white',
         focus: 'red',
       },
-      image: null, //data.image
+      image: temp, //data.image
       imageTitle: 'Логотип организации', // data.imageTitle
     },
     {
@@ -68,7 +68,7 @@ export default function Page () {
       colors: null,
       text: data?.code?.text, //data.text
       design: false,
-      image: null, //asserts
+      image: temp, //asserts
       imageTitle: null, //null
     },
     {
@@ -78,7 +78,7 @@ export default function Page () {
       blockquote: 'На этом этапе проверяется работоспособность и качество веб-сайта',
       text: data?.test?.text, //data.text
       design: false,
-      image: null, //asserts
+      image: temp, //asserts
       imageTitle: null, //null
     }
   ]

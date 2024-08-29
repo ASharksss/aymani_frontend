@@ -42,7 +42,7 @@
     display: flex;
     gap: 30px;
     height: fit-content;
-
+    justify-content: space-between;
 }
 
 .desc{
@@ -164,6 +164,31 @@
 }
 /*GIFS*/
 /*GIFS*/
+.leftColumn{
+    width: 100%;
+}
+.imageBlock{
+    margin-right: 8%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-direction: column;
+    max-width: 450px;
+    height: 550px;
+
+    overflow: hidden;
+}
+
+.Unique{
+    object-fit: cover;
+    border-radius: 35px;
+    height: 500px;
+}
+
+.imageTitle{
+    text-align: center;
+    color: var(--description-color);
+}
 
 @media (max-width: 1440px) {
 
@@ -195,6 +220,30 @@
     .desc{
         padding: 40px 0;
     }
+
+
+    .imageBlock{
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-direction: column;
+        max-width: 400px;
+        height: 550px;
+
+        overflow: hidden;
+    }
+
+    .Unique{
+        object-fit: cover;
+        border-radius: 35px;
+        height: 500px;
+    }
+
+    .imageTitle{
+        text-align: center;
+        color: var(--description-color);
+    }
+
 }
 
 @media (max-width: 1024px) {
@@ -269,6 +318,56 @@
         gap: 1%;
     }
 
+    .leftColumn{
+        width: 100%;
+    }
+    .imageBlock{
+        margin-right: 0;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-direction: column;
+        max-width: 350px;
+        height: 350px;
+
+        overflow: hidden;
+    }
+
+    .Unique{
+        object-fit: cover;
+        border-radius: 20px;
+        height: 350px;
+    }
+
+    .imageTitle{
+        text-align: center;
+        color: var(--description-color);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .section{
+        flex-direction: column;
+    }
+    .imageBlock{
+     /*align-self: center;*/
+        margin-right: 0;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-direction: column;
+        max-width: 500px;
+        height: 300px;
+        overflow: hidden;
+    }
+
+    .Unique{
+        object-fit: cover;
+        border-radius: 20px;
+        height: 250px;
+    }
+
 }
 
 @media (max-width: 425px) {
@@ -341,5 +440,24 @@
         width: 100%;
         display: flex;
         gap: 1%;
+    }
+
+
+    .imageBlock{
+        align-self: center;
+        margin-right: 0;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-direction: column;
+        max-width: 275px;
+        height: 325px;
+        overflow: hidden;
+    }
+
+    .Unique{
+        object-fit: cover;
+        border-radius: 20px;
+        height: 275px;
     }
 }

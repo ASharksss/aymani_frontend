@@ -4,6 +4,7 @@ import { ThemeContextProvider } from '@/contexts/ThemeContext'
 import ThemeProvider from '@/provider/ThemeProvider'
 import Footer from '@/components/layout/footer/Footer'
 import Header from '@/components/layout/header/Header'
+import BottomMenu from "@/components/layout/bottom-menu/BottomMenu";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,6 +21,9 @@ export default function RootLayout ({ children }) {
       <ThemeProvider>
         <Header/>
         {children}
+        <div className="bottom-menu">
+          <BottomMenu/>
+        </div>
         <Footer/>
       </ThemeProvider>
     </ThemeContextProvider>

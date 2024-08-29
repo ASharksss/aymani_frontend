@@ -45,8 +45,8 @@ export default function WorkProgress ({
       </div>
       {image !== null  ?
       <div className={styles.imageBlock}>
-        <Image src={image} alt={'image'} title={imageTitle} className={styles.image}/>
-        <article className={styles.imageTitle}>{imageTitle}</article>
+        <Image src={image} alt={'image'} title={imageTitle} className={styles.Unique}/>
+        {imageTitle ? <article className={styles.imageTitle}>{imageTitle}</article> : null}
       </div> : null }
       {shar ?
       <div className={styles.iiiariki}>

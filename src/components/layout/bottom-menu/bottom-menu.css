@@ -1,0 +1,67 @@
+.section {
+    /*--col-orange: #d17842;*/
+    /*--col-dark: #0c0f14;*/
+    --col-darkGray: #52555a;
+    --col-gray: #aeaeae;
+
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--nuans-color);
+    /*border: 1px solid var(--description-color);*/
+    border-radius: 30px;
+}
+.icon{
+    width: 24px;
+    height: 24px;
+}
+
+.label {
+
+    padding: 10px 20px;
+    transition: all 200ms;
+    display: inline-block;
+}
+
+.label input[type="radio"] {
+    display: none;
+}
+.label > svg {
+    transition: all 200ms;
+    fill: var(--col-gray);
+    width: 30px;
+}
+.label:hover:not(:has(input:checked)) > svg {
+    fill: var(--focus-color-meidum);
+    opacity: 0.6;
+}
+.label::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    border-radius: 5px;
+    position: relative;
+    left: 50%;
+    top: 20px;
+    margin-top: 5px;
+    background: var(--focus-color-meidum);
+    transition: all 200ms;
+}
+.label > svg {
+    transition: 300ms;
+    fill: var(--col-darkGray);
+    margin-top: 0;
+}
+.label:has(input:checked) > svg {
+    fill: var(--focus-color-meidum);
+    scale: 1.1;
+    margin-top: -5px;
+}
+
+.label:has(input:checked)::before {
+    width: 100%;
+    left: 0;
+    top: 25px;
+}

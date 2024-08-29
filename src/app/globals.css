@@ -22,7 +22,6 @@
   --card-background: conic-gradient(from 180deg at 50% 50%, #21262C 0deg, #0C0E10 235.8deg, #21262C 360deg);
   --card-box-shadow: 0 0 100px 10px #4A4A4A40;
   --card-border: transperent;
-
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,6 +36,7 @@ body {
   background-color: var(--base-color) ;
   overflow-x: hidden;
 }
+
 
 .dark{
   --background-image: url("../asserts/BACKGROUND_LIGHT.svg");
@@ -265,6 +265,19 @@ label {
 
 legend {
   display: block;
+}
+.bottom-menu{
+ display: none;
+}
+@media (max-width: 425px) {
+  .bottom-menu{
+    position: fixed;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    bottom: 10px;
+    z-index: 99;
+  }
 }
 
 /* Imperial Franklin */
