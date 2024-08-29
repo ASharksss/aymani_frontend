@@ -316,7 +316,7 @@ export default async function Page() {
                     </div>
                 </aside>
                 <div className={styles.commentForm} id={'comment'}>
-                    <CommentForm/>
+                    <CommentForm cancle={false}/>
                     <Comment comment={commentData} replies={commentData.replies}/>
                 </div>
                 <span></span>

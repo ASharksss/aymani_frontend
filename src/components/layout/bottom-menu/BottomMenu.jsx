@@ -28,22 +28,12 @@ export default function BottomMenu() {
                     fill="inherit"
                     // filter="black"
                     viewBox="0 0 24 24"
-                    height="24"
+                    height="20"
                     width="24"
                     className="icon book"
                 >
-                    <path d="M7 22C5.93913 22 4.92178 21.5785 4.17163 20.8284C3.42149 20.0782 3 19.0609 3 18C3 16.9391 3.42149 15.9217 4.17163 15.1715C4.92178 14.4214 5.93913 14 7 14"
-                          fill="inherit"
-                          stroke="inherit" strokeWidth="1.5"  strokeLinecap="round" />
-                    <path d="M7 2C5.93913 2 4.92178 2.42136 4.17163 3.17151C3.42149 3.92165 3 4.93913 3 6V18"
-                          fill="inherit"
-                          stroke="inherit" strokeWidth="1.5" strokeLinecap="round" />
-                    <path d="M7 2H19C19.5304 2 20.0392 2.21074 20.4142 2.58582C20.7893 2.96089 21 3.46957 21 4V16"
-                          fill="inherit"
-                          stroke="inherit" strokeWidth="1.5" strokeLinecap="round" />
-                    <path d="M7 14H19C19.5304 14 20.0392 14.2107 20.4142 14.5858C20.7893 14.9609 21 15.4696 21 16V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0392 21.7893 19.5304 22 19 22H7"
-                          fill="inherit"
-                          stroke="inherit" strokeWidth="1.5" strokeLinecap="round" />
+                    <rect x="2" y="0" width="24" height="24" rx="3" stroke="var(--nuans-color)"/>
+                    <path d="M5 10L24 10" stroke="var(--nuans-color)" strokeLinecap="round"/>
                 </svg>
             </label>
             <label title="notifications" htmlFor="notifications" className="label">
