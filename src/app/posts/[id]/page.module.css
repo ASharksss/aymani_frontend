@@ -345,6 +345,13 @@
 }
 
 @media (max-width: 425px) {
+    .span{
+        display: block;
+        position: sticky;
+        top: 0;
+        align-self: flex-start;
+
+    }
     .commentForm{
         margin: 5vh 0;
     }
@@ -357,7 +364,7 @@
     }
 
     .grid{
-
+        /*overflow: auto;*/
     }
 
     .recomends{
