@@ -5,8 +5,9 @@ import image from "@/asserts/temp/temp.jpg"
 import Image from 'next/image';
 import styles from "./style.module.css"
 import {useRouter} from "next/navigation";
+import {IMAGE_URL} from "@/utils";
 
-const CaseItem = ({name, price}) => {
+const CaseItem = ({name, price, image}) => {
     const router = useRouter()
   return (
     <div className={styles.main} onClick={() => router.push('/cases/1')}>
@@ -18,7 +19,7 @@ const CaseItem = ({name, price}) => {
             <h3>{new Intl.NumberFormat("ru", { style: "currency", currency: "RUB" }).format(price)}</h3>
           </div> : null}
         </figcaption>
-        <Image src={image} className={styles.img} alt={'image'}/>
+        <Image  src={`${IMAGE_URL}${image}`} className={styles.img} alt={'image'} fill={true}/>
       </figure>
     </div>
   );

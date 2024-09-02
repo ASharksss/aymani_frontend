@@ -7,6 +7,9 @@ import CaseItem from '@/components/case_items/case_item'
 import Image from 'next/image'
 import magic from '../../asserts/gifs/IIIAR.gif'
 import stars from '../../asserts/gifs/stars-main.gif'
+// import {useAppSelector, useAppStore} from "@/redux/hooks";
+// import { getCases } from "@/redux/lib/cases";
+import Data from "@/app/cases/Data";
 // import {useRouter} from "next/navigation";
 
 export const metadata = {
@@ -15,15 +18,18 @@ export const metadata = {
 }
 
 export default function Page () {
-  const data = []
-  // const router = useRouter()
-  for (let i = 1; i < 62; ++i) {
-    data.push({
-      key: i.toString(),
-      name: i.toString() + ' product',
-      price: Math.floor(Math.random() * 120000)
-    });
-  }
+
+  // const data = []
+  // // const router = useRouter()
+  // for (let i = 1; i < 62; ++i) {
+  //   data.push({
+  //     key: i.toString(),
+  //     name: i.toString() + ' product',
+  //     price: Math.floor(Math.random() * 120000)
+  //   });
+  // }
+
+
   return (
     <div className={styles.main}>
       <h2 className={page.h1}>Проекты</h2>
@@ -43,15 +49,8 @@ export default function Page () {
           <Image src={magic} className={page.fourth} alt={'sharic'}/>
           </div>
         </div>
-
       </div>
-      <div className={page.grid}>
-        {data.map((item, index) => (
-          <div className={`${page[`grid${(index % 14) + 1}`]}`} >
-            <CaseItem name={item.name} />
-          </div>
-        ))}
-      </div>
+        <Data/>
     </div>
   )
 };
