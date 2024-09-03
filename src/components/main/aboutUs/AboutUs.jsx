@@ -6,7 +6,7 @@ import line from '../../../asserts/main/curve line.svg'
 import {useContext} from "react";
 import {ThemeContext} from "@/contexts/ThemeContext";
 import CurveLine from "@/components/svgs/CurveLine";
-export function AboutUs () {
+export default function AboutUs () {
     const {theme} = useContext(ThemeContext)
   return (
     <div className={styles.main}>

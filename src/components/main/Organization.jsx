@@ -1,5 +1,5 @@
 'use client'
-import { useContext } from 'react'
+import {useContext, useEffect, useRef, useState} from 'react'
 import Image from 'next/image'
 
 import { ThemeContext } from '@/contexts/ThemeContext'
@@ -12,9 +12,30 @@ import AiWeb from '@/components/logo/ai-web/AiWeb'
 
 export default function Organization () {
   const { theme } = useContext(ThemeContext)
+    const forme = useRef(null)
+    //
+    // const [scrollSpeed, setScrollSpeed] = useState(0);
+    //
+    // useEffect(() => {
+    //     const handleScroll = () => {
+    //         setScrollSpeed(window.pageYOffset);
+    //     };
+    //
+    //     window.addEventListener('scroll', handleScroll);
+    //
+    //     // Очистка обработчика события при размонтировании компонента
+    //     return () => {
+    //         window.removeEventListener('scroll', handleScroll);
+    //     };
+    // }, []);
+    //
+    // console.log(scrollSpeed)
+
+
+
 
   return (
-    <div className={styles.main}>
+    <div className={styles.main} ref={forme}>
       <div className={styles.devImage}>
         <Image src={developer.src} className={styles.backImage} alt={'developer'} width={650} height={920}/>
       </div>

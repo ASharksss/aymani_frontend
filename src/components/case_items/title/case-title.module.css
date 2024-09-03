@@ -11,6 +11,9 @@
 .date:after{
     content: '|';
 }
+.date{
+    align-self: center;
+}
 .typeOfWork{
     font-family: Montserrat, sans-serif;
     font-weight: normal;
@@ -26,7 +29,9 @@
     display: flex;
     justify-content: center;
     font-family: "Franklin Gothic Demi",sans-serif;
-    font-size: 16px;
+    font-size: 16pt;
+    gap: 10px;
+    align-items: center;
     color: var(--description-color);
     padding-top: 10px;
 }

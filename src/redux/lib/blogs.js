@@ -10,6 +10,19 @@ export const getPosts = createAsyncThunk('post/getAllPosts', async () => {
     }
 });
 
+export const getByTag = createAsyncThunk('post/getByTagPosts', async (id) => {
+    try {
+        const response = await axios.get(`/post/getByTagPosts`, {
+            params: {
+                tagId: id
+            }
+        }  );
+        return response.data; // Возвращаем данные из ответа
+    } catch (error) {
+        throw error.response.data; // Если есть ошибка, выбрасываем её для обработки в Redux
+    }
+});
+
 export const getOnePost = createAsyncThunk('post/getPost', async (id) => {
     try {
         const response = await axios.get(`/post/getPost/${id}`,  );
@@ -47,6 +60,18 @@ const casesSlice = createSlice({
                 state.ABlogs.status = 'loaded';
             })
             .addCase(getPosts.rejected, (state) => {
+                state.ABlogs.items = [];
+                state.ABlogs.status = 'error';
+            })
+            .addCase(getByTag.pending, (state) => {
+                state.ABlogs.items = [];
+                state.ABlogs.status = 'loading';
+            })
+            .addCase(getByTag.fulfilled, (state, action) => {
+                state.ABlogs.items = action.payload;
+                state.ABlogs.status = 'loaded';
+            })
+            .addCase(getByTag.rejected, (state) => {
                 state.ABlogs.items = [];
                 state.ABlogs.status = 'error';
             })

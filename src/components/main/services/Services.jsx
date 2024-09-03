@@ -1,10 +1,12 @@
 'use client'
 import styles from './services.module.css'
 import page from "@/app/cases/page.module.css";
+import global from '@/app/page.module.css'
 import CaseItem from "@/components/case_items/case_item";
-import React, {useEffect} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {useAppDispatch, useAppSelector} from "@/redux/hooks";
 import {getCases} from "@/redux/lib/cases";
+import Link from "next/link";
 export default function Services () {
     const dispatch = useAppDispatch()
     const {cases} = useAppSelector(state => state.cases)
@@ -13,19 +15,9 @@ export default function Services () {
         dispatch(getCases())
     },[])
 
-    // const data = []
-    // for (let i = 1; i < 62; ++i) {
-    //     data.push({
-    //         key: i.toString(),
-    //         name: i.toString() + ' product',
-    //         price: Math.floor(Math.random() * 120000)
-    //     });
-    // }
-    //
-    // console.log(cases)
 
   return (
-    <section className={styles.main} id={'services'}>
+    <section className={styles.main} id={'services'} >
 
       <div className={styles.background}>
           <header className={styles.header}> УСЛУГИ</header>

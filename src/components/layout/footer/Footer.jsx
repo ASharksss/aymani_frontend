@@ -52,7 +52,7 @@ function Footer ({}) {
           </div>
           <div className={styles.block}>
             <div className={` ${styles.c_text}`}>
-              © 2024 АЙМАНИ. Все права защищены.
+              © {new Date().getFullYear()} АЙМАНИ. Все права защищены.
             </div>
           </div>
           <div className={`${styles.block}`}>

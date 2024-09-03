@@ -37,7 +37,6 @@ body {
   overflow-x: hidden;
 }
 
-
 .dark{
   --background-image: url("../asserts/BACKGROUND_LIGHT.svg");
   --COLOR-LIGHT: white;
@@ -276,7 +275,7 @@ legend {
     width: 100%;
     justify-content: center;
     bottom: 10px;
-    z-index: 99;
+    z-index: 999;
   }
 
 }

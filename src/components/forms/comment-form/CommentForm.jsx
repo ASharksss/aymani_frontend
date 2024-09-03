@@ -6,41 +6,26 @@ import styles from './comment-form.module.css'
 import TransprentButton from '@/components/ui/buttons/transprent/TransprentButton'
 import Textarea from '@/components/ui/inputs/textarea/Textarea'
 
-export default function CommentForm ({click, place, sumbit = true, cancle = true}) {
-  // const { id } = useParams()
-  const [value, setValue] = useState('')
-  // const dispatch = useDispatch()
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   // console.log('Form submitted');
-  //   if (id) {
-  //     const data = {
-  //       text: value,
-  //       publicationId: id,
-  //     };
-  //     try {
-  //       dispatch(createComment(data));
-  //     } catch (e) {
-  //       console.error('Error:', e);
-  //     }
-  //   }
-  // };
-
-  useEffect(() => {
-    // console.log(value)
-  }, [value])
+export default function CommentForm ({click, place, setValue, value,
+                                        form,
+                                         sumbit = true, cancle = true}) {
+  // const [value, setValue] = useState('')
+  //
+  //   useEffect(() => {
+  //       // console.log(value)
+  //   }, [value])
 
   return (
-    // <>
-    <form id={'HORVA'}
-          // onSubmit={handleSubmit}
+    <div
           className={`${styles.hell}`} >
       <div className={styles.input}>
         <Textarea type={'text'}
                   place={place ? place : 'Оставить комментарий'}
                   rows={1}
                   req
-                  onChange={(e) => setValue(e.target.value)}
+                  value={value ? value : ''}
+                  // onChange={(e) => setValue(e.target.value)}
+                  onChange={setValue}
                   back={false}/>
       </div>
       <div className={styles.flex}>
@@ -51,10 +36,10 @@ export default function CommentForm ({click, place, sumbit = true, cancle = true
           {sumbit ?
         <div className={styles.button}>
           {/*<button type="submit" form={'HORVA'}>Отправить</button>*/}
-          <TransprentButton  text={'Отправить'} type={'submit'} form={'HORVA'}/>
+          <TransprentButton  text={'Отправить'} type={'submit'} form={form}/>
         </div> : null}
       </div>
-    </form>
+    </div>
   )
 };
 

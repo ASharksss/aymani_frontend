@@ -4,12 +4,15 @@ import React from 'react'
 import styles from './work-progress.module.css'
 import Image from 'next/image'
 import IIIAR from '@/asserts/gifs/IIIAR.gif'
+import {IMAGE_URL} from "@/utils";
 
 export default function WorkProgress ({
   header, blockquote, numb,
   text, image, imageTitle,shar,
   colors, unique
 }) {
+
+  // console.log('clr', colors)
   return (
     <section className={styles.section}>
       <div className={styles.leftColumn}>
@@ -27,25 +30,27 @@ export default function WorkProgress ({
         <article className={styles.text}>
           {text}
         </article>
-        {colors !== null ?
+        {/*{console.log(colors)}*/}
+        {colors ?
           <div className={styles.colorImages}>
-            <div className={styles.oval} style={{ background: colors?.base, border: `1px solid ${colors.base}` }}>База</div>
+            {console.log(colors[0].base_color)}
+            <div className={styles.oval} style={{ background: colors[0]?.base_color, border: `1px solid ${colors[0].base_color}` }}>База</div>
             <div className={styles.circles}>
               <div className={styles.colors}>
-                <div className={styles.circle} style={{ background: colors?.nuans_start }}></div>
-                <div className={styles.circle} style={{ background: colors?.nuans_middle }}></div>
-                <div className={styles.circle} style={{ background: colors?.nuans_end }}></div>
+                {colors[0].nuance_colors?.map((color) => (
+                    <div className={styles.circle} style={{ background: color.color }}></div>
+                    )) }
               </div>
               <article className={styles.nuans}>
                 Нюанс
               </article>
             </div>
-            <div className={styles.oval} style={{ background: colors?.focus, border: `1px solid ${colors.focus}` }}>Акцент</div>
+            <div className={styles.oval} style={{ background: colors[0]?.accent_color, border: `1px solid ${colors[0].accent_color}` }}>Акцент</div>
           </div> : null}
       </div>
-      {image !== null  ?
+      {image !== null && shar === false ?
       <div className={styles.imageBlock}>
-        <Image src={image} alt={'image'} title={imageTitle} className={styles.Unique}/>
+        <Image src={`${IMAGE_URL}${image}`} alt={'image'} title={imageTitle} className={styles.Unique} fill={true}/>
         {imageTitle ? <article className={styles.imageTitle}>{imageTitle}</article> : null}
       </div> : null }
       {shar ?

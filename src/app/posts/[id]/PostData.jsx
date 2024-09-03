@@ -1,6 +1,6 @@
 'use client'
 
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 
 import styles from './page.module.css'
 import {useAppDispatch, useAppSelector} from "@/redux/hooks";
@@ -15,30 +15,148 @@ import CommentForm from "@/components/forms/comment-form/CommentForm";
 import {useParams} from "next/navigation";
 import {IMAGE_URL} from "@/utils";
 import {getCases} from "@/redux/lib/cases";
+import CommentD from "@/components/publications/post/comment/Comment";
+import {createComment} from "@/redux/lib/comments";
+
 
 export default function PostData() {
 
+    //Комментарий
+    const commentData = {
+        id: 1,
+        nickname: 'User1',
+        time: '2 часа назад',
+        text: 'Это основной комментарий.',
+        likes: 1200,
+        replies: [
+            {
+                id: 2,
+                nickname: 'User2',
+                time: '1 час назад',
+                text: 'Это ответ на основной комментарий.',
+                likes: 300,
+                replies: [
+                    {
+                        id: 3,
+                        nickname: 'User3',
+                        time: '30 минут назад',
+                        text: 'Это ответ на первый ответ.',
+                        likes: 100,
+                        replies: []
+                    }
+                ]
+            },
+            {
+                id: 4,
+                nickname: 'User4',
+                time: '45 минут назад',
+                text: 'Еще один ответ на основной комментарий.',
+                likes: 150,
+                replies: [
+                    {
+                        id: 2,
+                        nickname: 'User2',
+                        time: '1 час назад',
+                        text: 'Это ответ на основной комментарий.',
+                        likes: 300,
+                        replies: [
+                            {
+                                id: 3,
+                                nickname: 'User3',
+                                time: '30 минут назад',
+                                text: 'Это ответ на первый ответ.',
+                                likes: 100,
+                                replies: [
+                                    {
+                                        id: 2,
+                                        nickname: 'User2',
+                                        time: '1 час назад',
+                                        text: 'Это ответ на основной комментарий.',
+                                        likes: 300,
+                                        replies: [
+                                            {
+                                                id: 3,
+                                                nickname: 'User3',
+                                                time: '30 минут назад',
+                                                text: 'Это ответ на первый ответ.',
+                                                likes: 100,
+                                                replies: []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        id: 4,
+                                        nickname: 'User4',
+                                        time: '45 минут назад',
+                                        text: 'Еще один ответ на основной комментарий.',
+                                        likes: 150,
+                                        replies: []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        id: 4,
+                        nickname: 'User4',
+                        time: '45 минут назад',
+                        text: 'Еще один ответ на основной комментарий.',
+                        likes: 150,
+                        replies: []
+                    }
+                ]
+            }
+        ]
+    }; //data комментариев
+    const [nickName, setNickname] = useState('')
+    const [value, setValue] = useState('')
+    // const [parentComment, setParentComment] = useState()
+    //Комментарий
+
     const dispatch = useAppDispatch();
 
-    const {OBlog} = useAppSelector(state => state.blogs);
-    const {ABlogs} = useAppSelector(state => state.blogs);
-    const {cases} = useAppSelector(state => state.cases);
+    const {OBlog} = useAppSelector(state => state.blogs);   // пост
+    const {ABlogs} = useAppSelector(state => state.blogs); // все посты
+    const {cases} = useAppSelector(state => state.cases); // проекты
 
-    const {id} = useParams()
+    const {id} = useParams() // id страницы
+
+    //Комментарий отправка формы
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // console.log(id);
+        if (id) {
+            const data = {
+                username: nickName,
+                text: value,
+                postId: id,
+                // parentCommentId: parentComment,
+            };
+            try {
+                dispatch(createComment(data));
+                setValue('')
+                setNickname('')
+            } catch (e) {
+                console.error('Error:', e);
+            }
+        }
+    };
+    //Комментарий отправка формы
+
 
     useEffect(() => {
-        dispatch(getOnePost(id));
-        // console.log(OBlog)
+        dispatch(getOnePost(id)); //получить посты
+        // console.log(OBlog)    //просто будет тут
     }, []);
 
     useEffect(() => {
-        dispatch(getPosts());
-        // console.log(OBlog)
+        dispatch(getPosts());  //получить пост
+        // console.log(OBlog) //просто будет тут
     }, []);
 
     useEffect(() => {
-        dispatch(getCases())
-        // console.log(cases)
+        dispatch(getCases())   //получить проекты
+        // console.log(cases) //просто будет тут
     }, [])
 
     return (
@@ -65,55 +183,65 @@ export default function PostData() {
                 </div>
                 <div className={styles.text}>
                     {OBlog?.items?.html && (
-                        <div dangerouslySetInnerHTML={{ __html: OBlog.items.html }}
-                             className={styles.textContent} />
+                        <div dangerouslySetInnerHTML={{__html: OBlog.items.html}}
+                        />
                     )}
                 </div>
             </div>
-            {/*</form>*/}
             <aside className={styles.recomends}>
                 <div className={styles.project}>
                     {cases?.items.length > 0 ?
-                    <ProjectArticle title={cases?.items[0]?.name}
-                                    img={`${IMAGE_URL}${cases?.items[0]?.cover}`}
-                                    id={cases?.items[0]?.id}
-                    />
-                        : null }
+                        <ProjectArticle title={cases?.items[0]?.name}
+                                        img={`${IMAGE_URL}${cases?.items[0]?.cover}`}
+                                        id={cases?.items[0]?.id}
+                        />
+                        : null}
                 </div>
                 <div className={styles.sticky}>
                     <div className={styles.news}>
                         <h3>Новинки</h3>
-                        {ABlogs.items.length > 0 ? ABlogs.items.slice(0,2).map((item) => (
+                        {ABlogs.items.length > 0 ? ABlogs.items.slice(0, 2).map((item) => (
                                 <LittlePost title={item.title}
                                             id={item?.id}
                                             img={`${IMAGE_URL}${item.cover}`}/>
-                        )) :
+                            )) :
                             <>
-                        <LittlePost title={'The quick brown fox jumps over the lazy dog'} img={temp}/>
-                        <LittlePost title={'The quick brown fox jumps over the lazy dog'} img={temp}/>
+                                <LittlePost title={'The quick brown fox jumps over the lazy dog'} img={temp}/>
+                                <LittlePost title={'The quick brown fox jumps over the lazy dog'} img={temp}/>
                             </>}
                     </div>
                     <div className={styles.news}>
                         <h3>Похожее</h3>
-                        {ABlogs.items.length > 0 ? ABlogs.items.filter(item => item.tagId === OBlog?.items?.tagId).sort(() => Math.random() - 0.5).slice(0,2).map((item) => (
+                        {ABlogs.items.length > 0 ? ABlogs.items.filter(item => item.tagId === OBlog?.items?.tagId).sort(() => Math.random() - 0.5).slice(0, 2).map((item) => (
                             <LittlePost
                                 id={item?.id}
-                                title={item.title} img={`${IMAGE_URL}${item.cover}`} />
+                                title={item.title} img={`${IMAGE_URL}${item.cover}`}/>
                         )) : (
                             <>
-                                <LittlePost title={'The quick brown fox jumps over the lazy dog'} img={temp} />
-                                <LittlePost title={'The quick brown fox jumps over the lazy dog'} img={temp} />
+                                <LittlePost title={'The quick brown fox jumps over the lazy dog'} img={temp}/>
+                                <LittlePost title={'The quick brown fox jumps over the lazy dog'} img={temp}/>
                             </>
                         )}
                     </div>
                 </div>
             </aside>
             <div className={styles.commentForm} id={'comment'}>
-                <div className={styles.nickname}>
-                <CommentForm place={'Введите свой nickname либо имя для комментария'} sumbit={false} cancle={false}/>
-                </div>
-                <CommentForm cancle={false}/>
-                {/*<Comment comment={commentData} replies={commentData.replies}/>*/}
+                <form className={styles.senForm} id={'SendComment'} onSubmit={handleSubmit}>
+                    <h1>Оставить комментарий</h1>
+                    <div className={styles.nickname}>
+                        <CommentForm place={'nickname'}
+                                     setValue={(e) => setNickname(e.target.value)}
+                                     sumbit={false}
+                                     value={nickName}
+                                     cancle={false}/>
+                    </div>
+                    <CommentForm cancle={false}
+                                 setValue={(e) => setValue(e.target.value)}
+                                 form={'SendComment'}
+                                 value={value}
+                                 place={'Комментарий'}/>
+                </form>
+                <CommentD comment={commentData} replies={commentData.replies}/>
             </div>
             <span></span>
         </section>

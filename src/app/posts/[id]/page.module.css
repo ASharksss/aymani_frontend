@@ -72,9 +72,9 @@
 }
 
 .textContent{
-    background: rgba(0, 0, 0, 0.06);
-    padding: 20px;
-    border-radius: 10px;
+    /*background: rgba(0, 0, 0, 0.02);*/
+    /*padding: 20px;*/
+    /*border-radius: 10px;*/
 }
 
 
@@ -120,6 +120,17 @@
     background: var(--nuans-color);
     width: 100%;
 }
+
+.senForm{
+    background: rgba(0, 0, 0, 0.05);
+    padding: 10px 10px;
+    border-radius: 20px;
+}
+ .senForm h1{
+     font-size: 20px;
+     padding: 0 15px;
+     margin: 20px 0
+ }
 
 .spanImage{
     align-self: start;
@@ -241,6 +252,11 @@
 }
 
 @media (max-width: 1024px) {
+    .senForm h1{
+        font-size: 22px;
+        padding: 0 0;
+        margin: 10px 0
+    }
     .nickname{
         width: 100%;
     }

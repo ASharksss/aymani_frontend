@@ -43,6 +43,42 @@
     row-gap: 40px;
 }
 
+.anotherProjects{
+    margin-top: 50px;
+    padding: 0 50px;
+    gap: 20px;
+
+    height: 1000px;
+    /*height: fit-content;*/
+    display: flex;
+    justify-content: space-around;
+}
+.project{
+    min-height: 250px;
+    height: 100%;
+    max-height: 950px;
+    position: relative;
+    width: 100%;
+}
+
+.link{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 37px;
+    /* identical to box height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* hanging-punctuation is currently only supported in Safari. */
+    hanging-punctuation: first last;
+    text-decoration-line: underline !important;
+    color: var(--base-color);
+    margin: 50px;
+}
+
 @media (max-width: 1440px) {
     .content{
         padding: 50px;
@@ -60,6 +96,10 @@
     }
     .span{
         display: none;
+    }
+    .link{
+        margin: 30px;
+        font-size: 20pt;
     }
 }
 
@@ -90,6 +130,33 @@
         height: fit-content;
         font-size: 15pt;
     }
+
+    .anotherProjects{
+        margin-top: 50px;
+        padding: 0 50px;
+        gap: 20px;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+
+        height: 800px;
+    }
+    .anotherProjects .project:last-child {
+        grid-column: span 2;
+    }
+
+    .project{
+        min-height: 250px;
+        height: 100%;
+        max-height: 950px;
+        position: relative;
+        width: 100%;
+    }
+
+    .link{
+        font-size: 16pt;
+    }
 }
 @media (max-width: 768px) {
     .content {
@@ -98,6 +165,20 @@
         flex-direction: column;
         gap: 20px
 
+    }
+
+    .link{
+        font-size: 14pt;
+    }
+    .anotherProjects{
+        height: auto;
+    }
+    .project{
+        min-height: 250px;
+        height: 100%;
+        max-height: 250px;
+        position: static;
+        width: 100%;
     }
 }
 @media (max-width: 425px) {
@@ -119,6 +200,10 @@
         padding-left: 10px;
         padding-right: 10px;
         padding-bottom: 100px;
+    }
+
+    .link{
+        font-size: 10pt;
     }
 }
 

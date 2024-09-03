@@ -1,6 +1,6 @@
 .main{
     position: relative;
-
+    animation: fadeIn .2s forwards;
 }
 
 .container {
@@ -393,5 +393,13 @@
     .without_footer {
         margin-top: 20px;
     }
+}
 
+@keyframes fadeIn {
+    from {
+        filter: blur(100px);
+    }
+    to {
+        filter: none;
+    }
 }

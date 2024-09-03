@@ -7,6 +7,8 @@ import ArticleItem from "@/components/article_item/article_item";
 import page from '@/app/posts/page.module.css'
 import {useAppDispatch, useAppSelector} from "@/redux/hooks";
 import {getPosts} from "@/redux/lib/blogs";
+import Link from "next/link";
+import global from "@/app/page.module.css";
 
 const data = []
 
@@ -44,6 +46,7 @@ export default function BlogsData() {
                     </div>
                     )) : null }
             </div>
+
         </div>
     );
 };
