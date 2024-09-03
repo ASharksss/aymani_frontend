@@ -10,11 +10,26 @@ export const getPosts = createAsyncThunk('post/getAllPosts', async () => {
     }
 });
 
+export const getOnePost = createAsyncThunk('post/getPost', async (id) => {
+    try {
+        const response = await axios.get(`/post/getPost/${id}`,  );
+        return response.data; // Возвращаем данные из ответа
+    } catch (error) {
+        throw error.response.data; // Если есть ошибка, выбрасываем её для обработки в Redux
+    }
+});
+
+
+
 const initialState = {
     ABlogs:{
         items: [],
         status: 'loading',
     },
+    OBlog:{
+        items: [],
+        status: 'loading'
+    }
 }
 
 const casesSlice = createSlice({
@@ -24,18 +39,30 @@ const casesSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(getPosts.pending, (state) => {
-                state.cases.items = [];
-                state.cases.status = 'loading';
+                state.ABlogs.items = [];
+                state.ABlogs.status = 'loading';
             })
             .addCase(getPosts.fulfilled, (state, action) => {
-                state.cases.items = action.payload;
-                state.cases.status = 'loaded';
+                state.ABlogs.items = action.payload;
+                state.ABlogs.status = 'loaded';
             })
             .addCase(getPosts.rejected, (state) => {
-                state.cases.items = [];
-                state.cases.status = 'error';
+                state.ABlogs.items = [];
+                state.ABlogs.status = 'error';
+            })
+            .addCase(getOnePost.pending, (state) => {
+                state.OBlog.items = [];
+                state.OBlog.status = 'loading';
+            })
+            .addCase(getOnePost.fulfilled, (state, action) => {
+                state.OBlog.items = action.payload;
+                state.OBlog.status = 'loaded';
+            })
+            .addCase(getOnePost.rejected, (state) => {
+                state.OBlog.items = [];
+                state.OBlog.status = 'error';
             })
     }
 });
 
-export const casesReducer = casesSlice.reducer;
+export const blogsReducer = casesSlice.reducer;

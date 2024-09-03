@@ -2,18 +2,27 @@
 import styles from './services.module.css'
 import page from "@/app/cases/page.module.css";
 import CaseItem from "@/components/case_items/case_item";
-import React from "react";
+import React, {useEffect} from "react";
+import {useAppDispatch, useAppSelector} from "@/redux/hooks";
+import {getCases} from "@/redux/lib/cases";
 export default function Services () {
+    const dispatch = useAppDispatch()
+    const {cases} = useAppSelector(state => state.cases)
 
-    const data = []
+    useEffect(() => {
+        dispatch(getCases())
+    },[])
 
-    for (let i = 1; i < 62; ++i) {
-        data.push({
-            key: i.toString(),
-            name: i.toString() + ' product',
-            price: Math.floor(Math.random() * 120000)
-        });
-    }
+    // const data = []
+    // for (let i = 1; i < 62; ++i) {
+    //     data.push({
+    //         key: i.toString(),
+    //         name: i.toString() + ' product',
+    //         price: Math.floor(Math.random() * 120000)
+    //     });
+    // }
+    //
+    // console.log(cases)
 
   return (
     <section className={styles.main} id={'services'}>
@@ -24,18 +33,21 @@ export default function Services () {
           <p className={styles.bcg}>УСЛУГИ УСЛУГИ</p>
       </div>
         <div className={styles.content}>
-            {data.slice(0,6).map((item, index) => (
+            {cases?.items?.length > 0 ?
+            cases.items.map((item, index) => (
                 <div className={`${page[`grid${(index % 14) + 1}`]}`}>
-                    <CaseItem name={item.name}  />
+                    <CaseItem name={item.name}  image={item.cover} />
                 </div>
-            ))}
+            )) : null}
+            {/*todo : Исправить сверху .slice(0,6)*/}
         </div>
         <div className={styles.content2}>
-            {data.slice(0,6).map((item, index) => (
+            {cases?.items?.length > 0 ?
+                cases.items.map((item, index) => (
                 <div className={`${page[`grid${(index % 14) + 1}`]}`}>
-                    <CaseItem name={item.name}  />
+                    <CaseItem name={item.name}  image={item.cover}/>
                 </div>
-            ))}
+            )) : null }
         </div>
       {/*<Image src={} alt={}*/}
     </section>

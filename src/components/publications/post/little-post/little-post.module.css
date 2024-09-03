@@ -1,4 +1,5 @@
 .section{
+    cursor: pointer;
     display: flex;
     padding: 10px;
     background: var(--card-background);
@@ -18,6 +19,12 @@
 }
 
 .header{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: normal;
+
     width: 100%;
     font-family: Montserrat, sans-serif;
     font-weight: 500;

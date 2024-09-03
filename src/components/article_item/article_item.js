@@ -1,20 +1,16 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 import Image from 'next/image'
-import image from '@/asserts/temp/temp.jpg'
 import styles from './style.module.css'
 import {useRouter} from "next/navigation";
+import {IMAGE_URL} from "@/utils";
 
 
-const ArticleItem = ({ name, type }) => {
+const ArticleItem = ({ name, type, description, views, image, id }) => {
   const router = useRouter()
-  const [description, setDescription] = useState('As recently as last month, U.S. intelligence officials warned that Iran aimed to stoke societal discord and undermine former president Donald Trump’s bid to regain the White House, a reprise of its online interference four years ago. Now the 2024 effort appears to have begun, with suspected hacking attempts targeting the Republican and Democratic presidential campaigns. But intelligence officials and disinformation experts remain unsure of Iran’s precise plans.\n' +
-    'As recently as last month, U.S. intelligence officials warned that Iran aimed to stoke societal discord and undermine former president Donald Trump’s bid to regain the White House, a reprise of its online interference four years ago. Now the 2024 effort appears to have begun, with suspected hacking attempts targeting the Republican and Democratic presidential campaigns. But intelligence officials and disinformation experts remain unsure of Iran’s precise plans.')
-  const [views, setViews] = useState(1000)
-
   return (
-    <div className={styles.main} onClick={() => router.push('/posts/1')}>
+    <div className={styles.main} onClick={() => router.push(`/posts/${id}`)}>
       {
         type === 'full' ?
           <section className={`${styles.full_container} ${styles.container}`}>
@@ -30,11 +26,16 @@ const ArticleItem = ({ name, type }) => {
               </div>
               </article>
             </div>
-            <Image src={image} alt={'Изображение'} className={styles.full_image}/>
+            <div className={styles.full_image}>
+            <Image src={`${IMAGE_URL}${image}`} alt={'Изображение'} fill={true} className={styles.image}/>
+            </div>
           </section>
           : type === 'flexColumn' ?
             <section className={`${styles.column_container} ${styles.container}`}>
-              <Image src={image} alt={'Изображение'} className={styles.column_image}/>
+              <div className={styles.column_image}>
+                <Image src={`${IMAGE_URL}${image}`} alt={'Изображение'} height={300} width={600} className={styles.image}/>
+              </div>
+              {/*<Image src={image} alt={'Изображение'} className={styles.column_image}/>*/}
               <header>
                 <h2 className={`${styles.column_title} ${styles.title}`}>{name}</h2>
               </header>
@@ -73,7 +74,10 @@ const ArticleItem = ({ name, type }) => {
                       </div>
                     </article>
                   </div>
-                  <Image src={image} alt={'Изображение'} className={styles.row_image}/>
+                  <div className={styles.row_image}>
+                    <Image src={`${IMAGE_URL}${image}`} alt={'Изображение'} fill={true} className={styles.image}/>
+                  </div>
+                  {/*<Image src={image} alt={'Изображение'} className={styles.row_image}/>*/}
                 </section>
                 : 'НЕ НАЙДЕНО '
       }

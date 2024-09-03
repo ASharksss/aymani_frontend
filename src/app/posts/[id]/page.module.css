@@ -9,6 +9,9 @@
     margin: 2% 25%;
 }
 .mainImage{
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: normal;
     justify-content: center;
     display: flex;
     align-items: center;
@@ -119,13 +122,17 @@
 }
 
 .spanImage{
+    align-self: start;
+
     /*height: 520px;*/
     width: 100%;
-    margin: auto;
+    /*margin: auto;*/
     /*max-height: 520px;*/
     max-width: 1250px;
 }
-
+.nickname{
+    width: 70%;
+}
 .fileUpload{
     /*position: absolute;*/
     /*top: 49vh;*/
@@ -234,6 +241,9 @@
 }
 
 @media (max-width: 1024px) {
+    .nickname{
+        width: 100%;
+    }
     .commentForm{
         margin: 5vh 0;
     }

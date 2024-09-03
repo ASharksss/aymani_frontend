@@ -17,10 +17,16 @@
     gap: 10px;
 }
 .description p:after{
-    content: '|';
+    content: ',';
 }
 
 .header{
+    /*word-wrap: break-word;*/
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: normal;
+    /*max-width: 1000px;*/
+    /*overflow-x: scroll;*/
     font-family: Montserrat, sans-serif;
     font-weight: bold;
     font-size: 48px;

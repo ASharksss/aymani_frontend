@@ -10,14 +10,19 @@
 }
 
 .grid1, .grid9{
+    width: 100%;
     grid-row: span 2;
     grid-column: span 2;
 }
 .grid2, .grid3, .grid6, .grid7, .grid8, .grid10, .grid11, .grid14{
+    width: 100%;
+
     grid-column: span 2;
 }
 
 .grid4, .grid5, .grid12, .grid13{
+    width: 100%;
+
     grid-row: span 2;
 }
 

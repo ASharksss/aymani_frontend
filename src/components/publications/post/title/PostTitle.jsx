@@ -4,7 +4,6 @@ import React, {useContext} from 'react'
 import styles from './post-title.module.css'
 import Tag from '@/components/tags/tag'
 import TransprentButton from '@/components/ui/buttons/transprent/TransprentButton'
-import LikeSvg from '@/components/svgs/LikeSVG'
 import ShareSvg from '@/components/svgs/ShareSVG'
 import CommentSVG from '@/components/svgs/CommentSVG'
 import {ThemeContext} from '@/contexts/ThemeContext'
@@ -15,20 +14,21 @@ export default function PostTitle({title, user, date, tag, buttons= true}) {
 
     const {theme} = useContext(ThemeContext)
     const router = useRouter()
+    const options = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+    };
     const handleLinkClick = () => {
         router.push('#comment');
-        // commentRef.current.scrollIntoView({
-        //     behavior: 'smooth',
-        //     block: 'center',
-        // });
     };
 
 
     return (
         <div className={styles.main}>
             <div className={styles.description}>
-                {user ? <p>User: {user} </p> : null } {date ?  <p>Date: {date} </p> : null}
-            </div>
+                {user ? <p>{user}</p> : null}
+                {date ? <p>{new Date(date).toLocaleDateString('ru-RU', options)}</p> : null}            </div>
             <nav className={styles.navigationTag}>
                 <Tag text={tag} fsize={'20px'} id={1}/>
             </nav>

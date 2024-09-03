@@ -6,7 +6,8 @@
 }
 .button{
     max-width: 200px;
-    min-width: 150px;
+    width: fit-content;
+    /*min-width: 150px;*/
 }
 
 .input{

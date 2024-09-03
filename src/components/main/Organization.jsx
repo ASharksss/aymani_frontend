@@ -16,9 +16,9 @@ export default function Organization () {
   return (
     <div className={styles.main}>
       <div className={styles.devImage}>
-        <Image src={developer} className={styles.backImage} alt={'developer'}/>
+        <Image src={developer.src} className={styles.backImage} alt={'developer'} width={650} height={920}/>
       </div>
-        <Image src={developer} className={styles.frontImage} alt={'developer'}/>
+        <Image src={developer.src} className={styles.frontImage} alt={'developer'} width={650} height={920}/>
       <div className={styles.logo}>
         <AiWeb color={theme === 'light' ? 'white' : 'black'}/>
       </div>
