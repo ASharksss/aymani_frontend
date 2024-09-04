@@ -33,7 +33,6 @@ export default function WorkProgress ({
         {/*{console.log(colors)}*/}
         {colors ?
           <div className={styles.colorImages}>
-            {console.log(colors[0].base_color)}
             <div className={styles.oval} style={{ background: colors[0]?.base_color, border: `1px solid ${colors[0].base_color}` }}>База</div>
             <div className={styles.circles}>
               <div className={styles.colors}>

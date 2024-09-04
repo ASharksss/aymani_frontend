@@ -16,13 +16,13 @@ import {useParams} from "next/navigation";
 import {IMAGE_URL} from "@/utils";
 import {getCases} from "@/redux/lib/cases";
 import CommentD from "@/components/publications/post/comment/Comment";
-import {createComment} from "@/redux/lib/comments";
+import {createComment, getComments} from "@/redux/lib/comments";
 
 
 export default function PostData() {
 
     //Комментарий
-    const commentData = {
+    const commentData =[ {
         id: 1,
         nickname: 'User1',
         time: '2 часа назад',
@@ -107,7 +107,95 @@ export default function PostData() {
                 ]
             }
         ]
-    }; //data комментариев
+    },
+        {
+        id: 1,
+        nickname: 'User1',
+        time: '2 часа назад',
+        text: 'Это основной комментарий.',
+        likes: 1200,
+        replies: [
+        {
+            id: 2,
+            nickname: 'User2',
+            time: '1 час назад',
+            text: 'Это ответ на основной комментарий.',
+            likes: 300,
+            replies: [
+                {
+                    id: 3,
+                    nickname: 'User3',
+                    time: '30 минут назад',
+                    text: 'Это ответ на первый ответ.',
+                    likes: 100,
+                    replies: []
+                }
+            ]
+        },
+        {
+            id: 4,
+            nickname: 'User4',
+            time: '45 минут назад',
+            text: 'Еще один ответ на основной комментарий.',
+            likes: 150,
+            replies: [
+                {
+                    id: 2,
+                    nickname: 'User2',
+                    time: '1 час назад',
+                    text: 'Это ответ на основной комментарий.',
+                    likes: 300,
+                    replies: [
+                        {
+                            id: 3,
+                            nickname: 'User3',
+                            time: '30 минут назад',
+                            text: 'Это ответ на первый ответ.',
+                            likes: 100,
+                            replies: [
+                                {
+                                    id: 2,
+                                    nickname: 'User2',
+                                    time: '1 час назад',
+                                    text: 'Это ответ на основной комментарий.',
+                                    likes: 300,
+                                    replies: [
+                                        {
+                                            id: 3,
+                                            nickname: 'User3',
+                                            time: '30 минут назад',
+                                            text: 'Это ответ на первый ответ.',
+                                            likes: 100,
+                                            replies: []
+                                        }
+                                    ]
+                                },
+                                {
+                                    id: 4,
+                                    nickname: 'User4',
+                                    time: '45 минут назад',
+                                    text: 'Еще один ответ на основной комментарий.',
+                                    likes: 150,
+                                    replies: []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    id: 4,
+                    nickname: 'User4',
+                    time: '45 минут назад',
+                    text: 'Еще один ответ на основной комментарий.',
+                    likes: 150,
+                    replies: []
+                }
+            ]
+        }
+    ]
+}
+    ]; //data комментариев
+
     const [nickName, setNickname] = useState('')
     const [value, setValue] = useState('')
     // const [parentComment, setParentComment] = useState()
@@ -118,6 +206,7 @@ export default function PostData() {
     const {OBlog} = useAppSelector(state => state.blogs);   // пост
     const {ABlogs} = useAppSelector(state => state.blogs); // все посты
     const {cases} = useAppSelector(state => state.cases); // проекты
+    const {comments} = useAppSelector(state => state.comment)
 
     const {id} = useParams() // id страницы
 
@@ -136,6 +225,7 @@ export default function PostData() {
                 dispatch(createComment(data));
                 setValue('')
                 setNickname('')
+                alert('Комментарий опубликован')
             } catch (e) {
                 console.error('Error:', e);
             }
@@ -158,6 +248,10 @@ export default function PostData() {
         dispatch(getCases())   //получить проекты
         // console.log(cases) //просто будет тут
     }, [])
+    useEffect(() => {
+        dispatch(getComments(id))   //получить проекты
+        // console.log(cases) //просто будет тут
+    }, [])
 
     return (
         <section className={styles.grid}>
@@ -166,6 +260,7 @@ export default function PostData() {
                 </span>
             <div>
                 <PostTitle
+                    idTag={OBlog?.items?.tag?.id ? OBlog?.items.tag.id : null}
                     title={OBlog?.items?.title ? OBlog.items.title : 'Что то новое для вас'}
                     tag={OBlog?.items?.tag?.name ? OBlog?.items.tag.name : 'Web-программирование'}
                     date={OBlog?.items?.createdAt ? OBlog?.items.createdAt : '12.02.2002'}
@@ -241,7 +336,16 @@ export default function PostData() {
                                  value={value}
                                  place={'Комментарий'}/>
                 </form>
-                <CommentD comment={commentData} replies={commentData.replies}/>
+                {comments?.items.length > 0 ?
+                comments.items.map((item) => (
+                    <CommentD comment={item} replies={item.replies}/>
+                )) :
+                    commentData.map((item) => (
+                            <CommentD comment={item} replies={item.replies}/>
+                        ))
+                }
+
+
             </div>
             <span></span>
         </section>

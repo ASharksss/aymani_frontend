@@ -7,8 +7,6 @@ import ArticleItem from "@/components/article_item/article_item";
 import page from '@/app/posts/page.module.css'
 import {useAppDispatch, useAppSelector} from "@/redux/hooks";
 import {getPosts} from "@/redux/lib/blogs";
-import Link from "next/link";
-import global from "@/app/page.module.css";
 
 const data = []
 
@@ -36,7 +34,7 @@ export default function BlogsData() {
     }, [])
 
     return (
-        <div>
+        <div id={'posts'}>
             <div className={styles.content}>
                 {ABlogs.items.length > 0 ? ABlogs.items.slice(0,7).map((item, index) => (
                     <div className={`${page[`grid${(index % 14) + 1}`]}`}>

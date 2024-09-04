@@ -6,7 +6,6 @@ import styles from './comment.module.css'
 
 import ProfileNickname from '@/components/publications/post/profile/profile-nickname/ProfileNickname'
 import TransprentButton from '@/components/ui/buttons/transprent/TransprentButton'
-import CommnetForm from '../../../forms/comment-form/CommentForm'
 import LikeSvg from '@/components/svgs/LikeSVG'
 import {ThemeContext} from '@/contexts/ThemeContext'
 import CommentForm from "../../../forms/comment-form/CommentForm";
@@ -26,7 +25,6 @@ export default function CommentD({comment = [], replies = []}) {
     const {id} = useParams()
     const [nickName, setNickname] = useState('')
     const [value, setValue] = useState('')
-    const [parentComment, setParentComment] = useState()
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -42,6 +40,8 @@ export default function CommentD({comment = [], replies = []}) {
                 dispatch(createComment(data));
                 setValue('')
                 setNickname('')
+                alert('Комментарий опубликован')
+
             } catch (e) {
                 console.error('Error:', e);
             }
@@ -53,7 +53,7 @@ export default function CommentD({comment = [], replies = []}) {
         <>
             <div className={styles.pad}>
                 <div className={`${styles.sender_information}`}>
-                    <ProfileNickname nickname={comment?.nickname}/>
+                    <ProfileNickname nickname={comment?.username}/>
                     <div className={`${styles.time}`}>
                         {comment?.time}
                     </div>

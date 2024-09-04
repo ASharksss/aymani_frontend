@@ -1,12 +1,12 @@
 .main{
     position: relative;
     animation: fadeIn .2s forwards;
-}
-
-.container {
     background: var(--card-background);
     backdrop-filter: blur(20px);
     box-shadow: var(--card-box-shadow);
+}
+
+.container {
     border: 1px solid var(--card-border);
     display: flex;
 }

@@ -1,16 +1,17 @@
 "use client"
 
 import React, from 'react';
-import image from "@/asserts/temp/temp.jpg"
 import Image from 'next/image';
 import styles from "./style.module.css"
 import {useRouter} from "next/navigation";
 import {IMAGE_URL} from "@/utils";
 
-const CaseItem = ({name, price, image, id}) => {
+const CaseItem = ({name, price, image, id, click = true}) => {
     const router = useRouter()
+
+
     return (
-        <div className={styles.main} onClick={() => router.push(`/cases/${id}`)}>
+        <div className={styles.main} onClick={() => click ? router.push(`/cases/${id}`) : null}>
             <figure className={styles.image}>
                 <figcaption className={styles.figurecaption}>
                     <h1 className={styles.text}>{name}</h1>

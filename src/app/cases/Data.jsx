@@ -1,6 +1,6 @@
 'use client'
 
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect} from 'react';
 
 import page from './page.module.css'
 import CaseItem from "@/components/case_items/case_item";
@@ -16,7 +16,7 @@ export default function Data({}) {
 
     useEffect(() => {
         dispatch(getCases());
-        console.log(cases)
+        // console.log(cases)
     }, []);
 
     return (

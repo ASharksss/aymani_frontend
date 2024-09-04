@@ -1,5 +1,5 @@
 'use client'
-import React, {useContext} from 'react'
+import React, {useCallback, useContext} from 'react'
 
 import styles from './post-title.module.css'
 import Tag from '@/components/tags/tag'
@@ -7,10 +7,12 @@ import TransprentButton from '@/components/ui/buttons/transprent/TransprentButto
 import ShareSvg from '@/components/svgs/ShareSVG'
 import CommentSVG from '@/components/svgs/CommentSVG'
 import {ThemeContext} from '@/contexts/ThemeContext'
-import {useRouter} from "next/navigation";
+import { useRouter, useSearchParams} from "next/navigation";
+import {getByTag, getPosts} from "@/redux/lib/blogs";
+import {useAppDispatch} from "@/redux/hooks";
 
 
-export default function PostTitle({title, user, date, tag, buttons= true}) {
+export default function PostTitle({title, user, date, tag, idTag, buttons= true}) {
 
     const {theme} = useContext(ThemeContext)
     const router = useRouter()
@@ -23,6 +25,24 @@ export default function PostTitle({title, user, date, tag, buttons= true}) {
         router.push('#comment');
     };
 
+    const dispatch = useAppDispatch();
+    const searchParams = useSearchParams()
+
+    const createQueryString = useCallback(
+        (name, value) => {
+            const params = new URLSearchParams(searchParams)
+            params.set(name, value)
+            if(value && name.toLowerCase() === 'tagid'){
+                dispatch(getByTag(value))
+            }
+            else{
+                dispatch(getPosts())
+            }
+            return params.toString()
+        },
+        [searchParams]
+    )
+
 
     return (
         <div className={styles.main}>
@@ -30,7 +50,8 @@ export default function PostTitle({title, user, date, tag, buttons= true}) {
                 {user ? <p>{user}</p> : null}
                 {date ? <p>{new Date(date).toLocaleDateString('ru-RU', options)}</p> : null}            </div>
             <nav className={styles.navigationTag}>
-                <Tag text={tag} fsize={'20px'} id={1}/>
+                <Tag text={tag} fsize={'20px'} id={1}
+                     click={() => { router.push('/posts' + '?' + createQueryString('tagId', idTag))}}/>
             </nav>
             <header className={styles.header}>
                 {title}
