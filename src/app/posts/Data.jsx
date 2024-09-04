@@ -2,18 +2,16 @@
 import React, {useEffect} from 'react';
 
 import page from './page.module.css'
-// import page from "@/app/posts/page.module.css";
 import ArticleItem from "@/components/article_item/article_item";
 import {useAppDispatch, useAppSelector} from "@/redux/hooks";
 import {getByTag, getPosts} from "@/redux/lib/blogs";
-import {usePathname, useSearchParams} from "next/navigation";
+import { useSearchParams} from "next/navigation";
 import Nothing from "@/components/nothing/Nothing";
 
 export default function Data() {
 
     const dispatch = useAppDispatch();
     const { ABlogs } = useAppSelector(state => state.blogs);
-    const pathname = usePathname()
     const searchParams = useSearchParams()
 
 

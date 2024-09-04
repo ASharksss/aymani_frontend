@@ -37,7 +37,7 @@ export default function WorkProgress ({
             <div className={styles.circles}>
               <div className={styles.colors}>
                 {colors[0].nuance_colors?.map((color) => (
-                    <div className={styles.circle} style={{ background: color.color }}></div>
+                    <div key={color.id} className={styles.circle} style={{ background: color.color }}></div>
                     )) }
               </div>
               <article className={styles.nuans}>
@@ -49,7 +49,13 @@ export default function WorkProgress ({
       </div>
       {image !== null && shar === false ?
       <div className={styles.imageBlock}>
-        <Image src={`${IMAGE_URL}${image}`} alt={'image'} title={imageTitle} className={styles.Unique} fill={true}/>
+        <Image
+            src={`${IMAGE_URL}${image}`} alt={'image'}
+            title={imageTitle}
+            className={styles.Unique}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
         {imageTitle ? <article className={styles.imageTitle}>{imageTitle}</article> : null}
       </div> : null }
       {shar ?

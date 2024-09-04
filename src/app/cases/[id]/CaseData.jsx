@@ -42,6 +42,7 @@ export default function CaseData() {
             {oneCase?.items.length !== 0 ?
                 oneCase?.items.case_blocks.map((step, index) => (
                         <WorkProgress header={step.type_block}
+                                      key={step.id}
                                       text={step.text}
                                       colors={step.color_shems.length > 0 ? step.color_shems : false}
                                       numb={index + 1}
@@ -56,18 +57,10 @@ export default function CaseData() {
             <Projects text={'РЕЗУЛЬТАТ'} tablet={oneCase?.result.desktop_version} mobile={oneCase?.result.mobile_version}/>
 
             <span className={styles.span}> asdfasf</span>
-            <WorkProgress header={data.total.header}
-                          blockquote={data.total.text}
-                          text={data.total.price}
-                          numb={data.total.numb}
-                          colors={null}
-                          image={null}
-            />
-
                 <div className={styles.anotherProjects}>
                     {cases?.items.length > 0 ?
                         cases?.items.slice(0,3).map((item) => (
-                            <div className={styles.project}>
+                            <div className={styles.project} key={item.id}>
                             <CaseItem name={item.name} image={item.cover} id={item.id} />
                             </div>
                         )) : null

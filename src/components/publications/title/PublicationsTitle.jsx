@@ -83,8 +83,9 @@ export default function PublicationsTitle({small = false}) {
                 </div>
                     <Tag text={'Сбросить фильтр'} click={() => Reload()}/>
                 {tags?.items?.length > 0 ? tags.items.slice(0, value).map((item, index) => (
-                    <div className={styles.tag} id={item.key}>
-                        <Tag text={item.name} id={(index % 7)}
+                    <div className={styles.tag} key={item.key} id={item.key}>
+                        <Tag
+                             text={item.name} id={(index % 7)}
                              active={searchParams.get('tagId') === item.id.toString()}
                              // Click без скролла
                              // click={() => { router.push(pathname + '?' + createQueryString('tagId', item.id))}}

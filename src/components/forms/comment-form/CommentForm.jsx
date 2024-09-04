@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 import styles from './comment-form.module.css'
 import TransprentButton from '@/components/ui/buttons/transprent/TransprentButton'

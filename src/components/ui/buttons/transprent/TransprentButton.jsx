@@ -6,8 +6,7 @@ import styles from './transprent-button.module.css'
 export default function TransprentButton ({active= false,
   text, fsize,
   click,
-  img,
-  form}) {
+  img}) {
   return (
     <button className={active ? `${styles.button} ${styles.active}` :`${styles.button} ${styles.color}`}
             style={{fontSize: fsize}}

@@ -3,12 +3,7 @@ import React from 'react';
 
 import styles from '@/app/posts/[id]/page.module.css'
 import page from "@/app/page.module.css";
-import BackTool from "@/asserts/tools/back-tool/BackTool";
 import PostTitle from "@/components/publications/post/title/PostTitle";
-import PostImage from "@/components/publications/post/image/PostImage";
-import temp from "@/asserts/temp/temp.jpg";
-import ProjectArticle from "@/components/publications/post/project-article/ProjectArticle";
-import LittlePost from "@/components/publications/post/little-post/LittlePost";
 
 export default function Page() {
     return (

@@ -1,5 +1,5 @@
 'use client'
-import {useContext, useEffect, useRef, useState} from 'react'
+import {useContext, useRef} from 'react'
 import Image from 'next/image'
 
 import { ThemeContext } from '@/contexts/ThemeContext'

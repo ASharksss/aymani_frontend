@@ -66,12 +66,10 @@
 }
 .label:has(input:checked) > svg #col {
     fill: var(--focus-color-meidum);
-    /*stroke: var(--focus-color-meidum);*/
 }
 
 .label:has(input:checked) > svg #col2 {
     stroke: var(--focus-color-meidum);
-    /*stroke: var(--focus-color-meidum);*/
 }
 
 .label:has(input:checked)::before {

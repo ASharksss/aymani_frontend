@@ -1,13 +1,8 @@
 'use client'
 
 import styles from './about-us.module.css'
-import Image from 'next/image'
-import line from '../../../asserts/main/curve line.svg'
-import {useContext} from "react";
-import {ThemeContext} from "@/contexts/ThemeContext";
 import CurveLine from "@/components/svgs/CurveLine";
 export default function AboutUs () {
-    const {theme} = useContext(ThemeContext)
   return (
     <div className={styles.main}>
       <h1>О НАС</h1>

@@ -37,7 +37,7 @@ export default function BlogsData() {
         <div id={'posts'}>
             <div className={styles.content}>
                 {ABlogs.items.length > 0 ? ABlogs.items.slice(0,7).map((item, index) => (
-                    <div className={`${page[`grid${(index % 14) + 1}`]}`}>
+                    <div className={`${page[`grid${(index % 14) + 1}`]}`} key={item.id}>
                         <ArticleItem name={item.title} image={item.cover} description={item.description} views={item.views} id={item.id}
                                      type={flexRow.includes((index % 14) + 1) ? 'flexRow' : flexColumn.includes((index % 14) + 1) ? 'flexColumn'
                                          : without.includes((index % 14) + 1) ? 'withoutImage' : 'full'}/>

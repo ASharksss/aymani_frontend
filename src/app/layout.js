@@ -9,7 +9,7 @@ import Header from '@/components/layout/header/Header'
 import BottomMenu from "@/components/layout/bottom-menu/BottomMenu";
 import axios from 'axios';
 import {Provider} from "react-redux";
-import {makeStore} from "../redux/lib/store";
+import {makeStore} from "@/redux/lib/store";
 
 const inter = Inter({subsets: ['latin']})
 
