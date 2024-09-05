@@ -59,7 +59,7 @@
 
 .grid{
     padding: 60px;
-
+    min-height: 70vh;
     display: grid;
     grid-template-columns: repeat(3, 1fr) ;
     grid-auto-rows: minmax(400px, 1fr); /* Базовая настройка для строк */
@@ -127,6 +127,7 @@
 
 @media (max-width: 768px) {
     .grid{
+        min-height: 80vh;
         column-gap: 10px;
         row-gap: 25px;
         grid-template-columns: repeat(2, 1fr);

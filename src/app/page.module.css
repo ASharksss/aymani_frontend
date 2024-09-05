@@ -34,7 +34,7 @@
 
 
 .content{
-    padding: 50px;
+    margin: 50px;
     display: grid;
     grid-template-columns: repeat(4, 1fr) ;
     grid-auto-rows: minmax(250px, 250px); /* Базовая настройка для строк */
@@ -42,6 +42,21 @@
     column-gap: 20px;
     row-gap: 40px;
 }
+
+/*.content:hover > .cards:hover {*/
+/*    transition: all .5s ease-in-out;*/
+
+/*    transform: scale(1.002);*/
+/*    !*box-shadow: 0 0 10px rgba(0,0,0,0.5);*!*/
+/*    z-index: 10;*/
+/*}*/
+
+/*.content:hover > .cards:not(:hover) {*/
+/*    transition: all .5s ease-in-out;*/
+/*    opacity: var(--opacity);*/
+/*    filter: blur(5px);*/
+/*}*/
+
 
 .anotherProjects{
     margin-top: 50px;
@@ -202,6 +217,9 @@
 
     .link{
         font-size: 10pt;
+    }
+    .anotherProjects{
+        padding: 0 10px;
     }
 }
 

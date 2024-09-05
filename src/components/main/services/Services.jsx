@@ -5,6 +5,7 @@ import CaseItem from "@/components/case_items/case_item";
 import React, {useEffect} from "react";
 import {useAppDispatch, useAppSelector} from "@/redux/hooks";
 import {getServices} from "@/redux/lib/services";
+import LoadingSceleton from "@/components/loading/LoadingSceleton";
 export default function Services () {
     const dispatch = useAppDispatch()
     const {services} = useAppSelector(state => state.services)
@@ -12,6 +13,12 @@ export default function Services () {
     useEffect(() => {
         dispatch(getServices())
     },[])
+
+    // if(services.status === 'loading'){
+    //     return (
+    //         <LoadingSceleton/>
+    //     )
+    // }
 
 
   return (
@@ -28,7 +35,7 @@ export default function Services () {
                     <div className={`${page[`grid${(index % 14) + 1}`]}`} key={item.id}>
                         <CaseItem key={item.id} name={item.name} image={item?.image_url}  price={item.price} click={false}/>
                     </div>
-                )) : null}
+                )) : <LoadingSceleton/>}
             {/*todo : Исправить сверху .slice(0,6)*/}
         </div>
         {/*КОСТЫЛЬ из-за positions */}

@@ -25,7 +25,7 @@ export default function Home() {
             <Organization/>
             <Services/>
             {/*<Link href={'/cases'} className={global.link}>Смотреть еще</Link>*/}
-            <Projects />
+            <Projects/>
             <Link href={'/cases'} className={global.link}>Смотреть еще</Link>
             <AboutUs/>
             <PublicationsTitle/>

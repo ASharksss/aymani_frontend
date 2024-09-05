@@ -155,6 +155,55 @@
 }
 
 
+.text img{
+    margin: 2% 0;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.text h1,
+.text h2,
+.text h3,
+.text h4,
+.text h5,
+.text h6{
+    margin-bottom: .5rem;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.2;
+    color: inherit;
+}
+
+.text h1,
+.text .h1{
+    font-size: 2.5rem;
+}
+.text h2,
+.text .h2{
+    font-size: 2rem;
+}
+
+.text h3,
+.text .h3{
+    font-size: 1.75rem;
+}
+
+.text h4,
+.text .h4{
+    font-size: 1.5rem;
+}
+.text h5,
+.text .h5{
+    font-size: 1.25rem;
+}
+.text h6,
+.text .h6{
+    font-size: 1rem;
+}
+
+
 .text ul,
 .text ol {
     padding: 0 1rem;
@@ -398,6 +447,14 @@
     }
     .text{
         font-size: 14pt;
+    }
+    .text img{
+        width: 100%;
+        min-width: 100px;
+        height: 300px;
+        object-fit: cover;
+        object-position: center;
+
     }
 
     .text ul,

@@ -72,7 +72,7 @@ export default function PublicationsTitle({small = false}) {
         <div className={styles.main}>
             {small ? <h2>ПУБЛИКАЦИИ</h2> : <h1 onClick={() => router.push('/posts')}>ПУБЛИКАЦИИ</h1>}
             <div className={small ? `${styles.description} ${styles.small}` : `${styles.description} ${styles.big}`}>
-                <p>Антон Антонов, Генадий Воробьев, Жора Измаился </p>
+                <p>Аймани</p>
                 <p className={styles.date}> {date.toLocaleString('ru-RU', options)} </p>
                 <Tag text={'Бабочки среди радуги'} id={1} />
             </div>

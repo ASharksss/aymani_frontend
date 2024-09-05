@@ -11,6 +11,7 @@ import {getCases, getOneCase} from "@/redux/lib/cases";
 import {useParams} from "next/navigation";
 import CaseItem from "@/components/case_items/case_item";
 import Link from "next/link";
+import LoadingSceleton from "@/components/loading/LoadingSceleton";
 
 
 export default function CaseData() {
@@ -27,13 +28,18 @@ export default function CaseData() {
         dispatch(getCases())
     }, [])
 
+    if(oneCase.status === 'loading'){
+        return <LoadingSceleton/>
+    }
+
     return (
         <section className={styles.main}>
             {oneCase?.items.length !== 0 ?
                 <CaseTitle type={oneCase?.items.name}
                            tag={oneCase?.items.tag.name}
-                           date={oneCase?.items.createdAt} companyname={oneCase?.items.customer}
-                           developers={'FOra Hola DOra'}/>
+                           date={oneCase?.items.createdAt}
+                           companyname={oneCase?.items.customer}
+                           developers={'Тима Sairommef Алсу'}/>
                 :
                 <CaseTitle type={'NULL'} date={'NULL'} companyname={'NULL'}
                            developers={'NULL'}/>
@@ -43,12 +49,12 @@ export default function CaseData() {
                 oneCase?.items.case_blocks.map((step, index) => (
                         <WorkProgress header={step.type_block}
                                       key={step.id}
-                                      text={step.text}
+                                      text={step.attachment_title}
                                       colors={step.color_shems.length > 0 ? step.color_shems : false}
                                       numb={index + 1}
                                       shar={step.type_block.toLowerCase() === 'планирование'}
                                       unique={step.color_shems.length > 0}
-                                      blockquote={step.attachment_title}
+                                      blockquote={step.text}
                                       image={step.attachment}
                                       imageTitle={step.attachment_title}
                         />

@@ -1,13 +1,11 @@
 'use client'
 
-import React, {useContext, useState} from 'react'
+import React, { useState} from 'react'
 
 import styles from './comment.module.css'
 
 import ProfileNickname from '@/components/publications/post/profile/profile-nickname/ProfileNickname'
 import TransprentButton from '@/components/ui/buttons/transprent/TransprentButton'
-import LikeSvg from '@/components/svgs/LikeSVG'
-import {ThemeContext} from '@/contexts/ThemeContext'
 import CommentForm from "../../../forms/comment-form/CommentForm";
 import {createComment} from "@/redux/lib/comments";
 import {useParams} from "next/navigation";
@@ -17,9 +15,6 @@ export default function CommentD({comment = [], replies = []}) {
 
     const [answ, setAnsw] = useState(false);
     const [showReplies, setShowReplies] = useState(false);
-
-    const {theme} = useContext(ThemeContext)
-
 
     const dispatch = useAppDispatch()
     const {id} = useParams()
@@ -64,13 +59,6 @@ export default function CommentD({comment = [], replies = []}) {
                     </div>
                 </div>
                 <div className={styles.action}>
-                    <button className={styles.likes}>
-                        <div className={`${styles.flex}`}>
-                            <LikeSvg
-                                color={theme === 'light' ? 'var(--description-color)' : "var(--description-color)"}/>
-                            {comment?.likes}
-                        </div>
-                    </button>
                     {answ ? null : <TransprentButton text={'Ответить'} click={() => setAnsw(!answ)}/>}
                 </div>
                 <div className={styles.answ}>
@@ -103,13 +91,17 @@ export default function CommentD({comment = [], replies = []}) {
                         </button>
                     )}
                 </div>
-                {showReplies && (
+                {showReplies ? (
                     <div className={styles.childAnswer}>
                         {replies.map((reply) => (
                             <CommentD key={reply.id} comment={reply} replies={reply.replies}/>
                         ))}
                     </div>
-                )}
+                ) : <div className={styles.childAnswer}>
+                    {replies.slice(0, 2).map((reply) => (
+                        <CommentD key={reply.id} comment={reply} replies={reply.replies}/>
+                    ))}
+                </div>}
             </div>
         </>
     );

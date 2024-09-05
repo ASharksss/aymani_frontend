@@ -7,6 +7,7 @@ import ArticleItem from "@/components/article_item/article_item";
 import page from '@/app/posts/page.module.css'
 import {useAppDispatch, useAppSelector} from "@/redux/hooks";
 import {getPosts} from "@/redux/lib/blogs";
+import LoadingSceleton from "@/components/loading/LoadingSceleton";
 
 const data = []
 
@@ -33,18 +34,25 @@ export default function BlogsData() {
         dispatch(getPosts())
     }, [])
 
+    // if(ABlogs.status === 'loading'){
+    //     return (
+    //         <LoadingSceleton/>
+    //     )
+    // }
+
     return (
         <div id={'posts'}>
+            {ABlogs.items.length > 0 ?
             <div className={styles.content}>
-                {ABlogs.items.length > 0 ? ABlogs.items.slice(0,7).map((item, index) => (
-                    <div className={`${page[`grid${(index % 14) + 1}`]}`} key={item.id}>
+                {ABlogs.items.slice(0,7).map((item, index) => (
+                    <div className={`${page[`grid${(index % 14) + 1}`]} ${styles.cards}`} key={item.id}>
                         <ArticleItem name={item.title} image={item.cover} description={item.description} views={item.views} id={item.id}
                                      type={flexRow.includes((index % 14) + 1) ? 'flexRow' : flexColumn.includes((index % 14) + 1) ? 'flexColumn'
                                          : without.includes((index % 14) + 1) ? 'withoutImage' : 'full'}/>
                     </div>
-                    )) : null }
+                    ))}
             </div>
-
+                : <LoadingSceleton/> }
         </div>
     );
 };

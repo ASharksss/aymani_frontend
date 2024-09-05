@@ -13,12 +13,6 @@ import {makeStore} from "@/redux/lib/store";
 
 const inter = Inter({subsets: ['latin']})
 
-// export const metadata = {
-//     title: 'АЙМАНИ | AIMANI',
-//     description: 'Заказать сайт просто',
-// }
-
-
 axios.defaults.baseURL = 'http://192.168.1.121:5000/api/'
 
 export default function RootLayout({children}) {

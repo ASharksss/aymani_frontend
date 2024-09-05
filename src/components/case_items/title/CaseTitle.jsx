@@ -16,7 +16,7 @@ export default function CaseTitle ({type, companyname, developers, date, tag}) {
       <div className={`${styles.description}`}>
            <p>Developers: {developers}</p>
        <div className={styles.row}>
-          <p className={styles.date}>Date: {date} </p> <div className={styles.Ctag}> <Tag text={tag} /> </div>
+          <p className={styles.date}>{new Date(date).toLocaleDateString('ru-RU', date)}</p> <div className={styles.Ctag}> <Tag text={tag} /> </div>
        </div>
       </div>
     </header>

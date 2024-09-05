@@ -11,6 +11,8 @@
     object-fit: cover;
     cursor: pointer;
     overflow: hidden;
+    animation: fadeIn .1s forwards;
+
 }
 .figurecaption{
     display: flex;
@@ -219,5 +221,17 @@
     }
     .price h5{
         font-size: 8pt;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        filter: blur(100px);
+        opacity: 100;
+
+    }
+    to {
+        filter: none;
+        opacity: none;
     }
 }

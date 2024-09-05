@@ -47,7 +47,7 @@ export default function WorkProgress ({
             <div className={styles.oval} style={{ background: colors[0]?.accent_color, border: `1px solid ${colors[0].accent_color}` }}>Акцент</div>
           </div> : null}
       </div>
-      {image !== null && shar === false ?
+      {image !== null && image !== undefined && shar === false ?
       <div className={styles.imageBlock}>
         <Image
             src={`${IMAGE_URL}${image}`} alt={'image'}

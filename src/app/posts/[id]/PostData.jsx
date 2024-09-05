@@ -26,7 +26,7 @@ export default function PostData() {
 
     const [nickName, setNickname] = useState('')
     const [value, setValue] = useState('')
-    // const [parentComment, setParentComment] = useState()
+    const [result, setResult] = useState()
     //Комментарий
 
     const dispatch = useAppDispatch();
@@ -62,6 +62,9 @@ export default function PostData() {
     //Комментарий отправка формы
 
 
+
+
+
     useEffect(() => {
         dispatch(getOnePost(id)); //получить посты
         // console.log(OBlog)    //просто будет тут
@@ -80,6 +83,29 @@ export default function PostData() {
         dispatch(getComments(id))   //получить проекты
         // console.log(cases) //просто будет тут
     }, [])
+    useEffect(() => {
+
+    if(OBlog.status === 'loaded'){
+        // const parser = new DOMParser();
+        // const doc = parser.parseFromString(OBlog?.items?.html, 'application/xml');
+        const articleHtml = OBlog?.items?.html;
+        const IMAGE_URL = 'http://192.168.1.121:5000'
+        // const updatedHtml = articleHtml.replace(/src="\//g, `src="${IMAGE_URL}\/`);
+        const updatedHtml = articleHtml.replace(/src="\/static\/post_images\//g, `src="${IMAGE_URL}\/static\/post_images\/`);
+        setResult(updatedHtml)
+        // console.log(updatedHtml)
+        // const images = doc.getElementsByTagName('img');
+        //     for (const img of images) {
+        //         const one = img.getElementsByTagName('img')
+        //         one.src = `${IMAGE_URL}/${img.getAttribute('src').slice(1)}`
+        //         // setResult(doc.replace(/src="\/static\/post_images\//g, `src="${one.src}""`));
+        //     }
+        //     console.log(result)
+    }
+    },[OBlog.status === 'loading'])
+
+
+
 
     return (
         <section className={styles.grid}>
@@ -92,7 +118,7 @@ export default function PostData() {
                     title={OBlog?.items?.title ? OBlog.items.title : 'Что то новое для вас'}
                     tag={OBlog?.items?.tag?.name ? OBlog?.items.tag.name : 'Web-программирование'}
                     date={OBlog?.items?.createdAt ? OBlog?.items.createdAt : '12.02.2002'}
-                    user={'Множество Измен'}
+                    user={'Аймани'}
                 />
             </div>
             <span className={styles.anotherSpan}></span>
@@ -105,8 +131,10 @@ export default function PostData() {
                     </div>
                 </div>
                 <div className={styles.text}>
+                    {/*{result}*/}
+
                     {OBlog?.items?.html && (
-                        <div dangerouslySetInnerHTML={{__html: OBlog.items.html}}
+                        <div dangerouslySetInnerHTML={{__html: result}}
                         />
                     )}
                 </div>

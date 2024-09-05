@@ -8,6 +8,7 @@ import CaseItem from "@/components/case_items/case_item";
 
 import {useAppDispatch, useAppSelector} from "@/redux/hooks";
 import { getCases } from "@/redux/lib/cases";
+import LoadingSceleton from "@/components/loading/LoadingSceleton";
 
 export default function Data({}) {
 
@@ -18,6 +19,11 @@ export default function Data({}) {
         dispatch(getCases());
         // console.log(cases)
     }, []);
+
+    if(cases.status === 'loading'){
+        return (<LoadingSceleton/>)
+    }
+
 
     return (
             <div className={page.grid}>

@@ -17,7 +17,6 @@ export default function Projects ({text, mobile, tablet}) {
         <div className={styles.Iphone}>
           <div className={styles.contain_image_phone}>
             <img loading={"lazy"} src={mobile ? `${IMAGE_URL}${mobile}` : blog.src} alt={'projects'} className={styles.image}
-
             />
           </div>
         </div>

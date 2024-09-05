@@ -80,6 +80,13 @@
 }
 
 @media (max-width: 425px) {
+    .row{
+        /*flex-direction: ro;*/
+        gap: 20px;
+    }
+    .date:after{
+        content: '';
+    }
     .main{
         /*padding-bottom: 10px;*/
         padding: 30px 0;
@@ -89,8 +96,10 @@
         display: block;
     }
     .Ctag {
-        display: none;
+
+        /*display: none;*/
     }
+
     .typeOfWork,
     .nameOfCompany {
         font-size: 28px;

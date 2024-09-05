@@ -3,7 +3,7 @@
     overflow: hidden;
     max-width: 100vw;
     box-sizing: border-box;
-    animation: fadeIn 1s forwards;
+    animation: fadeIn .1s forwards;
     /*position: absolute;*/
 }
 .background{
