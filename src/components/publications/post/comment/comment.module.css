@@ -22,7 +22,7 @@
 
 .content_text{
     font-family: "SF Pro Rounded", sans-serif;
-    font-size: 13pt;
+    font-size: 14pt;
     font-weight: normal;
     color: var(--base-color);
     display: -webkit-box;
@@ -36,6 +36,10 @@
     display: flex;
     gap: 30px;
     max-width: 500px;
+}
+.span{
+    display: block;
+    visibility: hidden;
 }
 
 .flex{

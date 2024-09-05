@@ -27,7 +27,7 @@ export default function Data({}) {
 
     return (
             <div className={page.grid}>
-                {cases?.items.length > 0 ? cases?.items.map((item, index) => (
+                {cases?.items.length > 0 ? cases?.items.toReversed().map((item, index) => (
                     <div className={`${page[`grid${(index % 14) + 1}`]}`} >
                         <CaseItem name={item.name} image={item.cover} id={item.id} />
                     </div>

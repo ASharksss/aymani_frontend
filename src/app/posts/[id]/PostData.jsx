@@ -54,15 +54,14 @@ export default function PostData() {
                 setValue('')
                 setNickname('')
                 alert('Комментарий опубликован')
+                // dispatch(getComments(id))
+                location.reload()
             } catch (e) {
                 console.error('Error:', e);
             }
         }
     };
     //Комментарий отправка формы
-
-
-
 
 
     useEffect(() => {
@@ -84,27 +83,24 @@ export default function PostData() {
         // console.log(cases) //просто будет тут
     }, [])
     useEffect(() => {
-
-    if(OBlog.status === 'loaded'){
-        // const parser = new DOMParser();
-        // const doc = parser.parseFromString(OBlog?.items?.html, 'application/xml');
-        const articleHtml = OBlog?.items?.html;
-        const IMAGE_URL = 'http://192.168.1.121:5000'
-        // const updatedHtml = articleHtml.replace(/src="\//g, `src="${IMAGE_URL}\/`);
-        const updatedHtml = articleHtml.replace(/src="\/static\/post_images\//g, `src="${IMAGE_URL}\/static\/post_images\/`);
-        setResult(updatedHtml)
-        // console.log(updatedHtml)
-        // const images = doc.getElementsByTagName('img');
-        //     for (const img of images) {
-        //         const one = img.getElementsByTagName('img')
-        //         one.src = `${IMAGE_URL}/${img.getAttribute('src').slice(1)}`
-        //         // setResult(doc.replace(/src="\/static\/post_images\//g, `src="${one.src}""`));
-        //     }
-        //     console.log(result)
-    }
-    },[OBlog.status === 'loading'])
-
-
+        if (OBlog.status === 'loaded') {
+            // const parser = new DOMParser();
+            // const doc = parser.parseFromString(OBlog?.items?.html, 'application/xml');
+            const articleHtml = OBlog?.items?.html;
+            const IMAGE_URL = 'http://192.168.1.121:5000'
+            // const updatedHtml = articleHtml.replace(/src="\//g, `src="${IMAGE_URL}\/`);
+            const updatedHtml = articleHtml.replace(/src="\/static\/post_images\//g, `src="${IMAGE_URL}\/static\/post_images\/`);
+            setResult(updatedHtml)
+            // console.log(updatedHtml)
+            // const images = doc.getElementsByTagName('img');
+            //     for (const img of images) {
+            //         const one = img.getElementsByTagName('img')
+            //         one.src = `${IMAGE_URL}/${img.getAttribute('src').slice(1)}`
+            //         // setResult(doc.replace(/src="\/static\/post_images\//g, `src="${one.src}""`));
+            //     }
+            //     console.log(result)
+        }
+    }, [OBlog.status === 'loading'])
 
 
     return (
@@ -176,8 +172,15 @@ export default function PostData() {
                     </div>
                 </div>
             </aside>
+            {/*<div id="poda">*/}
+            {/*    <div id="main">*/}
+            {/*        <input placeholder="Search..." type="text" name="text" className="input"/>*/}
+            {/*    </div>*/}
+            {/*</div>*/}
+
             <div className={styles.commentForm} id={'comment'}>
                 <form className={styles.senForm} id={'SendComment'} onSubmit={handleSubmit}>
+                    <div className={styles.senForm2}>
                     <h1>Оставить комментарий</h1>
                     <div className={styles.nickname}>
                         <CommentForm place={'nickname'}
@@ -191,11 +194,12 @@ export default function PostData() {
                                  form={'SendComment'}
                                  value={value}
                                  place={'Комментарий'}/>
+                    </div>
                 </form>
                 {comments?.items.length > 0 ?
-                comments.items.map((item) => (
-                    <CommentD comment={item} replies={item.replies}/>
-                )) : null }
+                    comments.items.map((item) => (
+                        <CommentD comment={item} replies={item.replies}/>
+                    )) : null}
 
 
             </div>

@@ -36,7 +36,7 @@ export default function CommentD({comment = [], replies = []}) {
                 setValue('')
                 setNickname('')
                 alert('Комментарий опубликован')
-
+                location.reload()
             } catch (e) {
                 console.error('Error:', e);
             }
@@ -59,6 +59,7 @@ export default function CommentD({comment = [], replies = []}) {
                     </div>
                 </div>
                 <div className={styles.action}>
+                    <span className={styles.span}> </span>
                     {answ ? null : <TransprentButton text={'Ответить'} click={() => setAnsw(!answ)}/>}
                 </div>
                 <div className={styles.answ}>
@@ -72,7 +73,7 @@ export default function CommentD({comment = [], replies = []}) {
                                              sumbit={false}
                                              cancle={false}/>
                             </div>
-                            <CommentForm cancle={false}
+                            <CommentForm
                                          value={value}
                                          setValue={(e) => setValue(e.target.value)}
                                          form={'SendComment'}
@@ -97,11 +98,7 @@ export default function CommentD({comment = [], replies = []}) {
                             <CommentD key={reply.id} comment={reply} replies={reply.replies}/>
                         ))}
                     </div>
-                ) : <div className={styles.childAnswer}>
-                    {replies.slice(0, 2).map((reply) => (
-                        <CommentD key={reply.id} comment={reply} replies={reply.replies}/>
-                    ))}
-                </div>}
+                ) : null}
             </div>
         </>
     );

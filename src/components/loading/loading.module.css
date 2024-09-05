@@ -1,7 +1,7 @@
 .main{
     display: flex;
     align-items: center;
-
+    background-color: var(--nuans-color);
     justify-content: center;
     flex-direction: column;
     height: 100vh;

@@ -40,7 +40,7 @@ export default function Data() {
         <>
         {ABlogs?.items.length > 0 ?
         <main className={page.grid}>
-            {ABlogs.items.toReversed().map((item, index) => (
+            {ABlogs.items.map((item, index) => (
                 <div className={`${page[`grid${(index % 14) + 1}`]} ${page.cards}`} >
                     {/*<CaseItem name={item.name}  />*/}
                     <ArticleItem name={item.title} description={item.description} views={item.views} image={item.cover} id={item.id}

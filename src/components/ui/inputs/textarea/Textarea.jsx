@@ -9,6 +9,7 @@ function Textarea ({place, rows, value, onChange, back = true, req = false}) {
         onChange={onChange}
         value={value}
         lang={'ru'}
+        spellCheck
         maxLength={3000}
         className={back ? `${styles.input} ${styles.back}` : `${styles.input} ${styles.anotherBack}` }
         rows={rows}

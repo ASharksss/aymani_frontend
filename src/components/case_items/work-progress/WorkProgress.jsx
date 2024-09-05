@@ -23,11 +23,11 @@ export default function WorkProgress ({
           <div className={styles.numb}>
             {numb}
           </div>
-          <blockquote className={styles.blockquote}>
+          <blockquote className={styles.text}>
             {blockquote}
           </blockquote>
         </div>
-        <article className={styles.text}>
+        <article className={styles.blockquote}>
           {text.replace(//g, '').split('\n').map((line, index) => (
               <p key={index}>{line}</p>
           ))}
@@ -51,13 +51,25 @@ export default function WorkProgress ({
       </div>
       {image !== null && image !== undefined && shar === false ?
       <div className={styles.imageBlock}>
+        {unique ?
         <Image
             src={`${IMAGE_URL}${image}`} alt={'image'}
             title={imageTitle}
-            className={styles.Unique}
-            fill
+            className={styles.logoImage}
+            // fill
+            width={1000}
+            height={600}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
+        /> :
+            <Image
+                src={`${IMAGE_URL}${image}`} alt={'image'}
+                title={imageTitle}
+                className={styles.Unique}
+                // fill
+                width={1000}
+                height={500}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            /> }
         {imageTitle ? <article className={styles.imageTitle}>{imageTitle}</article> : null}
       </div> : null }
       {shar ?
