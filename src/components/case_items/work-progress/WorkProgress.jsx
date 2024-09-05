@@ -28,7 +28,9 @@ export default function WorkProgress ({
           </blockquote>
         </div>
         <article className={styles.text}>
-          {text}
+          {text.replace(//g, '').split('\n').map((line, index) => (
+              <p key={index}>{line}</p>
+          ))}
         </article>
         {/*{console.log(colors)}*/}
         {colors ?

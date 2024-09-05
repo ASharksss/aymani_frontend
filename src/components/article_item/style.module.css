@@ -15,21 +15,26 @@
     z-index: -1;
     top: -20px;
     left: -20px;
-    /*background: radial-gradient( var(--focus-color-start), var(--focus-color-end));*/
-    background: black;
+    background: var(--gradieeent);
     height: 20px;
     width: 20px;
     border-radius: 32px;
     transform: scale(1);
     transform-origin: 50% 50%;
-    transition: transform .5s ease-out;
+    transition: transform 1s ease-out;
 }
 
 .main:hover:before {
-     transform: scale(40);
+     transform: var(--scale-round);
+}
+.main:hover{
+    top: -2px;
 }
 .main:hover .article{
-    color: white;
+    color: var(--article);
+}
+.main:hover .title{
+    color: var(--nuans-color);
 }
 
 .container {
@@ -69,7 +74,8 @@
 .full_container {
     /*box-sizing: border-box;*/
     /*align-items: center;*/
-    max-width: 900px;
+    /*max-width: 900px;*/
+    justify-content: space-between;
     height: 550px;
     max-height: 550px;
     padding: 20px ;
@@ -137,7 +143,7 @@
     flex-direction: column;
     width: 100%;
     min-width: 300px;
-    max-width: 425px;
+    /*max-width: 425px;*/
     height: 550px;
     padding: 30px 20px;
 }
@@ -146,7 +152,7 @@
 .column_image {
     position: relative;
     width: 100%;
-    max-width: 385px;
+    /*max-width: 385px;*/
     height: 250px;
     object-fit: cover;
 }
@@ -178,7 +184,7 @@
     flex-direction: column;
     width: 100%;
     min-width: 200px;
-    max-width: 460px;
+    /*max-width: 460px;*/
     height: 550px;
     min-height: fit-content;
     max-height: 550px;
@@ -194,7 +200,7 @@
 .without_description {
     min-width: 200px;
     width: 100%;
-    max-width: 400px;
+    /*max-width: 400px;*/
     height: 100%;
     font-size: 12pt;
     word-wrap: break-word;
@@ -212,7 +218,7 @@
 
 .row_container {
     box-sizing: border-box;
-    max-width: 870px;
+    /*max-width: 870px;*/
     min-width: 400px;
     width: 100%;
     max-height: 250px;

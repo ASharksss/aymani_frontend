@@ -19,6 +19,10 @@
   --services-title: #E8E8E8;
   --opacity: 0.5;
 
+  --article: gray;
+  --scale-round: scale(120);
+  --gradieeent: radial-gradient( var(--base-color), white);
+
 
   --card-background: conic-gradient(from 180deg at 50% 50%, #21262C 0deg, #0C0E10 235.8deg, #21262C 360deg);
   --card-box-shadow: 0 0 100px 10px #4A4A4A40;
@@ -54,6 +58,10 @@ body {
   --description-color: #8D8D8D;
   --display: none;
   --opacity: 0.8;
+
+  --article: gray;
+  --scale-round: scale(120);
+  --gradieeent: radial-gradient( var(--base-color), black);
 
   --services-title: #6c6c6c;
   /*--services-title: #E8E8E8;*/

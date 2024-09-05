@@ -30,6 +30,10 @@
     max-width: 850px;
 }
 
+.text p {
+    padding: 0.25rem 0;
+}
+
 .iiiariki{
     /*height: 550px;*/
     max-width: 700px;
@@ -38,6 +42,7 @@
 }
 
 .section{
+    align-items: center;
     padding: 60px 160px ;
     display: flex;
     gap: 30px;
@@ -171,13 +176,12 @@
     position: relative;
     margin-right: 8%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     gap: 20px;
     flex-direction: column;
     max-width: 450px;
     width: 100%;
     height: 550px;
-
     overflow: hidden;
 }
 

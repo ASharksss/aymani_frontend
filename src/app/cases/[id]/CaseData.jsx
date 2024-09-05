@@ -49,12 +49,12 @@ export default function CaseData() {
                 oneCase?.items.case_blocks.map((step, index) => (
                         <WorkProgress header={step.type_block}
                                       key={step.id}
-                                      text={step.attachment_title}
+                                      text={step.text}
                                       colors={step.color_shems.length > 0 ? step.color_shems : false}
                                       numb={index + 1}
                                       shar={step.type_block.toLowerCase() === 'планирование'}
                                       unique={step.color_shems.length > 0}
-                                      blockquote={step.text}
+                                      blockquote={step.attachment_title}
                                       image={step.attachment}
                                       imageTitle={step.attachment_title}
                         />
