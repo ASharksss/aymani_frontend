@@ -21,7 +21,7 @@ const ArticleItem = ({ name, type, description, views, image, id }) => {
               <article className={styles.article}>
               <p className={styles.full_description}>{description}</p>
               <div className={`${styles.full_footer} ${styles.footer}`}>
-                <span itemProp="interactionCount">{views} просмотров</span>
+                {/*<span itemProp="interactionCount">{views} просмотров</span>*/}
                 <time dateTime="2024-08-19T14:30:00Z">2 часа назад</time>
               </div>
               </article>
@@ -42,7 +42,7 @@ const ArticleItem = ({ name, type, description, views, image, id }) => {
               <article className={styles.article}>
               <p className={styles.column_description}>{description}</p>
               <div className={`${styles.column_footer} ${styles.footer}`}>
-                <span itemProp="interactionCount">{views} просмотров</span>
+                {/*<span itemProp="interactionCount">{views} просмотров</span>*/}
                 <time dateTime="2024-08-19T14:30:00Z">2 часа назад</time>
               </div>
               </article>
@@ -55,7 +55,7 @@ const ArticleItem = ({ name, type, description, views, image, id }) => {
                 <article className={`${styles.article}`}>
                 <p className={styles.without_description}>{description}</p>
                 <div className={`${styles.without_footer} ${styles.footer}`}>
-                  <span itemProp="interactionCount">{views} просмотров</span>
+                  {/*<span itemProp="interactionCount">{views} просмотров</span>*/}
                   <time dateTime="2024-08-19T14:30:00Z">2 часа назад</time>
                 </div>
                 </article>
@@ -69,7 +69,7 @@ const ArticleItem = ({ name, type, description, views, image, id }) => {
                     <article className={styles.article}>
                       <p className={styles.row_description}>{description}</p>
                       <div className={`${styles.row_footer} ${styles.footer}`}>
-                        <span itemProp="interactionCount">{views} просмотров</span>
+                        {/*<span itemProp="interactionCount">{views} просмотров</span>*/}
                         <time dateTime="2024-08-19T14:30:00Z">2 часа назад</time>
                       </div>
                     </article>
