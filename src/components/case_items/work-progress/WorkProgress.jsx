@@ -35,7 +35,7 @@ export default function WorkProgress ({
         {/*{console.log(colors)}*/}
         {colors ?
           <div className={styles.colorImages}>
-            <div className={styles.oval} style={{ background: colors[0]?.base_color, border: `1px solid ${colors[0].base_color}` }}>База</div>
+            <div className={styles.oval} style={{background: colors[0]?.base_color, border: `1px solid ${colors[0].base_color}`, color: colors[0]?.accent_color }}>База</div>
             <div className={styles.circles}>
               <div className={styles.colors}>
                 {colors[0].nuance_colors?.map((color) => (
@@ -46,21 +46,28 @@ export default function WorkProgress ({
                 Нюанс
               </article>
             </div>
-            <div className={styles.oval} style={{ background: colors[0]?.accent_color, border: `1px solid ${colors[0].accent_color}` }}>Акцент</div>
+            <div className={styles.oval} style={{ background: colors[0]?.accent_color, border: `1px solid ${colors[0].accent_color}`, color: colors[0]?.base_color  }}>Акцент</div>
           </div> : null}
       </div>
       {image !== null && image !== undefined && shar === false ?
-      <div className={styles.imageBlock}>
+      <div className={styles.imageBlock} >
         {unique ?
-        <Image
-            src={`${IMAGE_URL}${image}`} alt={'image'}
-            title={imageTitle}
-            className={styles.logoImage}
-            // fill
-            width={1000}
-            height={600}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        /> :
+            // <>
+              <div className={styles.imagespan}
+                   // style={{background: `${colors[0].base_color}` }}
+              >
+              <Image
+                  src={`${IMAGE_URL}${image}`} alt={'image'}
+                  title={imageTitle}
+                  className={styles.logoImage}
+                  // fill
+                  width={1000}
+                  height={600}
+                  // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 20vw, 33vw"
+              />
+              </div>
+            // </>
+              :
             <Image
                 src={`${IMAGE_URL}${image}`} alt={'image'}
                 title={imageTitle}
@@ -69,7 +76,8 @@ export default function WorkProgress ({
                 width={1000}
                 height={500}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            /> }
+            />
+            }
         {imageTitle ? <article className={styles.imageTitle}>{imageTitle}</article> : null}
       </div> : null }
       {shar ?

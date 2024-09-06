@@ -177,6 +177,13 @@
 .leftColumn{
     width: 100%;
 }
+
+.imagespan{
+    /*filter: var(--invert);*/
+    background-color: var(--background-transprent);
+    padding: 10px;
+    border-radius: 30px;
+}
 .imageBlock{
     position: relative;
     margin-right: 8%;
@@ -191,6 +198,7 @@
 }
 
 .logoImage{
+    z-index: 98;
     /*object-fit: ;*/
     /*position: relative;*/
     object-fit: contain;
@@ -270,6 +278,10 @@
 }
 
 @media (max-width: 1024px) {
+    .imagespan{
+        max-height: 300px;
+
+    }
     .header {
         font-size: 42pt;
     }
@@ -474,7 +486,7 @@
         gap: 20px;
         flex-direction: column;
         max-width: 275px;
-        height: 325px;
+        height: 355px;
         overflow: hidden;
     }
 

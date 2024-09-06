@@ -59,7 +59,7 @@ export default function PostTitle({title, user, date, tag, idTag, buttons= true}
             {buttons ?
             <nav className={styles.nav} >
                 {/*<TransprentButton img={<LikeSvg color={theme === 'light' ? '#B0B0B0' : "#474747"}/>}/>*/}
-                <TransprentButton img={<ShareSvg color={theme === 'light' ? '#B0B0B0' : "#474747"}/>}/>
+                {/*<TransprentButton img={<ShareSvg color={theme === 'light' ? '#B0B0B0' : "#474747"}/>}/>*/}
                 <TransprentButton img={<CommentSVG color={theme === 'light' ? '#B0B0B0' : "#474747"}/>}
                                   click={() => handleLinkClick()}
                 />

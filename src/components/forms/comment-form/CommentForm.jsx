@@ -6,7 +6,7 @@ import styles from './comment-form.module.css'
 import TransprentButton from '@/components/ui/buttons/transprent/TransprentButton'
 import Textarea from '@/components/ui/inputs/textarea/Textarea'
 
-export default function CommentForm ({click, place, setValue, value,
+export default function CommentForm ({click, place, setValue, value, lenght,
                                         form,
                                          sumbit = true, cancle = true}) {
   // const [value, setValue] = useState('')
@@ -22,6 +22,7 @@ export default function CommentForm ({click, place, setValue, value,
         <Textarea type={'text'}
                   place={place ? place : 'Оставить комментарий'}
                   rows={1}
+                  lenght={lenght}
                   req
                   value={value ? value : ''}
                   // onChange={(e) => setValue(e.target.value)}

@@ -183,7 +183,8 @@ export default function PostData() {
                     <div className={styles.senForm2}>
                     <h1>Оставить комментарий</h1>
                     <div className={styles.nickname}>
-                        <CommentForm place={'nickname'}
+                        <CommentForm place={'Имя'}
+                                     lenght={25}
                                      setValue={(e) => setNickname(e.target.value)}
                                      sumbit={false}
                                      value={nickName}

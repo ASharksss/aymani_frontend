@@ -54,7 +54,7 @@ export default function CaseData() {
                                       numb={index + 1}
                                       shar={step.type_block.toLowerCase() === 'планирование'}
                                       unique={step.color_shems.length > 0}
-                                      blockquote={step.attachment_title}
+                                      blockquote={step.description}
                                       image={step.attachment}
                                       imageTitle={step.attachment_title}
                         />

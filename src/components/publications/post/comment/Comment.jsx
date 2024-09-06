@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState} from 'react'
+import React, {useEffect, useState} from 'react'
 
 import styles from './comment.module.css'
 
@@ -15,6 +15,9 @@ export default function CommentD({comment = [], replies = []}) {
 
     const [answ, setAnsw] = useState(false);
     const [showReplies, setShowReplies] = useState(false);
+
+    const [currentScrollY, setCurrentScrollY] = useState(0);
+
 
     const dispatch = useAppDispatch()
     const {id} = useParams()
@@ -36,12 +39,23 @@ export default function CommentD({comment = [], replies = []}) {
                 setValue('')
                 setNickname('')
                 alert('Комментарий опубликован')
+                window.localStorage.setItem('position', window.pageYOffset)
                 location.reload()
             } catch (e) {
                 console.error('Error:', e);
             }
         }
     };
+
+
+    useEffect(() => {
+        const position = Number(window.localStorage.getItem('position'))
+        if(Number.isInteger(position)){
+            console.log(position)
+            window.scrollTo(0, position);
+            setTimeout(() => {window.localStorage.setItem('position', null)}, 10000);
+        }
+    }, []);
 
 
     return (
@@ -69,6 +83,7 @@ export default function CommentD({comment = [], replies = []}) {
                             <div className={styles.nickname}>
                                 <CommentForm place={'nickname'}
                                              value={nickName}
+                                             lenght={25}
                                              setValue={(e) => setNickname(e.target.value)}
                                              sumbit={false}
                                              cancle={false}/>
