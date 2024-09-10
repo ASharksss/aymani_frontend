@@ -82,7 +82,7 @@ export default function CaseData() {
             <span className={styles.span}> asdfasf</span>
                 <div className={styles.anotherProjects}>
                     {cases?.items.length > 0 ?
-                        cases?.items.slice(0,3).map((item) => (
+                        cases?.items.filter((items) => items.id !== Number(id)).slice(0,3).map((item) => (
                             <div className={styles.project} key={item.id}>
                             <CaseItem name={item.name} image={item.cover} id={item.id} />
                             </div>
