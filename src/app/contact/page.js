@@ -38,6 +38,7 @@ export default function Page() {
                     <h1 className={styles.name}>Контакты</h1>
                     <p className={styles.address}><Link href={'https://yandex.ru/maps/-/CDDa6TJZ'}> РТ, г. Казань, ул. Техническая, д. 39 пом. 4 </Link></p>
                     <p className={styles.contact}>Телефон/WhatsApp: <Link href={'tel: +79673711711'}> +79673711711 </Link></p>
+                    <p className={styles.contact}>Телефон/WhatsApp: <Link href={'tel: +79534911711'}> +79673711711 </Link></p>
                     <p className={styles.contact}>Email:<Link href={'mailto: aimani.develop@gmail.com'}> aimani.develop@gmail.com </Link> </p>
                     <p className={styles.contact}>Telegram: <Link href={'https://t.me/@aimani_web'}> @aimani_web </Link>  </p>
                 </div>
