@@ -12,6 +12,8 @@
   --background-image: url("../asserts/BACKGROUND.svg");
   --nuans-back: #4A4F54;
   --hr: #ACBDCC;
+  --article-2: rgba(255, 255, 255, 0.1);
+
   --description-color: #8D8D8D;
   --visability: 'visible';
   --active-button: #7E7E7E;
@@ -64,6 +66,7 @@ body {
   --opacity: 0.8;
   --invert: invert(0);
   --article: gray;
+  --article-2: rgba(255, 255, 255, 0.1);
   --scale-round: scale(120);
   --gradieeent: radial-gradient( var(--base-color), black);
 

@@ -136,14 +136,14 @@ export default function PostData() {
                 </div>
             </div>
             <aside className={styles.recomends}>
-                <div className={styles.project}>
-                    {cases?.items.length > 0 ?
-                        <ProjectArticle title={cases?.items[0]?.name}
-                                        img={`${IMAGE_URL}${cases?.items[0]?.cover}`}
-                                        id={cases?.items[0]?.id}
-                        />
-                        : null}
-                </div>
+                {/*<div className={styles.project}>*/}
+                {/*    /!*{cases?.items.length > 0 ?*!/*/}
+                {/*    /!*    <ProjectArticle title={cases?.items[0]?.name}*!/*/}
+                {/*    /!*                    img={`${IMAGE_URL}${cases?.items[0]?.cover}`}*!/*/}
+                {/*    /!*                    id={cases?.items[0]?.id}*!/*/}
+                {/*    /!*    />*!/*/}
+                {/*    /!*    : null}*!/*/}
+                {/*</div>*/}
                 <div className={styles.sticky}>
                     <div className={styles.news}>
                         <h3>Новинки</h3>
