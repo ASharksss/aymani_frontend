@@ -57,7 +57,7 @@ export default function WorkProgress ({
                    // style={{background: `${colors[0].base_color}` }}
               >
               <Image
-                  src={`${IMAGE_URL}${image}`} alt={'image'}
+                  src={`${IMAGE_URL}${image}`} alt={imageTitle ? imageTitle : 'image'}
                   title={imageTitle}
                   className={styles.logoImage}
                   // fill
@@ -69,7 +69,7 @@ export default function WorkProgress ({
             // </>
               :
             <Image
-                src={`${IMAGE_URL}${image}`} alt={'image'}
+                src={`${IMAGE_URL}${image}`} alt={imageTitle ? imageTitle : 'image'}
                 title={imageTitle}
                 className={styles.Unique}
                 // fill
@@ -78,7 +78,7 @@ export default function WorkProgress ({
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
             }
-        {imageTitle ? <article className={styles.imageTitle}>{imageTitle}</article> : null}
+        {unique ? <article className={styles.imageTitle}>{imageTitle}</article> : null}
       </div> : null }
       {shar ?
       <div className={styles.iiiariki}>

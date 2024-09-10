@@ -74,7 +74,7 @@ export default function PublicationsTitle({small = false}) {
             <div className={small ? `${styles.description} ${styles.small}` : `${styles.description} ${styles.big}`}>
                 <p>Аймани</p>
                 <p className={styles.date}> {date.toLocaleString('ru-RU', options)} </p>
-                <Tag text={'Бабочки среди радуги'} id={1} />
+                <Tag text={'Аймани-Web'} id={1} />
             </div>
             <hr className={styles.hr}/>
             <div className={styles.tags}>
