@@ -33,7 +33,10 @@ export default function Services () {
             {services?.items?.length > 0 ?
                 services?.items.slice(0,12).map((item, index) => (
                     <div className={`${page[`grid${(index % 14) + 1}`]}`} key={item.id}>
-                        <CaseItem key={item.id} name={item.name} image={item?.image_url}  price={item.price} click={false}/>
+                        <CaseItem key={item.id}
+                                  name={item.name}
+                                  image={item?.image_url}
+                                  price={item.price} click={false}/>
                     </div>
                 )) : <LoadingSceleton/>}
             {/*todo : Исправить сверху .slice(0,6)*/}
