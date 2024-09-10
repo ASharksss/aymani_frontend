@@ -75,11 +75,11 @@ const casesSlice = createSlice({
                         }
                     }
                 })
-                let updatedData = {
-                    ...action.payload,
-                    case_blocks: action.payload.case_blocks.filter((block) => block.type_block !== "Результат"),
-                }
-                state.oneCase.items = updatedData;
+                // let updatedData = {
+                //     ...action.payload,
+                //     case_blocks: action.payload.case_blocks.filter((block) => block.type_block !== "Результат"),
+                // }
+                state.oneCase.items = action.payload;
             })
             .addCase(getOneCase.rejected, (state) => {
                 state.oneCase.items = [];

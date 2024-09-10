@@ -71,7 +71,6 @@ const ArticleItem = ({ name, type, description, views, image, id, time }) => {
                       <div className={`${styles.row_footer} ${styles.footer}`}>
                         {/*<span itemProp="interactionCount">{views} просмотров</span>*/}
                         <time dateTime={time}>{timeAgo(new Date(time))}</time>
-
                       </div>
                     </article>
                   </div>

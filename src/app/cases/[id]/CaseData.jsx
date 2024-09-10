@@ -46,7 +46,7 @@ export default function CaseData() {
             }
 
             {oneCase?.items.length !== 0 ?
-                oneCase?.items.case_blocks.map((step, index) => (
+                oneCase?.items.case_blocks.filter((block) => block.type_block !== "Результат").map((step, index) => (
                         <WorkProgress header={step.type_block}
                                       key={step.id}
                                       text={step.text}
@@ -61,6 +61,23 @@ export default function CaseData() {
                     ))
                 : null}
             <Projects text={'РЕЗУЛЬТАТ'} tablet={oneCase?.result.desktop_version} mobile={oneCase?.result.mobile_version}/>
+
+            {oneCase?.items.length !== 0 ?
+                oneCase?.items.case_blocks.filter((block) => block.type_block === "Результат").map((step) => (
+                    <WorkProgress header={null}
+                                  key={step.id}
+                                  text={step.text}
+                                  colors={step.color_shems.length > 0 ? step.color_shems : false}
+                                  numb={null}
+                                  shar={step.type_block.toLowerCase() === 'планирование'}
+                                  unique={step.color_shems.length > 0}
+                                  blockquote={step.description}
+                                  image={step.attachment}
+                                  imageTitle={step.attachment_title}
+                    />
+                ))
+                : null}
+
 
             <span className={styles.span}> asdfasf</span>
                 <div className={styles.anotherProjects}>
