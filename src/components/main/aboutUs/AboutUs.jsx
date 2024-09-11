@@ -4,7 +4,7 @@ import styles from './about-us.module.css'
 import CurveLine from "@/components/svgs/CurveLine";
 export default function AboutUs () {
   return (
-    <div className={styles.main}>
+    <div className={styles.main}  id={'about'}>
       <h1>О НАС</h1>
       <div className={styles.content}>
       <div className={`${styles.step} ${styles.start}`}>

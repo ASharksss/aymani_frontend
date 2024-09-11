@@ -12,23 +12,27 @@ import BlogsData from "@/components/main/blog-data/BlogsData";
 import AboutUs from '@/components/main/aboutUs/AboutUs'
 
 import Link from "next/link";
+import {fetchTags} from "@/utils";
 
 export const metadata = {
     title: 'Аймани | Главная',
     description: 'Сделать сайт просто!',
+    alternates: {
+        canonical: "https://aimani.org"
+    }
 }
 
-export default function Home() {
+export default async function Home() {
+    const tags = await fetchTags()
 
     return (
         <main className={styles.main}>
             <Organization/>
             <Services/>
-            {/*<Link href={'/cases'} className={global.link}>Смотреть еще</Link>*/}
             <Projects/>
             <Link href={'/cases'} className={global.link}>Смотреть еще</Link>
             <AboutUs/>
-            <PublicationsTitle/>
+            <PublicationsTitle tags={tags}/>
             <BlogsData/>
             <Link href={'/posts'} className={global.link}>Смотреть еще</Link>
         </main>

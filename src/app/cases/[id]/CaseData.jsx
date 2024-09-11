@@ -1,52 +1,31 @@
-'use client'
-import React, {useEffect} from 'react';
+import React from 'react';
 import styles from '../../page.module.css'
 import page from "@/app/page.module.css";
 
 import CaseTitle from "@/components/case_items/title/CaseTitle";
 import WorkProgress from "@/components/case_items/work-progress/WorkProgress";
 import Projects from "@/components/main/projects/Projects";
-import {useAppDispatch, useAppSelector} from "@/redux/hooks";
-import {getCases, getOneCase} from "@/redux/lib/cases";
-import {useParams} from "next/navigation";
 import CaseItem from "@/components/case_items/case_item";
 import Link from "next/link";
-import LoadingSceleton from "@/components/loading/LoadingSceleton";
 
 
-export default function CaseData() {
-
-    const dispatch = useAppDispatch()
-    const {id} = useParams()
-    const {oneCase} = useAppSelector(state => state.cases)
-    const { cases } = useAppSelector(state => state.cases)
-
-    useEffect(() => {
-        dispatch(getOneCase(id))
-    }, [])
-    useEffect(() => {
-        dispatch(getCases())
-    }, [])
-
-    if(oneCase.status === 'loading'){
-        return <LoadingSceleton/>
-    }
+export default function CaseData({data, result}) {
 
     return (
         <section className={styles.main}>
-            {oneCase?.items.length !== 0 ?
-                <CaseTitle type={oneCase?.items.name}
-                           tag={oneCase?.items.tag.name}
-                           date={oneCase?.items.createdAt}
-                           companyname={oneCase?.items.customer}
+            {data.length !== 0 ?
+                <CaseTitle type={data.name}
+                           tag={data.tag.name}
+                           date={data.createdAt}
+                           companyname={data.customer}
                            developers={'Тима Sairommef Алсу'}/>
                 :
                 <CaseTitle type={'NULL'} date={'NULL'} companyname={'NULL'}
                            developers={'NULL'}/>
             }
 
-            {oneCase?.items.length !== 0 ?
-                oneCase?.items.case_blocks.filter((block) => block.type_block !== "Результат").map((step, index) => (
+            {data.length !== 0 ?
+                data.case_blocks.filter((block) => block.type_block !== "Результат").map((step, index) => (
                         <WorkProgress header={step.type_block}
                                       key={step.id}
                                       text={step.text}
@@ -60,10 +39,10 @@ export default function CaseData() {
                         />
                     ))
                 : null}
-            <Projects text={'РЕЗУЛЬТАТ'} tablet={oneCase?.result.desktop_version} mobile={oneCase?.result.mobile_version}/>
+            <Projects text={'РЕЗУЛЬТАТ'} tablet={result.desktop_version} mobile={result.mobile_version}/>
 
-            {oneCase?.items.length !== 0 ?
-                oneCase?.items.case_blocks.filter((block) => block.type_block === "Результат").map((step) => (
+            {data.length !== 0 ?
+                data.case_blocks.filter((block) => block.type_block === "Результат").map((step) => (
                     <WorkProgress header={null}
                                   key={step.id}
                                   text={step.text}
@@ -81,8 +60,8 @@ export default function CaseData() {
 
             <span className={styles.span}> asdfasf</span>
                 <div className={styles.anotherProjects}>
-                    {cases?.items.length > 0 ?
-                        cases?.items.filter((items) => items.id !== Number(id)).slice(0,3).map((item) => (
+                    {data?.cases.length > 0 ?
+                        data?.cases.map((item) => (
                             <div className={styles.project} key={item.id}>
                             <CaseItem name={item.name} image={item.cover} id={item.id} />
                             </div>

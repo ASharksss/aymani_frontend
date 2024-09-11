@@ -9,7 +9,6 @@ import {IMAGE_URL} from "@/utils";
 const CaseItem = ({name, price, image, id, click = true}) => {
     const router = useRouter()
 
-
     return (
         <div className={styles.main} onClick={() => click ? router.push(`/cases/${id}`) : null}>
             <figure className={styles.image}>

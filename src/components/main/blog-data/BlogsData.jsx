@@ -1,13 +1,9 @@
-'use client'
-
-import React, {useEffect} from 'react';
-
+import React from 'react';
 import styles from '@/app/page.module.css'
 import ArticleItem from "@/components/article_item/article_item";
 import page from '@/app/posts/page.module.css'
-import {useAppDispatch, useAppSelector} from "@/redux/hooks";
-import {getPosts} from "@/redux/lib/blogs";
 import LoadingSceleton from "@/components/loading/LoadingSceleton";
+import {IMAGE_URL} from "@/utils";
 
 const data = []
 
@@ -23,28 +19,23 @@ const flexRow = [2, 3, 6, 7, 8, 10, 11, 14];
 const flexColumn = [4, 12];
 const without = [5, 13];
 
+async function fetchData() {
+    const response = await fetch(`${IMAGE_URL}/api/post/getAllPosts`, {
+        cache: "no-store"
+    })
+    if (!response.ok)
+        return [];
+    return response.json();
+}
 
-export default function BlogsData() {
-
-    const dispatch = useAppDispatch()
-
-    const {ABlogs} = useAppSelector(state => state.blogs);
-
-    useEffect(() => {
-        dispatch(getPosts())
-    }, [])
-
-    // if(ABlogs.status === 'loading'){
-    //     return (
-    //         <LoadingSceleton/>
-    //     )
-    // }
+export default async function BlogsData() {
+    const data = await fetchData()
 
     return (
         <div id={'posts'}>
-            {ABlogs.items.length > 0 ?
+            {data.length > 0 ?
             <div className={styles.content}>
-                {ABlogs.items.slice(0,7).map((item, index) => (
+                {data.slice(0,7).map((item, index) => (
                     <div className={`${page[`grid${(index % 14) + 1}`]} ${styles.cards}`} key={item.id}>
                         <ArticleItem name={item.title} image={item.cover} description={item.description} views={item.views} id={item.id}
                                      type={flexRow.includes((index % 14) + 1) ? 'flexRow' : flexColumn.includes((index % 14) + 1) ? 'flexColumn'

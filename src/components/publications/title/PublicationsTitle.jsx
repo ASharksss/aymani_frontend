@@ -6,18 +6,15 @@ import styles from './publications-title.module.css'
 import Tag from '@/components/tags/tag'
 import {usePathname, useRouter, useSearchParams} from "next/navigation";
 import {useAppDispatch, useAppSelector} from "@/redux/hooks";
-import {getTags} from "@/redux/lib/tags";
 import {getByTag, getPosts} from "@/redux/lib/blogs";
 
-export default function PublicationsTitle({small = false}) {
+export default function PublicationsTitle({small = false, tags = []}) {
     const router = useRouter()
     const pathname = usePathname()
     const dispatch = useAppDispatch();
     const searchParams = useSearchParams()
 
     const [value, setvalue] = useState(5)
-
-    const {tags} = useAppSelector(state => state.tags);
 
     const createQueryString = useCallback(
         (name, value) => {
@@ -43,9 +40,6 @@ export default function PublicationsTitle({small = false}) {
         createQueryString(null, null)
     }
 
-    useEffect(() => {
-        dispatch(getTags())
-    },[])
     const options = {
         // weekday: 'long',
         year: 'numeric',
@@ -53,7 +47,6 @@ export default function PublicationsTitle({small = false}) {
         day: 'numeric',
     };
     const date = new Date()
-
 
 
     const data = []
@@ -72,7 +65,7 @@ export default function PublicationsTitle({small = false}) {
         <div className={styles.main}>
             {small ? <h2>ПУБЛИКАЦИИ</h2> : <h1 onClick={() => router.push('/posts')}>ПУБЛИКАЦИИ</h1>}
             <div className={small ? `${styles.description} ${styles.small}` : `${styles.description} ${styles.big}`}>
-                <p>Аймани</p>
+                <p>Аймани </p>
                 <p className={styles.date}> {date.toLocaleString('ru-RU', options)} </p>
                 <Tag text={'Аймани-Web'} id={1} />
             </div>
@@ -82,7 +75,7 @@ export default function PublicationsTitle({small = false}) {
                     <Tag text={'Больше тегов'}/>
                 </div>
                     <Tag text={'Сбросить фильтр'} click={() => Reload()}/>
-                {tags?.items?.length > 0 ? tags.items.slice(0, value).map((item, index) => (
+                {tags?.length > 0 ? tags.slice(0, value).map((item, index) => (
                     <div className={styles.tag} key={item.key} id={item.key}>
                         <Tag
                              text={item.name} id={(index % 7)}
