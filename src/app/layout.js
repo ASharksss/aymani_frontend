@@ -1,6 +1,5 @@
 'use client'
 
-import {Inter} from 'next/font/google'
 import './globals.css'
 import React, {Suspense} from "react";
 import {ThemeContextProvider} from '@/contexts/ThemeContext'
@@ -14,14 +13,12 @@ import {makeStore} from "@/redux/lib/store";
 import LoadingSceleton from "@/components/loading/LoadingSceleton";
 import {Metrika} from "@/metrika";
 
-const inter = Inter({subsets: ['latin']})
-
 axios.defaults.baseURL = 'http://192.168.1.121:5000/api/'
 
 export default function RootLayout({children}) {
 	return (
 		<html lang="ru">
-		<body className={inter.className}>
+		<body>
 		<Provider store={makeStore()}>
 			<ThemeContextProvider>
 				<ThemeProvider>

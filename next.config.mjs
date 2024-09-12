@@ -1,13 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        remotePatterns: [
-            {
-                protocol: 'https',
-                hostname: 'api.aimani.org',
-                pathname: '/**',
-            },
-        ],
+        domains: ['localhost', "https://aimani.org", "api.aimani.org"]
     },
 };
 
