@@ -1,10 +1,6 @@
-// import { JSDOM } from 'jsdom';
+
 export const IMAGE_URL = 'http://192.168.1.121:5000';
 
-// export function parseHtml(html) {
-//     const { document } = new JSDOM(html).window;
-//     return document.body.innerHTML;
-// }
 export function timeAgo(input) {
     const date = (input instanceof Date) ? input : new Date(input);
     const formatter = new Intl.RelativeTimeFormat('ru');
@@ -47,3 +43,6 @@ export function getImageTypes(imageName) {
     else if (imageEnd === 'avif') return 'image/avif'
     else if (imageEnd === 'gif') return 'image/gif'
 }
+
+// const STATIC = 'https://aimani.org/static';
+

@@ -1,0 +1,48 @@
+.main{
+    border-bottom: 1px solid var(--description-color);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.main:hover{
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.icon{
+    transition: transform .5s;
+}
+.icon.i_open{
+    transition: transform .5s;
+
+    transform: rotate(-180deg);
+}
+
+.main_header{
+    color: var(--COLOR-DARK);
+    cursor: pointer;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.content{
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--base-color);
+    max-height: 0;
+    overflow: hidden;
+    transition: all .5s cubic-bezier(0,1,0,1);
+}
+
+.content.open{
+    height: auto;
+    max-height: 999px;
+    transition: all .2s cubic-bezier(1,0,1,1);
+}

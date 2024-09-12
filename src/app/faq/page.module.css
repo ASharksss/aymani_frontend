@@ -1,0 +1,46 @@
+.page{
+    background-color: var(--nuans-color);
+}
+
+.main{
+    background-color: var(--nuans-color);
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 30px;
+}
+.padAuto{
+    padding: 200px 400px;
+    min-height: 100vh;
+
+}
+.mainPad{
+    padding: 0 350px;
+    height: 50vh;
+    margin: auto;
+}
+
+
+.faq{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px
+}
+.faq .header{
+    color: var(--COLOR-DARK);
+    font-family: Montserrat, sans-serif;
+    font-weight: bold;
+    font-size: 48px;
+    margin-bottom: 3vh;
+}
+
+.alsoAhave{
+    padding-top: 3vh;
+
+    width: 100%;
+    max-width: 350px;
+}
+
+.alsoAhave .header{
+    visibility: hidden;
+}

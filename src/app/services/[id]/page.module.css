@@ -1,0 +1,11 @@
+.main{
+    min-height: 100vh;
+    height: 100%;
+    padding:  200px;
+}
+
+.map{
+    width: 500px;
+    margin: auto;
+    transition: all 1s ease-out;
+}

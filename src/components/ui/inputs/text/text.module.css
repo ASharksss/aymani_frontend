@@ -1,14 +1,10 @@
 .input{
     font-size: 14pt;
-    /*font-family: 'Montserrat', sans-serif;*/
     font-family: "SF Pro Text",sans-serif;
     font-weight: normal;
-    /*background: rgba(139, 90, 231, 0.01);*/
     vertical-align: top;
     width: 100%;
     height: 100%;
-    /* Note: backdrop-filter has minimal browser support */
-    /*transition: background 250ms ease-in-out;*/
     transition: transform 250ms;;
 }
 
@@ -27,8 +23,7 @@
 .anotherBack{
     /*про атрибут field-sizing */
     /*https://caniuse.com/?search=field-sizing*/
-    field-sizing: content;
-    padding: 7px 15px;
+    padding: 7px 0;
     border-bottom: 2px solid #b6b6b6;
 }
 
@@ -40,7 +35,7 @@
     background-size: 100% 2px;
     background-position: bottom;
     background-repeat: no-repeat;
-    transform: scale(1.01);
+    transform: scale(1.005);
 }
 
 

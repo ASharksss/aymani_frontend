@@ -1,0 +1,58 @@
+.select{
+    border-bottom: 1px solid ;
+    font-size: 14pt;
+    font-family: "SF Pro Text",sans-serif;
+    font-weight: normal;
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+    transition: all 250ms;
+    /*color: #8E8E8E;*/
+    color: var(--base-color);
+    -webkit-appearance: menulist-button;
+
+    background: transparent;
+    /*background-image: url("data:image/svg+xml;utf8,<svg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'> <path d='M1 1.5L5 5.5L9 1.5' stroke='black' stroke-width='1.33333' stroke-linecap='round' stroke-linejoin='round'/> </svg> ");*/
+    background-repeat: no-repeat;
+    background-position-x: 99%;
+    background-position-y: 50%;
+    border-radius: 2px;
+    margin-right: 2rem;
+    padding: 1rem;
+    padding-right: 2rem;
+
+
+}
+.select:invalid, .placeholder {
+    color: #8E8E8E;
+}
+.select{
+    /*про атрибут field-sizing */
+    /*https://caniuse.com/?search=field-sizing*/
+    field-sizing: content;
+    padding: 7px 0;
+    border-bottom: 2px solid #b6b6b6;
+}
+.select:focus{
+    border-bottom: 2px solid transparent;
+    background-image: radial-gradient( var(--focus-color-end), var(--focus-color-start));
+    background-size: 100% 2px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+.option{
+    color: black;
+    font-size: 14pt;
+    font-family: "SF Pro Text",sans-serif;
+    border-bottom: 1px solid gray;
+    margin: 5px;
+}
+
+.option:checked { color: green; }
+
+
+
+.select>.option {
+    /*backdrop-filter: blur(100px);*/
+}
