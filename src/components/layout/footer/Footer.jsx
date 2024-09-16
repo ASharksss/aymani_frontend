@@ -9,7 +9,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import Link from "next/link";
 
-function Footer ({}) {
+function Footer () {
   const router = useRouter()
   return (
     <footer className={ styles.frodo}>

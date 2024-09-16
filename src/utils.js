@@ -1,10 +1,6 @@
 // import { JSDOM } from 'jsdom';
 export const IMAGE_URL = 'https://api.aimani.org';
 
-// export function parseHtml(html) {
-//     const { document } = new JSDOM(html).window;
-//     return document.body.innerHTML;
-// }
 export function timeAgo(input) {
     const date = (input instanceof Date) ? input : new Date(input);
     const formatter = new Intl.RelativeTimeFormat('ru');

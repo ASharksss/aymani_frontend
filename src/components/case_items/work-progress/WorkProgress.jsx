@@ -3,7 +3,6 @@ import React from 'react'
 
 import styles from './work-progress.module.css'
 import Image from 'next/image'
-import IIIAR from '@/asserts/gifs/IIIAR.gif'
 import {IMAGE_URL} from "@/utils";
 
 export default function WorkProgress ({
@@ -12,7 +11,6 @@ export default function WorkProgress ({
   colors, unique
 }) {
 
-  // console.log('clr', colors)
   return (
     <section className={styles.section}>
       <div className={styles.leftColumn}>
@@ -32,7 +30,6 @@ export default function WorkProgress ({
               <p key={index}>{line}</p>
           ))}
         </article>
-        {/*{console.log(colors)}*/}
         {colors ?
           <div className={styles.colorImages}>
             <div className={styles.oval} style={{background: colors[0]?.base_color, border: `1px solid ${colors[0].base_color}`, color: colors[0]?.accent_color }}>База</div>
@@ -52,27 +49,20 @@ export default function WorkProgress ({
       {image !== null && image !== undefined && shar === false ?
       <div className={styles.imageBlock} >
         {unique ?
-            // <>
-              <div className={styles.imagespan}
-                   // style={{background: `${colors[0].base_color}` }}
-              >
+              <div className={styles.imagespan}>
               <Image
                   src={`${IMAGE_URL}${image}`} alt={imageTitle ? imageTitle : 'image'}
                   title={imageTitle}
                   className={styles.logoImage}
-                  // fill
                   width={1000}
                   height={600}
-                  // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 20vw, 33vw"
               />
               </div>
-            // </>
               :
             <Image
                 src={`${IMAGE_URL}${image}`} alt={imageTitle ? imageTitle : 'image'}
                 title={imageTitle}
                 className={styles.Unique}
-                // fill
                 width={1000}
                 height={500}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -82,13 +72,13 @@ export default function WorkProgress ({
       </div> : null }
       {shar ?
       <div className={styles.iiiariki}>
-        <Image src={IIIAR} alt={'image'} title={imageTitle} className={`${styles.image} ${styles.mains}`}/>
-        <Image src={IIIAR} alt={'image'} title={imageTitle} className={`${styles.image} ${styles.first}`}/>
-        <Image src={IIIAR} alt={'image'} title={imageTitle} className={`${styles.image} ${styles.second}`}/>
-        <Image src={IIIAR} alt={'image'} title={imageTitle} className={`${styles.image} ${styles.third}`}/>
-        <Image src={IIIAR} alt={'image'} title={imageTitle} className={`${styles.image} ${styles.fourth}`}/>
-        <Image src={IIIAR} alt={'image'} title={imageTitle} className={`${styles.image} ${styles.five}`}/>
-        <Image src={IIIAR} alt={'image'} title={imageTitle} className={`${styles.image} ${styles.sixs}`}/>
+        <img src={'/asserts/gifs/IIIAR.gif'} alt={'image'} title={imageTitle} className={`${styles.image} ${styles.mains}`}/>
+        <img src={'/asserts/gifs/IIIAR.gif'} alt={'image'} title={imageTitle} className={`${styles.image} ${styles.first}`}/>
+        <img src={'/asserts/gifs/IIIAR.gif'} alt={'image'} title={imageTitle} className={`${styles.image} ${styles.second}`}/>
+        <img src={'/asserts/gifs/IIIAR.gif'} alt={'image'} title={imageTitle} className={`${styles.image} ${styles.third}`}/>
+        <img src={'/asserts/gifs/IIIAR.gif'} alt={'image'} title={imageTitle} className={`${styles.image} ${styles.fourth}`}/>
+        <img src={'/asserts/gifs/IIIAR.gif'} alt={'image'} title={imageTitle} className={`${styles.image} ${styles.five}`}/>
+        <img src={'/asserts/gifs/IIIAR.gif'} alt={'image'} title={imageTitle} className={`${styles.image} ${styles.sixs}`}/>
       </div> : null}
     </section>
   )

@@ -2,21 +2,21 @@ import React from 'react'
 
 import CaseData from "@/app/cases/[id]/CaseData";
 import {getImageTypes, IMAGE_URL} from "@/utils";
+import Custom404 from "@/app/not-found";
 
 async function fetchData(id) {
     const response = await fetch(`${IMAGE_URL}/api/post/getCase/${id}`, {
         cache: "no-cache"
     });
-    if (!response.ok) {
+    if (!response.ok)
         return null;
-    }
     return response.json();
 }
 
 export async function generateMetadata({params}) {
     const data = await fetchData(params.id);
 
-    if (!data) {
+    if (!!data.error) {
         return {
             title: 'Кейс не найден',
             description: 'Не удалось найти данные для данного кейса.',
@@ -51,6 +51,8 @@ export async function generateMetadata({params}) {
 
 export default async function Page({params}) {
     const data = await fetchData(params.id);
+		if (!!data.error)
+			return <Custom404/>
     let result
     data.case_blocks.map(item => {
         if (item.type_block === "Результат") {
