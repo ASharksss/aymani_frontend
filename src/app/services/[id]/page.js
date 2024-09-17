@@ -53,8 +53,6 @@ export default function Page() {
             <Section/>
             <TextInput back={false} place={'Напишите что нибудь'}/>
             <div className={styles.map}>
-
-
             </div>
         </div>
     );

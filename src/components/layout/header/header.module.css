@@ -3,6 +3,9 @@
     background: linear-gradient(180deg, var(--nuans-color) 0%, rgba(232, 232, 232, 0.1) 100%);
     backdrop-filter: blur(10px);
 
+    transition: background .5s ease-in-out;
+
+
     display: flex;
     justify-content: center;
 

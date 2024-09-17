@@ -26,6 +26,7 @@ export const metadata = {
 
 export default async function Home() {
     const tags = await fetchTags()
+
     const data = [
         {
             header: 'Как мы работаем?',

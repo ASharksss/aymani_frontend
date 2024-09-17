@@ -18,9 +18,12 @@
     font-family: Montserrat, sans-serif;
     font-weight: 500;
     color: var(--base-color);
+
+    transition: color .5s ease-in-out;
 }
 .head_hover:hover{
     color: var(--focus-color-meidum);
+    transition: color .5s ease-in-out;
 }
 
 .heading h1{
@@ -75,3 +78,19 @@
         font-size: 12px;
     }
 }
+
+/*@media (max-width: 425px) {*/
+/*    .heading h1 {*/
+/*        font-size: 28px;*/
+/*    }*/
+/*    .heading h2 {*/
+/*        font-size: 20px;*/
+/*    }*/
+/*    .heading h3 {*/
+/*        font-size: 14px;*/
+/*    }*/
+/*    .descrioption .p_desc{*/
+/*        font-size: 12px;*/
+/*    }*/
+/*}*/
+

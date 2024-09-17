@@ -11,6 +11,8 @@
     font-weight: 500;
     font-size: 64px;
     color: var(--COLOR-DARK);
+    transition: color .5s ease-in-out;
+
 }
 
 .description .p_desc{
@@ -18,6 +20,8 @@
     font-weight: 300;
     font-size: 24px;
     color: var(--base-color);
+    transition: color .5s ease-in-out;
+
 }
 
 /* 1024px */
