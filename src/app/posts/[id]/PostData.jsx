@@ -4,7 +4,6 @@ import React, {useEffect, useState} from 'react';
 
 import styles from './page.module.css'
 import {useAppDispatch, useAppSelector} from "@/redux/hooks";
-import {getOnePost, getPosts} from "@/redux/lib/blogs";
 import BackTool from "@/asserts/tools/back-tool/BackTool";
 import PostTitle from "@/components/publications/post/title/PostTitle";
 import PostImage from "@/components/publications/post/image/PostImage";
@@ -13,7 +12,6 @@ import LittlePost from "@/components/publications/post/little-post/LittlePost";
 import CommentForm from "@/components/forms/comment-form/CommentForm";
 import {useParams} from "next/navigation";
 import {IMAGE_URL} from "@/utils";
-import {getCases} from "@/redux/lib/cases";
 import CommentD from "@/components/publications/post/comment/Comment";
 import {createComment, getComments} from "@/redux/lib/comments";
 
@@ -61,7 +59,6 @@ export default function PostData({post = {}}) {
     }, [])
     useEffect(() => {
         const articleHtml = post?.html;
-        const IMAGE_URL = 'http://192.168.1.121:5000'
         const updatedHtml = articleHtml.replace(/src="\/static\/post_images\//g, `src="${IMAGE_URL}\/static\/post_images\/`);
         setResult(updatedHtml)
     }, [])
