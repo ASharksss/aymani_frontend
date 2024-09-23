@@ -7,12 +7,16 @@
     display: grid;
     grid-template-columns: auto auto;
     column-gap: 30px;
+
+    animation: homelader .6s;
+
 }
 .padAuto{
     padding: 200px 400px;
     min-height: 100vh;
 }
 .mainPad{
+
     padding: 0 350px;
     height: 50vh;
     margin: auto;
@@ -67,6 +71,11 @@
     .padAuto{
         padding: 150px 50px;
     }
+
+    .mainPad{
+        padding: 0 50px;
+    }
+
     .faq .header {
         font-size: 36px;
     }
@@ -75,6 +84,11 @@
 @media (max-width: 768px) {
     .padAuto{
         padding: 150px 30px;
+    }
+
+    .mainPad{
+        height: 100%;
+        padding: 0 50px;
     }
 
 }
@@ -87,6 +101,10 @@
     .faq{
         gap: 10px
     }
+    .mainPad{
+        padding: 0 10px;
+    }
+
 
     .padAuto{
         padding: 50px 30px;
@@ -99,5 +117,15 @@
 
     .alsoAhave {
         padding-top: 1vh;
+    }
+}
+
+
+@keyframes homelader {
+    0%{
+        margin-left: -25%;
+    }
+    100%{
+        margin-left: 0;
     }
 }

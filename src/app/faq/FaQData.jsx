@@ -1,30 +1,28 @@
 'use client'
-import React, {useState} from 'react';
+import React from 'react';
 
 import styles from './page.module.css'
 import AccordionList from "@/components/accordion/accordion-list/AccordionList";
 import Accordion from "@/components/accordion/Accordion";
 
-export default function FaQData({data, slice_v, mainPad}) {
+export default async function FaQData({data, slice_v, mainPad}) {
 
-    const [selected, setSelected] = useState()
-
-
-    const toggle = (i) => {
-        if (selected === i) {
-            setSelected(null)
-        }
-        else {
-            setSelected(i)
-        }
-    }
+    // const [selected, setSelected] = useState()
+    // const toggle = (i) => {
+    //     if (selected === i) {
+    //         setSelected(null)
+    //     }
+    //     else {
+    //         setSelected(i)
+    //     }
+    // }
 
     return (
         <div className={mainPad ? `${styles.mainPad} ${styles.main}` : `${styles.main} ${styles.padAuto}`}>
             <div className={styles.faq}>
                 <h1 className={styles.header}>ЧаВо?</h1>
             {data.slice(slice_v).map((item, index) => (
-                <AccordionList header={item.header} desc={item.content} sel={selected === index } click={() => toggle(index)}/>
+                <AccordionList header={item.header} desc={item.content} sel={index} />
             ))}
             </div>
             <div className={styles.alsoAhave}>

@@ -133,7 +133,7 @@
 
 @media (max-width: 768px) {
     .main{
-        padding: 150px 30px 10px 30px ;
+        padding: 100px 30px 10px 30px;
     }
     .main h1{
         font-size: 64px;
@@ -166,6 +166,8 @@
 
 
 @media (max-width: 743px) {
+
+
     .image{
         display: none;
     }

@@ -9,15 +9,16 @@ export default function AccordionList({desc = '', header = '', sel, click}) {
 
     return (
         <div className={styles.main} onClick={click}>
-            <div  className={styles.main_header} >
+            <label className={styles.main_header} htmlFor={sel} >
                 <h1>
                     {header}
                 </h1>
-                <div className={sel ? `${styles.i_open} ${styles.icon}` : styles.icon}>
+                <div className={styles.icon}>
                 <SmallArrow/>
                 </div>
-            </div>
-            <div className={sel ? `${styles.open} ${styles.content}` : styles.content} >
+            </label>
+            <input type="checkbox" id={sel} className={styles.input} />
+            <div className={ styles.content} >
                 <p> {desc} </p>
             </div>
         </div>

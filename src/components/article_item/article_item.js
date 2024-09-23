@@ -5,7 +5,7 @@ import Image from 'next/image'
 import styles from './style.module.css'
 import {useRouter} from "next/navigation";
 import {IMAGE_URL, timeAgo} from "@/utils";
-
+import temp from '@/asserts/temp/temp.jpg'
 
 const ArticleItem = ({ name, type, description, views, image, id, time }) => {
   const router = useRouter()
@@ -33,7 +33,7 @@ const ArticleItem = ({ name, type, description, views, image, id, time }) => {
           : type === 'flexColumn' ?
             <section className={`${styles.column_container} ${styles.container}`}>
               <div className={styles.column_image}>
-                <Image src={`${IMAGE_URL}${image}`} alt={'Изображение'} height={300} width={600} className={styles.image}/>
+                <Image src={image !== null ? `${IMAGE_URL}${image}` : temp } alt={'Изображение'} height={300} width={600} className={styles.image}/>
               </div>
               {/*<Image src={image} alt={'Изображение'} className={styles.column_image}/>*/}
               <header>

@@ -17,6 +17,8 @@
 .typeOfWork{
     font-family: Montserrat, sans-serif;
     font-weight: normal;
+    max-width: 90%;
+    text-align: center;
     font-size: 64px;
 }
 
@@ -59,6 +61,13 @@
     .Ctag{
         /*display: none;*/
     }
+
+    .typeOfWork{
+        max-width: 100%;
+        text-align: left;
+    }
+
+
     .typeOfWork, .nameOfCompany{
         font-size: 42pt;
     }

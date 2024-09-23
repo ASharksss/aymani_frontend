@@ -4,7 +4,6 @@ import React, {useEffect, useState} from 'react';
 
 import styles from './page.module.css'
 import {useAppDispatch, useAppSelector} from "@/redux/hooks";
-import {getOnePost, getPosts} from "@/redux/lib/blogs";
 import BackTool from "@/asserts/tools/back-tool/BackTool";
 import PostTitle from "@/components/publications/post/title/PostTitle";
 import PostImage from "@/components/publications/post/image/PostImage";
@@ -13,15 +12,12 @@ import LittlePost from "@/components/publications/post/little-post/LittlePost";
 import CommentForm from "@/components/forms/comment-form/CommentForm";
 import {useParams} from "next/navigation";
 import {IMAGE_URL} from "@/utils";
-import {getCases} from "@/redux/lib/cases";
 import CommentD from "@/components/publications/post/comment/Comment";
 import {createComment, getComments} from "@/redux/lib/comments";
 
 
 export default function PostData({post = {}}) {
     //Комментарий
-
-
     const [nickName, setNickname] = useState('')
     const [value, setValue] = useState('')
     const [result, setResult] = useState()
@@ -32,6 +28,8 @@ export default function PostData({post = {}}) {
     const {comments} = useAppSelector(state => state.comment)
 
     const {id} = useParams() // id страницы
+
+
 
     //Комментарий отправка формы
     const handleSubmit = (e) => {
@@ -153,4 +151,5 @@ export default function PostData({post = {}}) {
         </section>
     );
 };
+
 

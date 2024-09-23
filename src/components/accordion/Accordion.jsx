@@ -19,6 +19,8 @@ export default function Accordion({
                                       href_head,
                                       description,
                                   }) {
+
+
     return (
         <div className={styles.main}>
             <section className={styles.section}>
@@ -40,7 +42,7 @@ export default function Accordion({
                                 fontSize === 'middle' ?
                                     <h2>{heading}</h2> :
                                     fontSize === 'big' ?
-                                        <h1>{heading}</h1> : null
+                                        <h1>{heading }  </h1> : null
                             }
                         </div>}
                     {faq ?

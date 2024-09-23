@@ -42,6 +42,7 @@ export default function Header () {
           <TransprentButton text={'Блог'} active={pathname === '/posts'} click={() => router.push('/posts')}/>
           <TransprentButton text={'Услуги'} active={pathname === '/#services'} click={() => router.push('/#services')}/>
           <TransprentButton text={'Кейсы'} active={pathname === '/cases'} click={() => router.push('/cases')}/>
+          <TransprentButton text={'ЧаВо?'} active={pathname === '/faq'} click={() => router.push('/faq')}/>
           <TransprentButton
               img={<Imaru/>}
               click={() => toggle()}/>

@@ -9,9 +9,11 @@
     content: '';
     display: block;
     position: relative;
-    height: 400px;
-    bottom: 150px;
-    background: linear-gradient(180deg, rgba(232, 232, 232, 0) 0%, var(--nuans-color) 60%);
+    height: 300px;
+    bottom: 100px;
+    background: linear-gradient(180deg, rgba(232, 232, 232, 0) 0%, var(--nuans-color) 100%);
+    /*background: red;*/
+
     width: 100%;
 }
 .main:before{
@@ -19,10 +21,10 @@
     content: '';
     display: block;
     position: relative;
-    height: 300px;
-    top: 70px;
-
-    background: linear-gradient(0deg, rgba(232, 232, 232, 0) 0%, var(--nuans-color) 60%);
+    height: 200px;
+    /*top: 70px;*/
+    /*background: red;*/
+    background: linear-gradient(0deg, rgba(232, 232, 232, 0) 0%, var(--nuans-color) 45%);
     width: 100%;
 }
 .lineBack{
@@ -69,6 +71,12 @@
     display: flex;
     justify-content: end;
     gap: 20px;
+
+    color: var(--active-button);
+    font-family: "SF Pro Display", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    align-items: center;
 }
 
 .desic p{
@@ -79,4 +87,69 @@
     display: flex;
     align-items: center;
     color: #8E8E8E;
+}
+
+
+@media (max-width: 1600px) {
+    .lineBack{
+        display: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    .lineBack{
+        display: none;
+    }
+    .wrapper{
+        display: flex;
+        padding: 0;
+        justify-content: center;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .tarma{
+        display: none;
+    }
+    .main:after{
+        content: '';
+        /*display: block;*/
+        display: none;
+        position: relative;
+        height: 150px;
+        bottom: 100px;
+        background: linear-gradient(180deg, rgba(232, 232, 232, 0) 0%, var(--nuans-color) 100%);
+        /*background: red;*/
+
+        width: 100%;
+    }
+    .main:before{
+        z-index: 90;
+        content: '';
+        /*display: block;*/
+        display: none;
+        position: relative;
+        height: 150px;
+        /*top: 70px;*/
+        /*background: red;*/
+        background: linear-gradient(0deg, rgba(232, 232, 232, 0) 0%, var(--nuans-color) 45%);
+        width: 100%;
+    }
+
+    .content{
+        height: fit-content;
+        padding: 10vh 0;
+    }
+}
+
+@media (max-width: 425px) {
+    .wrapper{
+        padding: 0 10px;
+    }
+
+    .content{
+        height: fit-content;
+        padding: 5vh 0;
+    }
 }

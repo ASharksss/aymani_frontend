@@ -1,60 +1,26 @@
 'use client'
 import React, from 'react';
 
-import styles from './page.module.css'
-import Accordion from "@/components/accordion/Accordion";
-import Definition from "@/components/definition/Definition";
-import Section from "@/components/ui/section/Section";
-import TextInput from "@/components/ui/inputs/text/TextInput";
 
-export default function Page() {
+import ServicesData from "@/app/services/[id]/ServicesData";
+import {IMAGE_URL} from "@/utils";
+
+async function fetchService(id) {
+    // Запрос данных по ID
+    const response = await fetch(`${IMAGE_URL}/api/post/getService/${id}`, {
+        cache: "no-store"
+    });
+    if (!response.ok) {
+        return null;
+    }
+    return response.json();
+}
 
 
+export default async function Page({params}) {
+    const service = await fetchService(params.id);
     return (
-        <div className={styles.main}>
-            <Definition head={'Лендинг'}
-                        description={'Лендинг — веб-страница, основной задачей которой является сбор контактных данных целевой аудитории. Используется для усиления эффективности рекламы, увеличения аудитории. Целевая страница обычно содержит информацию о товаре или услуге.'}/>
-            <Accordion
-                description={'Тут вы можете удобно определить что хотите видеть в своем будущем приложении\n' +
-                    'Калькулятор удобно рассчитает время и стоимость желаемого проекта'}
-                heading={'Калькулятор'}
-            />
-            <Accordion
-                description={'Тут вы можете удобно определить что хотите видеть в своем будущем приложении\n' +
-                    'Калькулятор удобно рассчитает время и стоимость желаемого проекта'}
-                fontSize={'middle'}
-                heading={'Калькулятор'}
-            />
-            <Accordion
-                description={'Тут вы можете удобно определить что хотите видеть в своем будущем приложении\n' +
-                    'Калькулятор удобно рассчитает время и стоимость желаемого проекта'}
-                fontSize={'big'}
-                heading={'Калькулятор'}
-            />
-            <Accordion
-                description={'Тут вы можете удобно определить что хотите видеть в своем будущем приложении\n' +
-                    'Калькулятор удобно рассчитает время и стоимость желаемого проекта'}
-                link link_link={'/home'}
-                heading={'Калькулятор'}
-            />
-            <Accordion
-                description={'Тут вы можете удобно определить что хотите видеть в своем будущем приложении\n' +
-                    'Калькулятор удобно рассчитает время и стоимость желаемого проекта'}
-                heading={'Калькулятор'}
-                faq faq_link={'/faq'}
-            />
-            <Accordion
-                description={'Тут вы можете удобно определить что хотите видеть в своем будущем приложении\n' +
-                    'Калькулятор удобно рассчитает время и стоимость желаемого проекта'}
-                heading={'Калькулятор'}
-                without
-            />
-
-            <Section/>
-            <TextInput back={false} place={'Напишите что нибудь'}/>
-            <div className={styles.map}>
-            </div>
-        </div>
+        <ServicesData data={service}/>
     );
 };
 

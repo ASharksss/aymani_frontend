@@ -5,12 +5,12 @@ import Image from 'next/image';
 import styles from "./style.module.css"
 import {useRouter} from "next/navigation";
 import {IMAGE_URL} from "@/utils";
+import temp from '@/asserts/temp/temp.jpg'
 
-const CaseItem = ({name, price, image, id, click = true}) => {
+const CaseItem = ({name, price, image, id, click = true, service= false}) => {
     const router = useRouter()
-
     return (
-        <div className={styles.main} onClick={() => click ? router.push(`/cases/${id}`) : null}>
+        <div className={styles.main} onClick={() => click ? router.push(service ? `/services/${id}` : `/cases/${id}`) : null}>
             <figure className={styles.image}>
                 <figcaption className={styles.figurecaption}>
                     <h1 className={styles.text}>{name}</h1>
@@ -22,7 +22,7 @@ const CaseItem = ({name, price, image, id, click = true}) => {
                         <h3>{new Intl.NumberFormat("ru", {style: "currency", currency: "RUB"}).format(price)}</h3>
                     </div> : null}
                 </figcaption>
-                <Image src={`${IMAGE_URL}${image}`} className={styles.img} alt={'image'} fill={true}/>
+                <Image src={image !== null ? `${IMAGE_URL}${image}` : temp} className={styles.img} alt={'image'} fill={true}/>
             </figure>
         </div>
     );

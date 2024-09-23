@@ -2,38 +2,27 @@ import React from 'react';
 
 import styles from './page.module.css'
 import FaQData from "@/app/faq/FaQData";
+import {IMAGE_URL} from "@/utils";
 
 export const metadata = {
     title: 'Аймани | Ответы',
     description: 'Ответы на часто задаваемые вопросы',
 }
 
+async function fetchData() {
+    const response = await fetch(`${IMAGE_URL}/api/post/getFaq`, {
+        cache: "no-cache"
+    });
+    if (!response.ok) {
+        return null;
+    }
+    return response.json();
+}
 
-export default function Page() {
-    const data = [
-        {
-            header: 'Как мы работаем?',
-            content: 'Как то так ну вот так 5 минут 10 пятнадцать пятого'
-        },
-        {
-            header: 'Какой стаж работы?',
-            content: 'Как то так ну вот так 5 минут 10 пятнадцать пятого'
-        },
-        {
-            header: 'Лендинг',
-            content: 'Лендинг — веб-страница, основной задачей которой является сбор контактных данных целевой аудитории. Используется для усиления эффективности рекламы, увеличения аудитории. Целевая страница обычно содержит информацию о товаре или услуге.'
-        },
-        {
-            header: 'Калькулятор',
-            content: 'Тут вы можете удобно определить что хотите видеть в своем будущем приложении\n' +
-                'Калькулятор удобно рассчитает время и стоимость желаемого проекта'
-        },
-        {
-            header: 'Как мы работаем?',
-            content: 'Как то так ну вот так 5 минут 10 пятнадцать пятого'
-        },
-    ]
 
+export default async function Page() {
+
+    const data = await fetchData();
     return (
         <div className={styles.page}>
             <FaQData data={data}/>

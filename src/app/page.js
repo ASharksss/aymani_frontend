@@ -12,7 +12,7 @@ import BlogsData from "@/components/main/blog-data/BlogsData";
 import AboutUs from '@/components/main/aboutUs/AboutUs'
 
 import Link from "next/link";
-import {fetchTags} from "@/utils";
+import {fetchTags, IMAGE_URL} from "@/utils";
 import FaQData from "@/app/faq/FaQData";
 import ServiceRequest from "@/components/main/service-request/ServiceRequest";
 
@@ -24,33 +24,20 @@ export const metadata = {
     }
 }
 
+async function fetchFaq() {
+    const response = await fetch(`${IMAGE_URL}/api/post/getFaq`, {
+        cache: "no-cache"
+    });
+    if (!response.ok) {
+        return null;
+    }
+    return response.json();
+}
+
+
 export default async function Home() {
     const tags = await fetchTags()
-
-    const data = [
-        {
-            header: 'Как мы работаем?',
-            content: 'Как то так ну вот так 5 минут 10 пятнадцать пятого'
-        },
-        {
-            header: 'Какой стаж работы?',
-            content: 'Как то так ну вот так 5 минут 10 пятнадцать пятого'
-        },
-        {
-            header: 'Лендинг',
-            content: 'Лендинг — веб-страница, основной задачей которой является сбор контактных данных целевой аудитории. Используется для усиления эффективности рекламы, увеличения аудитории. Целевая страница обычно содержит информацию о товаре или услуге.'
-        },
-        {
-            header: 'Калькулятор',
-            content: 'Тут вы можете удобно определить что хотите видеть в своем будущем приложении\n' +
-                'Калькулятор удобно рассчитает время и стоимость желаемого проекта'
-        },
-        {
-            header: 'Как мы работаем?',
-            content: 'Как то так ну вот так 5 минут 10 пятнадцать пятого'
-        },
-    ]
-
+    const faq = await fetchFaq()
     return (
         <main className={styles.main}>
             <Organization/>
@@ -62,7 +49,7 @@ export default async function Home() {
             <BlogsData/>
             <Link href={'/posts'} className={global.link}>Смотреть еще</Link>
             <ServiceRequest/>
-            <FaQData slice_v={'0, 10'} data={data} mainPad/>
+            <FaQData slice_v={'0, 10'} data={faq} mainPad/>
             <Link href={'/faq'} className={global.link}>Посмотреть больше</Link>
         </main>
 

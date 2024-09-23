@@ -34,6 +34,7 @@
     color: var(--article);
 }
 .main:hover .title{
+    transition: color 1s ease-out;
     color: var(--nuans-color);
 }
 
@@ -46,11 +47,13 @@
     font-size: 32px;
     font-family: "Franklin Gothic Demi",sans-serif;
     color: var(--base-color);
-    word-wrap: break-word;
+    /*word-wrap: break-word;*/
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    transition: color 1s ease-out;
+
 }
 
 .article{
@@ -236,7 +239,7 @@
 }
 
 .row_title {
-    word-break: break-all;
+    word-break: break-word;
     word-wrap: break-word;
     white-space: normal;
     width: 100%;

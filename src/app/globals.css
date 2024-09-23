@@ -124,6 +124,8 @@ a, button {
   cursor: revert;
 }
 
+
+
 /* Remove list styles (bullets/numbers) */
 ol, ul, menu, summary {
   list-style: none;
@@ -498,3 +500,4 @@ legend {
   font-weight: normal;
   font-style: normal;
 }
+
