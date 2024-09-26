@@ -20,30 +20,34 @@ const flexColumn = [4, 12];
 const without = [5, 13];
 
 async function fetchData() {
-    const response = await fetch(`${IMAGE_URL}/api/post/getAllPosts`, {
-        cache: "no-store"
-    })
-    if (!response.ok)
-        return [];
-    return response.json();
+    try {
+        const response = await fetch(`${IMAGE_URL}/api/post/getAllPosts`, {
+            cache: "no-store"
+        })
+        if (!response.ok)
+            return [];
+        return response.json();
+    } catch (error) {
+        return console.log('Отсутствует подключение с серверу. Мы уже работаем над этим')
+    }
 }
 
 export default async function BlogsData() {
     const data = await fetchData()
-
     return (
         <div id={'posts'}>
-            {data.length > 0 ?
-            <div className={styles.content}>
-                {data.slice(0,7).map((item, index) => (
-                    <div className={`${page[`grid${(index % 14) + 1}`]} ${styles.cards}`} key={item.id}>
-                        <ArticleItem name={item.title} image={item.cover} description={item.description} views={item.views} id={item.id}
-                                     type={flexRow.includes((index % 14) + 1) ? 'flexRow' : flexColumn.includes((index % 14) + 1) ? 'flexColumn'
-                                         : without.includes((index % 14) + 1) ? 'withoutImage' : 'full'}/>
-                    </div>
+            {data?.length > 0 ?
+                <div className={styles.content}>
+                    {data?.slice(0, 7).map((item, index) => (
+                        <div className={`${page[`grid${(index % 14) + 1}`]} ${styles.cards}`} key={item.id}>
+                            <ArticleItem name={item.title} image={item.cover} description={item.description}
+                                         views={item.views} id={item.id}
+                                         type={flexRow.includes((index % 14) + 1) ? 'flexRow' : flexColumn.includes((index % 14) + 1) ? 'flexColumn'
+                                             : without.includes((index % 14) + 1) ? 'withoutImage' : 'full'}/>
+                        </div>
                     ))}
-            </div>
-                : <LoadingSceleton/> }
+                </div>
+                : <LoadingSceleton/>}
         </div>
     );
 };

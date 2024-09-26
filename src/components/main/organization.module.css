@@ -54,6 +54,7 @@
 }
 
 .title {
+    font-family: Montserrat, sans-serif;
     width: 100%;
     min-width: 300px;
     max-width: 800px;

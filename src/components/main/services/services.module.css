@@ -159,13 +159,14 @@
 
     }
     .content2{
-        margin-top: 250px;
+        margin-top: 0;
         visibility: hidden;
         display: grid;
+
         grid-template-columns: repeat(3, 1fr) ;
         overflow: hidden;
         /*grid-template-rows: repeat(auto-fit, 200px 100px );*/
-        grid-template-rows: repeat(auto-fit, 250px 250px 125px 125px 250px 250px );
+        grid-template-rows: repeat(auto-fit, 250px 250px 125px  );
 
         column-gap: 0;
         row-gap: 0;
@@ -184,7 +185,7 @@
 
 @media (max-width: 425px) {
     .content2{
-        margin-top: 50vh;
+        margin-top: 0;
     }
     .background{
         width: 100vw;

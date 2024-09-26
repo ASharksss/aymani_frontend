@@ -2,6 +2,7 @@ import PublicationsTitle from "@/components/publications/title/PublicationsTitle
 import styles from "../page.module.css";
 import Data from "@/app/posts/Data";
 import {fetchTags, IMAGE_URL} from "@/utils";
+import React from "react";
 
 export const metadata = {
     title: 'Посты',
@@ -22,22 +23,29 @@ export const metadata = {
 
 
 async function fetchPosts(tagId = undefined) {
-    if (tagId === undefined) {
-        const response = await fetch(`${IMAGE_URL}/api/post/getAllPosts`, {
-            cache: "no-store"
-        })
-        if (!response.ok) {
-            return null;
+    try {
+
+
+        if (tagId === undefined) {
+            const response = await fetch(`${IMAGE_URL}/api/post/getAllPosts`, {
+                cache: "no-store"
+            })
+            if (!response.ok) {
+                return null;
+            }
+            return response.json();
+        } else {
+            const response = await fetch(`${IMAGE_URL}/api/post/getByTagPosts?tagId=${tagId}`, {
+                cache: "no-store"
+            })
+            if (!response.ok) {
+                return null;
+            }
+            return response.json();
         }
-        return response.json();
-    } else {
-        const response = await fetch(`${IMAGE_URL}/api/post/getByTagPosts?tagId=${tagId}`, {
-            cache: "no-store"
-        })
-        if (!response.ok) {
-            return null;
-        }
-        return response.json();
+
+    } catch (error) {
+        return console.log('500 Нет подключения к серверу, мы уже работаем над этим')
     }
 }
 
@@ -48,7 +56,7 @@ export default async function Page(params) {
     return (
         <div className={styles.main}>
             <PublicationsTitle small tags={tags}/>
-            <Data posts={data} />
+            <Data posts={data}/>
         </div>
     )
 };

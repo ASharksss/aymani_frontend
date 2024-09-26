@@ -15,6 +15,7 @@ import Link from "next/link";
 import {fetchTags, IMAGE_URL} from "@/utils";
 import FaQData from "@/app/faq/FaQData";
 import ServiceRequest from "@/components/main/service-request/ServiceRequest";
+// import LoadingSceleton from "@/components/loading/LoadingSceleton";
 
 export const metadata = {
     title: 'Аймани | Главная',
@@ -25,13 +26,19 @@ export const metadata = {
 }
 
 async function fetchFaq() {
-    const response = await fetch(`${IMAGE_URL}/api/post/getFaq`, {
-        cache: "no-cache"
-    });
-    if (!response.ok) {
-        return null;
+    try{
+
+        const response = await fetch(`${IMAGE_URL}/api/post/getFaq`, {
+            cache: "no-cache"
+        });
+        if (!response.ok) {
+            return null;
+        }
+        return response.json();
     }
-    return response.json();
+    catch (error){
+        return console.log('500 Сервер не отвечает, мы работаем над этим')
+    }
 }
 
 
@@ -48,7 +55,7 @@ export default async function Home() {
             <PublicationsTitle tags={tags}/>
             <BlogsData/>
             <Link href={'/posts'} className={global.link}>Смотреть еще</Link>
-            <ServiceRequest/>
+            <ServiceRequest />
             <FaQData slice_v={'0, 10'} data={faq} mainPad/>
             <Link href={'/faq'} className={global.link}>Посмотреть больше</Link>
         </main>

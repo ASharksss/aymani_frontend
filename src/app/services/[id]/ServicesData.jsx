@@ -161,7 +161,7 @@ export default function ServicesData({data = {}}) {
                 <div className={styles.grid} key={'content'}>
                     {data?.cases?.length > 0 ?
                         data.cases.slice(0, 5).map((item, index) => (
-                            <div className={`${page[`grid${(index % 14) + 1}`]}`} key={item.id}>
+                            <div className={`${page[`grid${(index % 14) + 1}`]} ${styles.prod_content}`} key={item.id}>
                                 <CaseItem key={item.id}
                                           name={item.name}
                                           image={item?.cover}

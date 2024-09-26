@@ -23,7 +23,7 @@ export default function CheckBox({label,
                     <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
                   </svg>
                 </span>
-                <span>{label ? label : 'Text plz'}</span>
+                <p>{label ? label : 'Text plz'}</p>
                 {faq ?
                     <Link href={faq_link ? faq_link : '#'} className={styles.faq}>
                         <Image src={icon} alt={'faq'}/>

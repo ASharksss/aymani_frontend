@@ -6,15 +6,18 @@ import LoadingSceleton from "@/components/loading/LoadingSceleton";
 import {IMAGE_URL} from "@/utils";
 
 async function fetchData() {
-    const response = await fetch(`${IMAGE_URL}/api/post/getServices`, {cache: "no-store"})
-    if (!response.ok)
-        return []
-    return response.json()
+    try {
+        const response = await fetch(`${IMAGE_URL}/api/post/getServices`, {cache: "no-store"})
+        if (!response.ok)
+            return []
+        return response.json()
+    } catch (error) {
+        return <div><h1>Отсутствует подключение к серверу.</h1><p>Мы уже работаем над этим</p></div>
+    }
 }
 
 export default async function Services() {
     const data = await fetchData()
-
 
     return (
         <section className={styles.main} id={'services'}>
@@ -51,3 +54,6 @@ export default async function Services() {
         </section>
     )
 }
+
+
+

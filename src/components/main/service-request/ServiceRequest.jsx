@@ -74,7 +74,7 @@ export default function ServiceRequest({sele_disabled = false}) {
                             <div className={styles.desic}>
                                 <p>Или можете сразу написать (WhatsApp Telegram) по номеру +79232465647 </p>
                             </div>
-                            <div className={styles.buttons}>
+                            <div className={styles.buttons} >
                                 {sele_disabled ?
                                     <label htmlFor={'name_form'}>
                                         Отмена

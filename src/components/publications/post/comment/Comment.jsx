@@ -51,7 +51,7 @@ export default function CommentD({comment = [], replies = []}) {
     useEffect(() => {
         const position = Number(window.localStorage.getItem('position'))
         if(Number.isInteger(position)){
-            console.log(position)
+            // console.log(position)
             window.scrollTo(0, position);
             setTimeout(() => {window.localStorage.setItem('position', null)}, 10000);
         }
@@ -73,7 +73,7 @@ export default function CommentD({comment = [], replies = []}) {
                     </div>
                 </div>
                 <div className={styles.action}>
-                    <span className={styles.span}> </span>
+                    {/*<span className={styles.span}> </span>*/}
                     {answ ? null : <TransprentButton text={'Ответить'} click={() => setAnsw(!answ)}/>}
                 </div>
                 <div className={styles.answ}>

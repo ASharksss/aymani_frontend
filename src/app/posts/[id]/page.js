@@ -6,13 +6,17 @@ import {notFound} from "next/navigation";
 
 async function fetchData(id) {
     // Запрос данных по ID
-    const response = await fetch(`${IMAGE_URL}/api/post/getPost/${id}`, {
-        cache: "no-store"
-    });
-    if (!response.ok) {
-        return null;
+    try {
+        const response = await fetch(`${IMAGE_URL}/api/post/getPost/${id}`, {
+            cache: "no-store"
+        });
+        if (!response.ok) {
+            return null;
+        }
+        return response.json();
+    } catch (error) {
+        return console.log('500 Нет подключения к серверу, мы уже работаем над этим')
     }
-    return response.json();
 }
 
 export async function generateMetadata({params}) {

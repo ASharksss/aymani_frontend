@@ -1,4 +1,5 @@
 .frodo{
+    font-family: "SF Pro Text",sans-serif;
     overflow: hidden;
     z-index: 100;
 
@@ -176,6 +177,9 @@
 
     .block{
         justify-content: center;
+    }
+    .frodo{
+        padding-bottom: 100px;
     }
 }
 

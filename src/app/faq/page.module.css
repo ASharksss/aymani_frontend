@@ -3,13 +3,15 @@
 }
 
 .main{
+    scroll-snap-align: end;
+
     background-color: var(--nuans-color);
     display: grid;
     grid-template-columns: auto auto;
     column-gap: 30px;
-
+    scroll-margin-bottom: 50vh;
     animation: homelader .6s;
-
+    min-height: 100vh;
 }
 .padAuto{
     padding: 200px 400px;
@@ -17,7 +19,7 @@
 }
 .mainPad{
 
-    padding: 0 350px;
+    padding: 200px 350px;
     height: 50vh;
     margin: auto;
 }
@@ -61,7 +63,7 @@
         padding: 200px 100px;
     }
     .mainPad{
-        padding: 0 350px;
+        padding: 200px 200px;
         height: 50vh;
         margin: auto;
     }
@@ -73,7 +75,7 @@
     }
 
     .mainPad{
-        padding: 0 50px;
+        padding: 100px 50px;
     }
 
     .faq .header {
@@ -88,7 +90,7 @@
 
     .mainPad{
         height: 100%;
-        padding: 0 50px;
+        padding: 130px 50px;
     }
 
 }

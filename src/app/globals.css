@@ -114,6 +114,7 @@ body {
 /* Fix mobile Safari increase font-size on landscape mode */
 html {
   scroll-behavior: smooth;
+  /*scroll-snap-align: start;*/
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;

@@ -4,13 +4,18 @@ import CaseData from "@/app/cases/[id]/CaseData";
 import {getImageTypes, IMAGE_URL} from "@/utils";
 
 async function fetchData(id) {
-    const response = await fetch(`${IMAGE_URL}/api/post/getCase/${id}`, {
-        cache: "no-cache"
-    });
-    if (!response.ok) {
-        return null;
+
+    try {
+        const response = await fetch(`${IMAGE_URL}/api/post/getCase/${id}`, {
+            cache: "no-cache"
+        });
+        if (!response.ok) {
+            return null;
+        }
+        return response.json();
+    } catch (error) {
+        return <div><h1>Отсутствует подключение к серверу.</h1><p>Мы уже работаем над этим</p></div>
     }
-    return response.json();
 }
 
 export async function generateMetadata({params}) {
@@ -27,7 +32,7 @@ export async function generateMetadata({params}) {
         };
     }
 
-    let imageType = getImageTypes(data.cover)
+    let imageType = getImageTypes(data?.cover)
     return {
         title: data.name || 'Пост',
         description: data.description || 'Описание поста.',

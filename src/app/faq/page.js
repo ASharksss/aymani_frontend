@@ -10,13 +10,18 @@ export const metadata = {
 }
 
 async function fetchData() {
-    const response = await fetch(`${IMAGE_URL}/api/post/getFaq`, {
-        cache: "no-cache"
-    });
-    if (!response.ok) {
-        return null;
+    try {
+        const response = await fetch(`${IMAGE_URL}/api/post/getFaq`, {
+            cache: "no-cache"
+        });
+        if (!response.ok) {
+            return null;
+        }
+        return response.json();
+
+    } catch (error) {
+        return console.log('500 Отсутствует подключение к серверу. Мы уже работаем над этим')
     }
-    return response.json();
 }
 
 

@@ -168,6 +168,7 @@
 }
 
 .column_description {
+    font-family: "SF Pro Text",sans-serif;
     /*color: #828282;*/
     height: 60px;
     word-wrap: break-word;
@@ -201,6 +202,8 @@
 }
 
 .without_description {
+    font-family: "SF Pro Text",sans-serif;
+
     min-width: 200px;
     width: 100%;
     /*max-width: 400px;*/
@@ -248,6 +251,8 @@
     margin-bottom: 15px;
 }
 .row_description {
+    font-family: "SF Pro Text",sans-serif;
+
     word-wrap: break-word;
     display: -webkit-box;
     -webkit-line-clamp: 5;

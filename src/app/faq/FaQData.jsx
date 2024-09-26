@@ -4,6 +4,7 @@ import React from 'react';
 import styles from './page.module.css'
 import AccordionList from "@/components/accordion/accordion-list/AccordionList";
 import Accordion from "@/components/accordion/Accordion";
+import LoadingSceleton from "@/components/loading/LoadingSceleton";
 
 export default async function FaQData({data, slice_v, mainPad}) {
 
@@ -18,14 +19,16 @@ export default async function FaQData({data, slice_v, mainPad}) {
     // }
 
     return (
-        <div className={mainPad ? `${styles.mainPad} ${styles.main}` : `${styles.main} ${styles.padAuto}`}>
+        <div className={mainPad ? `${styles.mainPad} ${styles.main}` : `${styles.main} ${styles.padAuto}`} id={'faq'}>
             <div className={styles.faq}>
                 <h1 className={styles.header}>ЧаВо?</h1>
-            {data.slice(slice_v).map((item, index) => (
+            {data?.length > 0 ?
+                data?.slice(slice_v).map((item, index) => (
                 <AccordionList header={item.header} desc={item.content} sel={index} />
-            ))}
+            )) : <LoadingSceleton/>
+            }
             </div>
-            <div className={styles.alsoAhave}>
+            <div className={styles.alsoAhave} >
                 <h1 className={styles.header}>ЧаВо?</h1>
                 <Accordion fontSize={'big'} heading={'Остались вопросы?'} description={'Напишите их нам!'}/>
                 <Accordion without link_head href_head={'tel: +79673711711'} heading={'+79673711711'}/>

@@ -3,7 +3,10 @@
     display: none;
     visibility: hidden;
 }
+.checkbox_wrapper_46{
+    font-family: "SF Pro Text",sans-serif;
 
+}
 .cbx {
     display: flex;
     gap: 8px;

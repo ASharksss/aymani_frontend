@@ -56,6 +56,7 @@
 
 .pad{
     width: 100%;
+    border-top: 1px solid var(--hr);
     display: flex;
     flex-direction: column;
     gap: 10px;

@@ -1,3 +1,4 @@
+import React from "react";
 
 export const IMAGE_URL = 'http://192.168.1.121:5000';
 
@@ -24,13 +25,17 @@ export function timeAgo(input) {
 }
 
 export async function fetchTags() {
-    const response = await fetch(`${IMAGE_URL}/api/post/getTags`, {
-        cache: "no-store"
-    })
-    if (!response.ok) {
-        return [];
+    try {
+        const response = await fetch(`${IMAGE_URL}/api/post/getTags`, {
+            cache: "no-store"
+        })
+        if (!response.ok) {
+            return [];
+        }
+        return response.json();
+    } catch (error) {
+        return <div><h1>Отсутствует подключение к серверу.</h1><p>Мы уже работаем над этим</p></div>
     }
-    return response.json();
 }
 
 export function getImageTypes(imageName) {
