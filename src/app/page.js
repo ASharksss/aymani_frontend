@@ -45,6 +45,8 @@ async function fetchFaq() {
 export default async function Home() {
     const tags = await fetchTags()
     const faq = await fetchFaq()
+
+
     return (
         <main className={styles.main}>
             <Organization/>

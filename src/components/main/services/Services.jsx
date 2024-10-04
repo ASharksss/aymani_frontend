@@ -19,9 +19,12 @@ async function fetchData() {
 export default async function Services() {
     const data = await fetchData()
 
+    if(data.length === undefined){
+        return <LoadingSceleton />
+    }
+
     return (
         <section className={styles.main} id={'services'}>
-
             <div className={styles.background}>
                 <header className={styles.header}> УСЛУГИ</header>
                 <p className={styles.bcg}>УСЛУГИ УСЛУГИ </p>
@@ -38,7 +41,7 @@ export default async function Services() {
                                       image={item?.image_url}
                                       price={item.price} click={false}/>
                         </div>
-                    )) : <LoadingSceleton/>}
+                    )) : null }
                 {/*t odo : Было сверху .slice(0,6)*/}
             </div>
             {/*КОСТЫЛЬ из-за positions */}

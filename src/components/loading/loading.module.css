@@ -175,15 +175,17 @@
     }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1080px) {
     .main h1{
-        font-size: 64px;
+        font-size: 48px;
     }
 }
 
 @media (max-width: 768px) {
     .main h1{
         font-size: 32px;
+        padding: 50px 0;
+
     }
 }
 

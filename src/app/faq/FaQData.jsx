@@ -4,7 +4,7 @@ import React from 'react';
 import styles from './page.module.css'
 import AccordionList from "@/components/accordion/accordion-list/AccordionList";
 import Accordion from "@/components/accordion/Accordion";
-import LoadingSceleton from "@/components/loading/LoadingSceleton";
+import Nothing from "@/components/nothing/Nothing";
 
 export default async function FaQData({data, slice_v, mainPad}) {
 
@@ -25,7 +25,7 @@ export default async function FaQData({data, slice_v, mainPad}) {
             {data?.length > 0 ?
                 data?.slice(slice_v).map((item, index) => (
                 <AccordionList header={item.header} desc={item.content} sel={index} />
-            )) : <LoadingSceleton/>
+            )) : <Nothing/>
             }
             </div>
             <div className={styles.alsoAhave} >

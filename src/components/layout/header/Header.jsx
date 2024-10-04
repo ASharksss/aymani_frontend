@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useContext } from 'react'
+import React, {useContext} from 'react'
 
 import styles from './header.module.css'
 import TransprentButton from '@/components/ui/buttons/transprent/TransprentButton'
@@ -13,7 +13,11 @@ export default function Header () {
   const router = useRouter()
   const { theme, toggle } = useContext(ThemeContext)
   const  pathname  = usePathname();
-
+// const [width, setWidth] = useState();
+//
+//     useEffect(() => {
+//         setWidth(window.innerWidth)
+//     }, [width]);
   const Imaru = () => {
       return(
           <div title="cart"  className="label"  >
@@ -30,25 +34,29 @@ export default function Header () {
     }
 
   return (
-    <nav className={styles.header}>
-      <section className={styles.section}>
-        {/*<div className={styles.logo}>*/}
-          <header title={'Аймани'} className={styles.logo} onClick={() => router.push('/')}>
-            <Ai color={theme === 'light' ? 'white' : 'black'}/>
-          </header>
-        {/*</div>*/}
-        <nav className={styles.buttons}>
-          <TransprentButton text={'О нас'} active={pathname === '/'} click={() => router.push('/')} />
-          <TransprentButton text={'Блог'} active={pathname === '/posts'} click={() => router.push('/posts')}/>
-          <TransprentButton text={'Услуги'} active={pathname === '/services'} click={() => router.push('/#services')}/>
-          <TransprentButton text={'Кейсы'} active={pathname === '/cases'} click={() => router.push('/cases')}/>
-          <TransprentButton text={'ЧаВо?'} active={pathname === '/faq'} click={() => router.push('/#faq')}/>
-          <TransprentButton
-              img={<Imaru/>}
-              click={() => toggle()}/>
-        </nav>
-      </section>
-    </nav>
+      <nav className={styles.header}>
+          <section className={styles.section}>
+              {/*<div className={styles.logo}>*/}
+              <header title={'Аймани'} className={styles.logo} onClick={() => router.push('/')}>
+                  <Ai color={theme === 'light' ? 'white' : 'black'}/>
+              </header>
+              {/*</div>*/}
+              <nav className={styles.buttons}>
+                  <TransprentButton text={'О нас'} active={pathname === '/'} click={() => router.push('/')}/>
+                  <TransprentButton text={'Блог'} active={pathname === '/posts'} click={() => router.push('/posts')}/>
+                  <TransprentButton text={'Услуги'} active={pathname === '/services'}
+                                    click={() => router.push('/#services')}/>
+                  <TransprentButton text={'Кейсы'} active={pathname === '/cases'} click={() => router.push('/cases')}/>
+                  <TransprentButton text={'ЧаВо?'} active={pathname === '/faq'} click={() => router.push('/#faq')}/>
+                  <TransprentButton
+                      img={<Imaru/>}
+                      click={() => toggle()}/>
+              </nav>
+              {/*<div className={styles.temp}>*/}
+              {/*    {width}*/}
+              {/*</div>*/}
+          </section>
+      </nav>
   )
 };
 

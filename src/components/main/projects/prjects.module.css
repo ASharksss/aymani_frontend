@@ -175,10 +175,18 @@
 
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1080px) {
     .Iphone {
         display: none;
     }
+    .main h1 {
+        font-size: 96px;
+        padding: 40px 0;
+    }
+}
+
+@media (max-width: 1024px) {
+
 
     .devices {
         padding: 0 10px;
@@ -213,10 +221,7 @@
         overflow-y: scroll;
     }
 
-    .main h1 {
-        font-size: 96px;
-        padding: 40px 0;
-    }
+
 }
 
 @media (max-width: 768px) {

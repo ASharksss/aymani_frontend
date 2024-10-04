@@ -11,6 +11,8 @@
 }
 
 
+
+
 .flex{
     display: flex;
     justify-content: center;
@@ -173,7 +175,8 @@
     }
 
     .link{
-         background: none;
+        padding: 20px;
+        background: none;
         font-size: 14pt;
     }
     .anotherProjects{
