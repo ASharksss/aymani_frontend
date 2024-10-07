@@ -217,6 +217,7 @@
 }
 
 .imageTitle{
+    font-family: "SF Pro Rounded", sans-serif;
     text-align: center;
     color: var(--description-color);
 }

@@ -13,14 +13,9 @@ import page from "@/app/cases/page.module.css";
 import CaseItem from "@/components/case_items/case_item";
 import LoadingSceleton from "@/components/loading/LoadingSceleton";
 import Nothing from "@/components/nothing/Nothing";
-import Custom404 from "@/app/not-found";
 import ServiceRequest from "@/components/main/service-request/ServiceRequest";
 
 export default function ServicesData({data = {}}) {
-
-    // console.log(data.promiseResult)
-    // console.log(data.name)
-    // console.log(data)
 
     const [cost, setCost] = useState(0);
     const [day, setDay] = useState(0);
@@ -39,11 +34,6 @@ export default function ServicesData({data = {}}) {
         setDay(totalDays);
     }, [data.functionals]);
 
-    if (data.error !== null && data.id === undefined) {
-        return (
-            <Custom404/>
-        )
-    }
 
     return (
         <div className={styles.main}>
@@ -96,16 +86,17 @@ export default function ServicesData({data = {}}) {
 
                             <div className={styles.second}>
                                 <Accordion heading={'Итог'}
-                                           description={'Итоговая стоимость реализации'}
-                                           fontSize={'middle'}/>
-                                <Accordion heading={`${cost} Рублей`}
+                                           fontSize={'middle'}
+                                            description={'Выбрано блоков: ' + ([...document.querySelectorAll('input:checked')].length -1).toString() }
+                                />
+                                <Accordion heading={`${cost} ₽`}
                                            description={'Стоимость работ определяется в \n' +
                                                'зависимости от выбранных чего то там '}
-                                           fontSize={'default'}/>
+                                           fontSize={'middle'} />
                                 <Accordion heading={`${day} Дней`}
                                            description={'Стоимость работ определяется в \n' +
                                                'зависимости от выбранных чего то там '}
-                                           fontSize={'default'}/>
+                                           fontSize={'middle'}/>
                                 <label className={styles.button} htmlFor='name_form'>
                                     {/*<TransprentButton text={'Заказать сайт'}/>*/}
                                     Заказать сайт

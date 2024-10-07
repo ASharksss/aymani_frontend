@@ -14,7 +14,7 @@ import {makeStore} from "@/redux/lib/store";
 import LoadingSceleton from "@/components/loading/LoadingSceleton";
 
 
-axios.defaults.baseURL = 'http://192.168.1.121:5000/api/'
+axios.defaults.baseURL = 'http://192.168.0.101:5000/api/'
 
 export default function RootLayout({children}) {
     return (

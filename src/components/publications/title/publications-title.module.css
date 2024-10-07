@@ -154,6 +154,11 @@
 
 }
 
+@media (max-width: 1080px) {
+    .tags{
+        justify-content: start;
+    }
+}
 @media (max-width: 1024px) {
     .main h1{
         font-size: 110px;
@@ -167,9 +172,9 @@
     .tags{
         justify-content: start;
     }
-    .tags::-webkit-scrollbar {
-        display: none;
-    }
+    /*.tags::-webkit-scrollbar {*/
+    /*    display: none;*/
+    /*}*/
     .description p{
         font-size: 18px;
     }

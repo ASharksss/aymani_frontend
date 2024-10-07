@@ -212,6 +212,10 @@
     max-width: 300px;
 }
 
+.second div{
+    padding: 2px 0 !important;
+}
+
 .input[name="r"] {
     position: absolute;
     visibility: hidden;
@@ -237,7 +241,7 @@
     }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1080px) {
     .lineBack{
         display: none;
     }

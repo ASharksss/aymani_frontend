@@ -112,7 +112,7 @@
         padding: 0 20px;
         grid-template-columns: repeat(2, 1fr) ;
         grid-auto-rows: minmax(400px, 1fr); /* Базовая настройка для строк */
-        grid-template-rows: repeat(auto-fit, 600px 100px 600px 600px 600px 100px 600px 1000px);
+        grid-template-rows: repeat(auto-fit, 400px 100px 400px 400px 400px 100px 400px 500px);
         /*grid-template-columns: repeat(2, 1fr) ;*/
         /*grid-auto-rows: minmax(800px, 1fr); !* Базовая настройка для строк *!*/
         /*grid-template-rows: repeat(auto-fit, 800px 200px 800px 800px 800px 200px 800px 1800px);*/

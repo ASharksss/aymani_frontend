@@ -12,14 +12,14 @@ async function fetchData() {
             return []
         return response.json()
     } catch (error) {
-        return <div><h1>Отсутствует подключение к серверу.</h1><p>Мы уже работаем над этим</p></div>
+        return console.log('Нет подключения к серверу @Услуги@')
     }
 }
 
 export default async function Services() {
-    const data = await fetchData()
+    const data = await fetchData() || [];
 
-    if(data.length === undefined){
+    if(data === null || data.length === undefined ){
         return <LoadingSceleton />
     }
 

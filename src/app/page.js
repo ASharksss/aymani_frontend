@@ -27,7 +27,6 @@ export const metadata = {
 
 async function fetchFaq() {
     try{
-
         const response = await fetch(`${IMAGE_URL}/api/post/getFaq`, {
             cache: "no-cache"
         });
@@ -37,7 +36,7 @@ async function fetchFaq() {
         return response.json();
     }
     catch (error){
-        return console.log('500 Сервер не отвечает, мы работаем над этим')
+        return console.log('Нет подключения к серверу @ЧаВо?@')
     }
 }
 
@@ -45,7 +44,6 @@ async function fetchFaq() {
 export default async function Home() {
     const tags = await fetchTags()
     const faq = await fetchFaq()
-
 
     return (
         <main className={styles.main}>

@@ -1,11 +1,11 @@
 'use client'
 
-import React, {useCallback, useEffect, useState} from 'react'
+import React, {useCallback, useState} from 'react'
 
 import styles from './publications-title.module.css'
 import Tag from '@/components/tags/tag'
 import {usePathname, useRouter, useSearchParams} from "next/navigation";
-import {useAppDispatch, useAppSelector} from "@/redux/hooks";
+import {useAppDispatch} from "@/redux/hooks";
 import {getByTag, getPosts} from "@/redux/lib/blogs";
 
 export default function PublicationsTitle({small = false, tags = []}) {
@@ -67,14 +67,14 @@ export default function PublicationsTitle({small = false, tags = []}) {
             <div className={small ? `${styles.description} ${styles.small}` : `${styles.description} ${styles.big}`}>
                 <p>Аймани </p>
                 <p className={styles.date}> {date.toLocaleString('ru-RU', options)} </p>
-                <Tag text={'Аймани-Web'} id={1} />
+                <Tag text={'Аймани-Web'} disabled id={1} />
             </div>
             <hr className={styles.hr}/>
             <div className={styles.tags}>
                 <div className={styles.tag} onClick={() => setvalue(data.length)} >
                     <Tag text={'Больше тегов'}/>
                 </div>
-                    <Tag text={'Сбросить фильтр'} click={() => Reload()}/>
+                {small ?  <Tag text={'Сбросить фильтр'} click={() => Reload()}/> : null }
                 {tags?.length > 0 ? tags.slice(0, value).map((item, index) => (
                     <div className={styles.tag} key={item.key} id={item.key}>
                         <Tag

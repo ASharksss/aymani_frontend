@@ -52,7 +52,7 @@
     text-decoration: underline !important;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1080px) {
     .heading h1 {
         font-size: 48px;
     }

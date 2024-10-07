@@ -8,7 +8,7 @@ export default function Custom404()
 {
     return (
         <div >
-            <div className={styles.flex}>
+            <div className={`${styles.flex} ${styles.padding}`}>
             <Image src={err} alt={'ERROR 404'}/>
             </div>
         </div>

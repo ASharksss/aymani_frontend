@@ -57,6 +57,7 @@ export default function PostData({post = {}}) {
     useEffect(() => {
         dispatch(getComments(id))
     }, [])
+
     useEffect(() => {
         const articleHtml = post?.html;
         const IMAGE_URL = 'http://192.168.1.121:5000'

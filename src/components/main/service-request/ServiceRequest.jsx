@@ -15,12 +15,6 @@ export default function ServiceRequest({sele_disabled = false}) {
     const [name, setName] = useState('')
 
     const dispatch = useAppDispatch()
-    // const hadle = () => {
-    //     const data = [...document.querySelectorAll('input:checked')]
-    //         .map(e => Number(e.id))
-    //         .filter(item => !isNaN(item));
-    //     // console.log(data);
-    // }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -36,9 +30,7 @@ export default function ServiceRequest({sele_disabled = false}) {
             };
             try {
                 dispatch(takeMyMoneyReq(data));
-                // console.log(data)
-                // setName('')
-                // setNumber('')
+
                 alert('Форма отправлена')
                 // dispatch(getComments(id))
                 // location.reload()

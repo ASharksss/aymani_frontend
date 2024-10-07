@@ -24,7 +24,7 @@ export default function Accordion({
     return (
         <div className={styles.main}>
             <section className={styles.section}>
-                <div className={styles.flex}>
+                <div className={styles.flex} >
                     {link_head ?
                         <Link href={href_head} className={`${styles.heading} ${styles.head_hover}`}>
                             {fontSize === 'default' ?

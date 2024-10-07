@@ -8,16 +8,6 @@ import Nothing from "@/components/nothing/Nothing";
 
 export default async function FaQData({data, slice_v, mainPad}) {
 
-    // const [selected, setSelected] = useState()
-    // const toggle = (i) => {
-    //     if (selected === i) {
-    //         setSelected(null)
-    //     }
-    //     else {
-    //         setSelected(i)
-    //     }
-    // }
-
     return (
         <div className={mainPad ? `${styles.mainPad} ${styles.main}` : `${styles.main} ${styles.padAuto}`} id={'faq'}>
             <div className={styles.faq}>

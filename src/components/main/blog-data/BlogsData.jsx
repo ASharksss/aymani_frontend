@@ -28,12 +28,13 @@ async function fetchData() {
             return [];
         return response.json();
     } catch (error) {
-        return console.log('Отсутствует подключение с серверу. Мы уже работаем над этим')
+        return console.log('Отсутствует подключение с серверу @Посты@')
     }
 }
 
 export default async function BlogsData() {
     const data = await fetchData()
+
     return (
         <div id={'posts'}>
             {data?.length > 0 ?

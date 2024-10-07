@@ -7,6 +7,8 @@
     font-family: "SF Pro Text",sans-serif;
 
 }
+
+
 .cbx {
     display: flex;
     gap: 8px;
@@ -22,6 +24,15 @@
     user-select: none;
     cursor: pointer;
 }
+.checkbox_wrapper_46 .gray {
+    color: var(--base-color);
+    margin: auto;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: not-allowed;
+}
+
+
 .checkbox_wrapper_46 .cbx span {
     display: inline-block;
     vertical-align: middle;

@@ -1,6 +1,6 @@
-import React from "react";
+import React from "";
 
-export const IMAGE_URL = 'http://192.168.1.121:5000';
+export const IMAGE_URL = 'http://192.168.0.101:5000';
 
 export function timeAgo(input) {
     const date = (input instanceof Date) ? input : new Date(input);
@@ -34,7 +34,7 @@ export async function fetchTags() {
         }
         return response.json();
     } catch (error) {
-        return <div><h1>Отсутствует подключение к серверу.</h1><p>Мы уже работаем над этим</p></div>
+        return  console.log('Нет подключение к серверу @Теги@')
     }
 }
 
@@ -48,6 +48,22 @@ export function getImageTypes(imageName) {
     else if (imageEnd === 'avif') return 'image/avif'
     else if (imageEnd === 'gif') return 'image/gif'
 }
+
+// export function numDancing(time, step, number, elem) {
+//     // let element = document.querySelector('#' + elem)
+//     let start = 1;
+//
+//     let timer = Math.round(time/(number/step));
+//
+//     let interval = setInterval(() => {
+//         start = start + step;
+//         if (start === number) {
+//             clearInterval(interval);
+//         }
+//         // return start;
+//     }, timer)
+// }
+
 
 // const STATIC = 'https://aimani.org/static';
 
