@@ -14,14 +14,14 @@ async function fetchData(id) {
         }
         return response.json();
     } catch (error) {
-        return <div><h1>Отсутствует подключение к серверу.</h1><p>Мы уже работаем над этим</p></div>
+        return console.log('Отсутствует подключение к серверу @CASES:ID@')
     }
 }
 
 export async function generateMetadata({params}) {
     const data = await fetchData(params.id);
 
-    if (!data) {
+    if (!!data.error) {
         return {
             title: 'Кейс не найден',
             description: 'Не удалось найти данные для данного кейса.',
@@ -56,6 +56,8 @@ export async function generateMetadata({params}) {
 
 export default async function Page({params}) {
     const data = await fetchData(params.id);
+		if (!!data.error)
+			return <Custom404/>
     let result
     data.case_blocks.map(item => {
         if (item.type_block === "Результат") {

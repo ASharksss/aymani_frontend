@@ -60,7 +60,6 @@ export default function PostData({post = {}}) {
 
     useEffect(() => {
         const articleHtml = post?.html;
-        const IMAGE_URL = 'http://192.168.1.121:5000'
         const updatedHtml = articleHtml.replace(/src="\/static\/post_images\//g, `src="${IMAGE_URL}\/static\/post_images\/`);
         setResult(updatedHtml)
     }, [])
