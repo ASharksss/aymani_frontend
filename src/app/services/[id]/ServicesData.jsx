@@ -1,5 +1,5 @@
 'use client'
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 
 import styles from './page.module.css'
 import BackTool from "@/asserts/tools/back-tool/BackTool";
@@ -14,12 +14,19 @@ import CaseItem from "@/components/case_items/case_item";
 import LoadingSceleton from "@/components/loading/LoadingSceleton";
 import Nothing from "@/components/nothing/Nothing";
 import ServiceRequest from "@/components/main/service-request/ServiceRequest";
+import MouseMove from "@/components/mouse-move/MouseMove";
 
 export default function ServicesData({data = {}}) {
 
     const [cost, setCost] = useState(0);
     const [day, setDay] = useState(0);
+    const [checked, setChecked] = useState(0);
+    const parent = useRef(null);
 
+    const step_color = ['red', 'orange', 'yellow', 'green', 'blue', 'violet']
+    // const step_color = ['red', 'pink', 'blue', 'green', 'yellow'];
+    // const step_color = ['#ffff00', '#ffdd11', '#ffbb22', '#ff9933', '#ff7744', '#ff5555', '#dd66ff', '#bb77ff', '#9988ff', '#7799ff']
+    // const step_color = ['#204a35', '#1eb157', '#1db768', '#1cc07e', '#1acd9f', '#18eecd', '#16cfbf', '#13b1b1', '#10aaa2', '#0d9b95']
     const handleCheckboxChange = (checked, dayy, costt) => {
         setDay(checked ? day + dayy : day - dayy);
         setCost(checked ? cost + costt : cost - costt);
@@ -34,6 +41,10 @@ export default function ServicesData({data = {}}) {
         setDay(totalDays);
     }, [data.functionals]);
 
+    useEffect(() => {
+        setChecked([...document.querySelectorAll('input:checked')].length -1)
+        // console.log(checked);
+    }, [[...document.querySelectorAll('input:checked')].length -1])
 
     return (
         <div className={styles.main}>
@@ -52,7 +63,7 @@ export default function ServicesData({data = {}}) {
                 <div className={`${styles.slide} ${styles.s1}`}>
                     <div className={styles.calculator}>
                         <div className={styles.lineBack}>
-                            <LineBack/>
+                            <LineBack step_color={step_color.slice(0, checked)}/>
                         </div>
                         <div className={styles.tarma}>
                             <BorderTarma/>
@@ -66,10 +77,20 @@ export default function ServicesData({data = {}}) {
                         <div className={styles.columns}>
 
                             <div className={styles.first}>
-                                <Accordion heading={'Лендинг'}
+                                <Accordion heading={data.name}
                                            description={'Тип услуги'}
                                            faq fontSize={'middle'}/>
-                                <div className={styles.checkBoxes}>
+                                <div className={styles.checkBoxes} ref={parent}>
+                                    <MouseMove parent={parent} id={'move'}>
+                                        <div className={styles.some}>
+                                        {/*<h1>Листай</h1>*/}
+                                        <svg fill="var(--focus-color-end)" opacity="0.4" width="48px" height="48px" viewBox="0 0 24 24"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7.293,8.707a1,1,0,0,1,0-1.414l4-4a1,1,0,0,1,1.414,0l4,4a1,1,0,1,1-1.414,1.414L12,5.414,8.707,8.707A1,1,0,0,1,7.293,8.707Zm0,8,4,4a1,1,0,0,0,1.414,0l4-4a1,1,0,0,0-1.414-1.414L12,18.586,8.707,15.293a1,1,0,1,0-1.414,1.414Z"/>
+                                        </svg>
+                                        </div>
+                                    </MouseMove>
                                     {data?.functionals.length > 0 ?
                                         data?.functionals.map((item) => (
                                             <CheckBox id={item.id} label={item.name}
@@ -87,7 +108,7 @@ export default function ServicesData({data = {}}) {
                             <div className={styles.second}>
                                 <Accordion heading={'Итог'}
                                            fontSize={'middle'}
-                                            description={'Выбрано блоков: ' + ([...document.querySelectorAll('input:checked')].length -1).toString() }
+                                            description={'Выбрано блоков: ' + checked.toString() }
                                 />
                                 <Accordion heading={`${cost} ₽`}
                                            description={'Стоимость работ определяется в \n' +
@@ -147,7 +168,7 @@ export default function ServicesData({data = {}}) {
             <div className={styles.projects}>
                 <div className={styles.text}>
                     <Accordion fontSize={'big'} heading={'Проекты'} description={'Посмотреть другие работы'} link
-                               link_link={'/posts'}/>
+                               link_link={'/cases'}/>
                 </div>
                 <div className={styles.grid} key={'content'}>
                     {data?.cases?.length > 0 ?

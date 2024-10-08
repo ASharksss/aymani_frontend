@@ -6,13 +6,20 @@
     align-items: center;
 }
 
+.button:disabled{
+    color: gray;
+    cursor: not-allowed;
+}
+.button:disabled:hover {
+    color: darkred;
+}
+
 .button:focus-visible {
     /* remove default focus style */
     outline: none;
     /* custom focus styles */
     box-shadow: 0 0 1px 1px var(--focus-color-meidum);
 }
-
 .color{
     color: var(--base-color);
 }

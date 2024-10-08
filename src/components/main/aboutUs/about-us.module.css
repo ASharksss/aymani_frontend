@@ -1,4 +1,6 @@
 .main{
+    position: relative;
+    z-index: 90;
     padding: 100px 220px 10px 220px ;
 }
 .main h1{

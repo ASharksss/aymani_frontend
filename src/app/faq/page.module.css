@@ -11,17 +11,17 @@
     column-gap: 30px;
     scroll-margin-bottom: 50vh;
     animation: homelader .6s;
-    min-height: 100vh;
+    /*min-height: 100vh;*/
 }
 .padAuto{
     padding: 200px 400px;
     min-height: 100vh;
 }
 .mainPad{
-
     padding: 200px 350px;
-    height: 50vh;
     margin: auto;
+    height: 100%;
+
 }
 
 
@@ -64,7 +64,7 @@
     }
     .mainPad{
         padding: 200px 200px;
-        height: 50vh;
+        ;
         margin: auto;
     }
 }
@@ -75,7 +75,7 @@
     }
 
     .mainPad{
-        padding: 100px 50px;
+        padding: 20px 50px;
     }
 
     .faq .header {

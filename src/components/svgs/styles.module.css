@@ -13,6 +13,8 @@
     padding-left: 20px;
 }
 
+
+
 @media (max-width: 1024px) {
     .like, .share, .comment{
         width: 24px;

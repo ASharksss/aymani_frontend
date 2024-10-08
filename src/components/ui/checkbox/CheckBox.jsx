@@ -8,6 +8,7 @@ import icon from "@/asserts/icons/help-circle.png";
 
 export default function CheckBox({label,
                                      id,
+                                     required = false,
                                      faq,
                                      faq_link,
                                      description,
@@ -16,7 +17,11 @@ export default function CheckBox({label,
                                      disabled}) {
     return (
         <div className={styles.checkbox_wrapper_46}>
-            <input type="checkbox" id={id} onChange={onChange} className={styles.inp_cbx} disabled={disabled} checked={disabled ? disabled : null}/>
+            <input type="checkbox" id={id} onChange={onChange}
+                   required={required}
+                   className={styles.inp_cbx}
+                   disabled={disabled}
+                   checked={disabled ? disabled : null}/>
             <label htmlFor={id} className={disabled ? `${styles.cbx} ${styles.gray}` : styles.cbx}>
                 <span>
                   <svg viewBox="0 0 12 10" height="10px" width="12px">

@@ -5,12 +5,12 @@
 }
 .checkbox_wrapper_46{
     font-family: "SF Pro Text",sans-serif;
-
 }
 
 
 .cbx {
     display: flex;
+    /*z-index: 92;*/
     gap: 8px;
     align-items: center;
 }
@@ -123,7 +123,7 @@
 .descrioption{
     margin-top: 5px;
     margin-left: 25px;
-    font-family: "SF Pro Text", sans-serif;
+    font-family: "SF Pro Display", sans-serif;
     font-weight: 300;
     padding-left: 2px;
 }

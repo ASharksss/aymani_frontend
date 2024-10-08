@@ -9,10 +9,12 @@ import LineBack from "@/components/svgs/LineBack";
 import BorderTarma from "@/components/svgs/BorderTarma";
 import {useAppDispatch} from "@/redux/hooks";
 import {takeMyMoneyReq} from "@/redux/lib/takeMyMoney";
+import CheckBox from "@/components/ui/checkbox/CheckBox";
 
 export default function ServiceRequest({sele_disabled = false}) {
     const [number, setNumber] = useState('')
     const [name, setName] = useState('')
+    const [dis, setDis] = useState(true)
 
     const dispatch = useAppDispatch()
 
@@ -40,8 +42,10 @@ export default function ServiceRequest({sele_disabled = false}) {
     };
 
 
+
+
     return (
-        <div className={styles.main}>
+        <div className={styles.main} id={'call'}>
             <div className={styles.lineBack}>
                 <LineBack/>
             </div>
@@ -66,6 +70,14 @@ export default function ServiceRequest({sele_disabled = false}) {
                             <div className={styles.desic}>
                                 <p>Или можете сразу написать (WhatsApp Telegram) по номеру +79232465647 </p>
                             </div>
+                            <div className={styles.checkbox}>
+                                <CheckBox
+                                    required
+                                    onChange={() => setDis(!dis)}
+                                    id={'myCheckBox'}
+                                    description={'Не переживайте данные никуда не утекут'}
+                                    label={'Согласен на обработку персональных данных'}/>
+                            </div>
                             <div className={styles.buttons} >
                                 {sele_disabled ?
                                     <label htmlFor={'name_form'}>
@@ -73,6 +85,8 @@ export default function ServiceRequest({sele_disabled = false}) {
                                     </label> :
                                 null }
                                 <TransprentButton text={'Отправить'}
+                                                  disabled={dis}
+                                                  // active={dis}
                                                   // click={() => hadle()}
                                                   type={'submit'} from={'TakeMyMoney'}
                                 />

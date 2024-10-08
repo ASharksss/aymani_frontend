@@ -48,16 +48,16 @@ export default async function Home() {
     return (
         <main className={styles.main}>
             <Organization/>
+            <AboutUs/>
             <Services/>
             <Projects/>
             <Link href={'/cases'} className={global.link}>Смотреть еще</Link>
-            <AboutUs/>
-            <PublicationsTitle tags={tags}/>
-            <BlogsData/>
-            <Link href={'/posts'} className={global.link}>Смотреть еще</Link>
             <ServiceRequest />
             <FaQData slice_v={'0, 10'} data={faq} mainPad/>
             <Link href={'/faq'} className={global.link}>Посмотреть больше</Link>
+            <PublicationsTitle tags={tags}/>
+            <BlogsData/>
+            <Link href={'/posts'} className={global.link}>Смотреть еще</Link>
         </main>
 
     )

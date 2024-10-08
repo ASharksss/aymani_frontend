@@ -45,7 +45,8 @@
 
 .section{
     align-items: center;
-    padding: 60px 160px ;
+    padding: 60px 160px;
+    /*padding: 100px 160px 60px 160px;*/
     display: flex;
     gap: 30px;
     height: fit-content;

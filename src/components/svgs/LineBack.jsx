@@ -1,16 +1,34 @@
 'use client'
+
 import React from 'react';
 
-// import styles from './styles.module.css'
 
-export default function LineBack({color = 'var(--base-color)'}) {
+export default function LineBack({ step_color=[]}) {
+
     return (
         <div>
             <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                  width="941.000000pt" height="1400.000000pt" viewBox="0 0 941.000000 1200.000000"
                  preserveAspectRatio="xMidYMid meet">
+
+                <defs>
+                    <linearGradient id="gradient">
+                        {step_color.map((color, index) => (
+                        <stop key={index} offset={`${index * (100 / step_color.length)}%`} style={{stopColor: `${color}`}}/>
+                        ))}
+                        {/*<stop offset="0%" stop-color="red"/>*/}
+                        {/*<stop offset="10%" stop-color="orange" />*/}
+                        {/*<stop offset="20%" stop-color="yellow"/>*/}
+                        {/*<stop offset="30%" stop-color="green"/>*/}
+                        {/*<stop offset="40%" stop-color="yellow"/>*/}
+                    </linearGradient>
+                </defs>
+
+
                 <g transform="translate(0.000000,1200.000000) scale(0.100000,-0.100000)"
-                   fill={color} stroke="none">
+                    // fill={color}
+                   fill="url(#gradient)"
+                    stroke="none">
                     <path d="M2140 11858 c-118 -197 -263 -448 -315 -543 -312 -580 -484 -1109
 -556 -1710 -31 -258 -31 -683 0 -944 75 -630 277 -1221 625 -1830 158 -275
 442 -674 634 -887 9 -11 63 -71 119 -135 132 -151 477 -498 718 -723 105 -98

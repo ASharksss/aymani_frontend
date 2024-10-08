@@ -19,6 +19,7 @@ export default function WorkProgress ({
         <header className={unique ? styles.uniqueHeaders : styles.header}>
           {header}
         </header>
+        { numb !== null && blockquote !== null ?
         <div className={styles.desc}>
           <div className={styles.numb}>
             {numb}
@@ -26,7 +27,7 @@ export default function WorkProgress ({
           <blockquote className={styles.text}>
             {blockquote}
           </blockquote>
-        </div>
+        </div> : null }
         <article className={styles.blockquote}>
           {text.replace(//g, '').split('\n').map((line, index) => (
               <p key={index}>{line}</p>

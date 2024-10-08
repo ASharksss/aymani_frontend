@@ -73,6 +73,10 @@
     /*color: #828282;*/
 }
 
+.footer time{
+    font-family: "SF Pro Display", sans-serif ;
+}
+
 /* Full */
 .full_container {
     /*box-sizing: border-box;*/

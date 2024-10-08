@@ -129,7 +129,9 @@
 }
 
 @media (max-width: 1080px) {
-
+    .main{
+        padding-top: 10px;
+    }
     .content{
         position: absolute;
         top: 0;
@@ -150,7 +152,7 @@
         grid-template-columns: repeat(3, 1fr) ;
         overflow: hidden;
         /*grid-template-rows: repeat(auto-fit, 400px 100px );*/
-        grid-template-rows: repeat(auto-fit, 400px 100px 400px );
+        grid-template-rows: repeat(auto-fit, 400px 100px  );
         column-gap: 0;
         row-gap: 0;
     }
