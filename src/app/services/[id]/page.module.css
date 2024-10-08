@@ -4,7 +4,7 @@
     padding:  200px 0;
     overflow: hidden;
     background-color: var(--nuans-color);
-    transition: background-color .5s ease-in-out;
+    /*transition: background-color .5s ease-in-out;*/
 }
 
 .map{
@@ -177,6 +177,7 @@
     height: 300px;
     bottom: 0;
     left: 0;
+    /*transition: none;*/
     background: linear-gradient(180deg, rgba(232, 232, 232, 0) 0%, var(--nuans-color) 60%);
     /*background: red;*/
     width: 100%;
@@ -189,6 +190,7 @@
     height: 300px;
     left: 0;
     top: 0;
+    /*transition: none;*/
     /*top: 70px;*/
     /*background: red;*/
     background: linear-gradient(0deg, rgba(232, 232, 232, 0) 0%, var(--nuans-color) 45%);

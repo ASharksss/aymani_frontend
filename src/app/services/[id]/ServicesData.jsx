@@ -23,9 +23,9 @@ export default function ServicesData({data = {}}) {
     const [checked, setChecked] = useState(0);
     const parent = useRef(null);
 
-    const step_color = ['red', 'orange', 'yellow', 'green', 'blue', 'violet']
+    // const step_color = ['red', 'orange', 'yellow', 'green', 'blue', 'violet']
     // const step_color = ['red', 'pink', 'blue', 'green', 'yellow'];
-    // const step_color = ['#ffff00', '#ffdd11', '#ffbb22', '#ff9933', '#ff7744', '#ff5555', '#dd66ff', '#bb77ff', '#9988ff', '#7799ff']
+    const step_color = ['#00b061', '#60bd4b', '#98c831', '#d0cf17', '#ffff00', '#ffdd11', '#ffbb22', '#ff9933', '#ff7744', '#ff5555', '#dd66ff', '#bb77ff', '#9988ff', '#7799ff']
     // const step_color = ['#204a35', '#1eb157', '#1db768', '#1cc07e', '#1acd9f', '#18eecd', '#16cfbf', '#13b1b1', '#10aaa2', '#0d9b95']
     const handleCheckboxChange = (checked, dayy, costt) => {
         setDay(checked ? day + dayy : day - dayy);
