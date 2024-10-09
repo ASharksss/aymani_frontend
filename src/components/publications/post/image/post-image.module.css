@@ -6,7 +6,7 @@
 }
 
 .figcaption{
-    font-family: "Franklin Gothic Demi", sans-serif;
+    font-family: "Monserrat", sans-serif;
     font-size: 12pt;
     color: var(--description-color);
 }
@@ -39,7 +39,7 @@
         padding: 20px 0;
     }
     .figcaption{
-        font-size: 14pt;
+        font-size: 11pt;
     }
 
     .image{

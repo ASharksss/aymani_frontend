@@ -26,8 +26,8 @@ export default function Organization() {
 				<AiWeb color={theme === 'light' ? 'white' : 'black'}/>
 			</div>
 			<div className={styles.title}>
-				<p>Аймани Web - это платформа, созданная командой высококвалифицированных специалистов в области
-					IT-технологий. </p>
+				<p>Аймани Web - молодая команда по разработке веб-приложений и сайтов с нуля.
+					</p>
                 <button className={styles.button} onClick={() => router.push("#call")}>Заказать сайт</button>
 			</div>
 		</div>

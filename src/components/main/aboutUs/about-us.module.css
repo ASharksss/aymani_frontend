@@ -14,7 +14,7 @@
 }
 
 .step p{
-    max-width: 1088px;
+    max-width: 900px;
     font-family: "Montserrat", sans-serif;
     font-weight: normal;
     font-size: 32px;
@@ -63,7 +63,7 @@
     }
 
     .step p{
-        max-width: 900px;
+        max-width: 600px;
         font-size: 24px;
     }
 }
@@ -151,7 +151,7 @@
 
     .step p{
         max-width: 300px;
-        font-size: 16pt;
+        font-size: 13pt;
     }
     .last p{
         max-width: 400px ;
