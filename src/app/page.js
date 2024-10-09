@@ -18,8 +18,8 @@ import ServiceRequest from "@/components/main/service-request/ServiceRequest";
 // import LoadingSceleton from "@/components/loading/LoadingSceleton";
 
 export const metadata = {
-    title: 'Аймани | Главная',
-    description: 'Сделать сайт просто!',
+    title: 'Аймани Web',
+    description: 'Аймани Web - это платформа, созданная командой высококвалифицированных специалистов в области IT-технологий.',
     alternates: {
         canonical: "https://aimani.org"
     }

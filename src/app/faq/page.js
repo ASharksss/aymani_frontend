@@ -5,7 +5,7 @@ import FaQData from "@/app/faq/FaQData";
 import {IMAGE_URL} from "@/utils";
 
 export const metadata = {
-    title: 'Аймани | Ответы',
+    title: 'Аймани | ЧаВо?',
     description: 'Ответы на часто задаваемые вопросы',
 }
 

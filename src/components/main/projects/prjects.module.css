@@ -97,8 +97,8 @@
 .contain_image::-webkit-scrollbar-thumb {
     border-radius: 8px;
     background-clip: content-box;
-    /*background-color: rgba(196, 196, 196, 0.35);*/
-    background-color: transparent;
+    background-color: rgba(196, 196, 196, 0.50);
+    /*background-color: transparent;*/
 }
 
 .contain_image_phone::-webkit-scrollbar {
@@ -108,15 +108,14 @@
 
 .contain_image_phone::-webkit-scrollbar-track {
     border-radius: 8px;
-    background-color: transparent;
-
+    /*background-color: transparent;*/
 }
 
 .contain_image_phone::-webkit-scrollbar-thumb {
     border-radius: 8px;
     background-clip: content-box;
-    /*background-color: rgba(196, 196, 196, 0.35);*/
-    background-color: transparent;
+    background-color: rgba(196, 196, 196, 0.50);
+    /*background-color: transparent;*/
 }
 
 

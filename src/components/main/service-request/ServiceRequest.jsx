@@ -10,6 +10,7 @@ import BorderTarma from "@/components/svgs/BorderTarma";
 import {useAppDispatch} from "@/redux/hooks";
 import {takeMyMoneyReq} from "@/redux/lib/takeMyMoney";
 import CheckBox from "@/components/ui/checkbox/CheckBox";
+import Link from "next/link";
 
 export default function ServiceRequest({sele_disabled = false}) {
     const [number, setNumber] = useState('')
@@ -68,7 +69,8 @@ export default function ServiceRequest({sele_disabled = false}) {
                         <div className={styles.gap20}>
                             {/*{sele_disabled ? null : <Section /> }*/}
                             <div className={styles.desic}>
-                                <p>Или можете сразу написать (WhatsApp Telegram) по номеру +79232465647 </p>
+                                <p>Или можете сразу написать (WhatsApp Telegram) по номеру &nbsp; <Link href={'tel: +79673711711'}> +79673711711 </Link>
+                                </p>
                             </div>
                             <div className={styles.checkbox}>
                                 <CheckBox

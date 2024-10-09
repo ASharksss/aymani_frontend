@@ -92,6 +92,10 @@
     color: #8E8E8E;
 }
 
+.desic a{
+    color: var(--focus-color-end);
+}
+
 
 @media (max-width: 1600px) {
     .lineBack{
