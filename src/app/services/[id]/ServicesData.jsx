@@ -53,6 +53,7 @@ export default function ServicesData({data = {}}) {
             </div>
             <div className={styles.definitions}>
                 <Definition head={data.name}
+                            id={data.name}
                             description={data.description}/>
             </div>
             <div className={styles.slides}>
@@ -79,7 +80,9 @@ export default function ServicesData({data = {}}) {
                             <div className={styles.first}>
                                 <Accordion heading={data.name}
                                            description={'Тип услуги'}
-                                           faq fontSize={'middle'}/>
+                                           faq
+                                           faq_link={`#${data.name}`}
+                                           fontSize={'middle'}/>
                                 <div className={styles.checkBoxes} ref={parent}>
                                     <MouseMove parent={parent} id={'move'}>
                                         <div className={styles.some}>
@@ -94,7 +97,7 @@ export default function ServicesData({data = {}}) {
                                     {data?.functionals.length > 0 ?
                                         data?.functionals.map((item) => (
                                             <CheckBox id={item.id} label={item.name}
-                                                      faq
+                                                      // faq
                                                       onChange={(e) => handleCheckboxChange(e.target.checked, item.days, item.price)}
                                                       description={item.description}
                                                       disabled={item.checked}
