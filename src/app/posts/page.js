@@ -24,8 +24,6 @@ export const metadata = {
 
 async function fetchPosts(tagId = undefined) {
     try {
-
-
         if (tagId === undefined) {
             const response = await fetch(`${IMAGE_URL}/api/post/getAllPosts`, {
                 cache: "no-store"

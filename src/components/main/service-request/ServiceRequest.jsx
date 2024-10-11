@@ -46,7 +46,7 @@ export default function ServiceRequest({sele_disabled = false}) {
 
 
     return (
-        <div className={styles.main} id={'call'}>
+        <div className={sele_disabled ? `${styles.height} ${styles.main}` : styles.main} id={'call'} key={'call'}>
             <div className={styles.lineBack}>
                 <LineBack/>
             </div>
@@ -59,11 +59,11 @@ export default function ServiceRequest({sele_disabled = false}) {
                     <form className={styles.gap30} onSubmit={handleSubmit} id={'TakeMyMoney'}>
                         {/*form*/}
                         <TextInput req back={false} place={'Как к вам обращаться?'}
-                                   value={name ? name : null}
+                                   value={name ? name : ''}
                                     onChange={(e) => setName(e.target.value)}
                         />
                         <TextInput req back={false} place={'Номер телефона или email для связи'}
-                                    value={number ? number : null}
+                                    value={number ? number : ''}
                                    onChange={(e) => setNumber(e.target.value)}
                         />
                         <div className={styles.gap20}>

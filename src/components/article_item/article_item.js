@@ -10,7 +10,7 @@ import temp from '@/asserts/temp/temp.jpg'
 const ArticleItem = ({ name, type, description, views, image, id, time }) => {
   const router = useRouter()
   return (
-    <div className={styles.main} onClick={() => router.push(`/posts/${id}`)}>
+    <div className={styles.main} onClick={() => router.push(`/posts/${id}`)} key={id}>
       {
         type === 'full' ?
           <section className={`${styles.full_container} ${styles.container}`}>

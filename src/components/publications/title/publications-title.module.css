@@ -78,7 +78,6 @@
     border-radius: 8px;
     background-color: var(--nuans-color);
     /*background-color: transparent;*/
-
 }
 
 .tags::-webkit-scrollbar-thumb {
@@ -285,7 +284,7 @@
         font-size: 48px;
     }
     .main h2{
-        font-size: 42pt;
+        font-size: 38pt;
     }
 }
 
@@ -303,6 +302,6 @@
         font-size: 38px;
     }
     .main h2{
-        font-size: 32pt;
+        font-size: 28pt;
     }
 }

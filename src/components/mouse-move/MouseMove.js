@@ -12,8 +12,8 @@ export default function MouseMove({children, parent, id, zindex = true}) {
             if (parent.current) {
                 const parentRect = parent.current.getBoundingClientRect();
                 move.animate({
-                    left: `${clientX - parentRect.left - 50}px`,
-                    top: `${clientY - parentRect.top + 50}px`
+                    left: `${clientX - 50 - parentRect.left}px`,
+                    top: `${clientY + 100 - parentRect.top}px`
                 }, { duration: 500, fill: "forwards" });
             } else {
                 // console.log('if error')

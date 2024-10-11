@@ -293,6 +293,16 @@
     }
 }
 
+@media (max-width: 768px) {
+    .title{
+        font-size: 24px;
+    }
+
+    .column_description, .full_description, .row_description, .without_description {
+        font-size: 12pt;
+    }
+}
+
 @media (max-width: 425px) {
     .full_container, .column_container {
         display: flex;
@@ -325,7 +335,7 @@
     }
 
     .full_title, .column_title {
-        font-size: 24px;
+        font-size: 20px;
         margin-bottom: 2vh;
     }
 
@@ -384,7 +394,7 @@
     .row_title {
         width: 100%;
         /*color: white;*/
-        font-size: 10.5pt;
+        font-size: 12pt;
         margin-bottom: 0;
         height: 100%;
     }

@@ -5,7 +5,8 @@ import styles from './accordion.module.css'
 import Link from "next/link";
 import Image from "next/image";
 
-import icon from '../../asserts/icons/help-circle.png'
+// import icon from '../../asserts/icons/help-circle.png'
+import icon from '../../../public/asserts/icons/help-circle.png'
 
 export default function Accordion({
                                       fontSize = 'default',

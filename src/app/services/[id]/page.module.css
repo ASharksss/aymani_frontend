@@ -144,19 +144,43 @@
     z-index: 92;
     display: flex;
     gap: 10px;
-    overflow: auto;
+    overflow: hidden;
     justify-content: flex-start;
     /*backdrop-filter: blur(4px);*/
 }
 
+.checkBoxes::-webkit-scrollbar {
+    width: 5px;
+    height: 2px;
+    /*margin-top: 10px;*/
+}
+
+.checkBoxes::-webkit-scrollbar-track {
+    border-radius: 8px;
+    /*background-color: var(--nuans-color);*/
+    background-color: transparent;
+}
+
+.checkBoxes::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-clip: content-box;
+    background-color: var(--services-title);
+    /*background-color: transparent;*/
+}
 .columns::-webkit-scrollbar{
     display: none;
 }
 
+.somenthing{
+    position: absolute;
+}
+
 .second{
+    overflow: hidden;
+    margin-top: 10%;
     /*height: fit-content;*/
-    position: sticky;
-    top: 0;
+    /*position: sticky;*/
+    /*top: 0;*/
     z-index: 10;
     align-self: flex-start;
     /*top: 10px;*/
@@ -208,22 +232,25 @@
     font-weight: 500;
     display: flex;
     align-items: center;
-    color: var(--base-color);
+    color: var(--focus-color-end);
 
 }
 
 .checkBoxes{
+    overflow: auto;
+    height: 600px;
+    width: 90%;
     z-index: 92;
     display: flex;
     gap: 10px;
     flex-direction: column;
-    padding: 0 10px;
-    max-width: 400px;
+    padding: 0 50px 0 10px;
+    /*max-width: 400px;*/
 }
 
 
 .first{
-    height: 800px;
+    overflow: hidden;
     width: 100%;
     max-width: 560px;
 }
@@ -244,6 +271,7 @@
     display: flex;
 }
 .slide{
+    height: fit-content;
     width: 25%;
     transition: all 0.6s ease;
 }
@@ -265,7 +293,6 @@
     width: 100px;
     background: rgba(0, 0, 0, 0.01);
 }
-
 
 @media (max-width: 1600px) {
     .lineBack{
@@ -298,9 +325,12 @@
         height: 100%;
         flex-direction: column;
     }
-
+    .checkBoxes{
+        padding: 10px 0;
+        width: 100%;
+    }
     .columns{
-        height: 500px;
+        /*height: 500px;*/
     }
     .first{
         height: fit-content;
@@ -329,7 +359,9 @@
     .calculator:before, .calculator:after{
         display: none;
     }
-
+    .slides{
+        align-items: center;
+    }
     .columns{
         display: flex;
         flex-direction: column;
@@ -341,7 +373,12 @@
     .calculator{
         padding: 10px;
     }
+
+    .first{
+        order: 2;
+    }
     .second{
+        order: 1;
         max-width: 100%;
     }
 
