@@ -282,7 +282,6 @@
 @media (max-width: 1024px) {
     .imagespan{
         max-height: 300px;
-
     }
     .header {
         font-size: 42pt;
@@ -404,8 +403,8 @@
         border-radius: 20px;
         height: 250px;
     }
-
 }
+
 
 @media (max-width: 425px) {
     .header {
@@ -413,6 +412,10 @@
     }
     .uniqueHeaders {
         font-size: 54px;
+    }
+
+    .imagespan{
+        max-height: 250px;
     }
     .section {
         padding: 30px 10px;
@@ -489,6 +492,7 @@
         flex-direction: column;
         max-width: 275px;
         /*height: 355px;*/
+        height: 100%;
         overflow: hidden;
     }
 
