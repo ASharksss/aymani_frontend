@@ -57,3 +57,10 @@
         flex-direction: column;
     }
 }
+
+@media (max-width: 425px) {
+    .frame{
+        height: 45vh;
+        width: 100vw;
+    }
+}

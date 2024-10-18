@@ -31,7 +31,7 @@ export default async function Page() {
                             Техническая улица, 39 — Яндекс
                             Карты
                         </a>
-                        <iframe
+                        <iframe className={styles.frame}
                             src="https://yandex.ru/map-widget/v1/?ll=49.129884%2C55.757212&mode=whatshere&whatshere%5Bpoint%5D=49.128488%2C55.757175&whatshere%5Bzoom%5D=17&z=17.69"
                             width="700" height="500" frameBorder="1" allowFullScreen="true"
                             style={{position:'relative'}}></iframe>
